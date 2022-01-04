@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
   margin-bottom: 10px;
   
 }
@@ -24,7 +23,7 @@
 }
 
 .message-card {
-  /* padding: 10px; */
+  padding: 10px;
 
   background-color: white;
  border-radius: 10px;
@@ -108,7 +107,7 @@
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    width: 95%;
+    width: 9%;
   }
 }
 
@@ -121,7 +120,7 @@
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -138,7 +137,7 @@
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -157,6 +156,6 @@
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    width: 95%;
+    width: 90%;
   }
 }
