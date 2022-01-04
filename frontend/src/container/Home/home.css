@@ -38,11 +38,13 @@
   font-weight: bold;
   color: black;
   cursor: pointer;
-  width: 200px;
+  width: 210px;
   height: 60px;
-  z-index: -10;
+  z-index: 100;
 }
-
+.miseneforme_avatar{
+  margin:0
+}
 .message-is-admin {
   font-style: italic;
 }
@@ -107,7 +109,7 @@
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    width: 9%;
+    width: 90%;
   }
 }
 

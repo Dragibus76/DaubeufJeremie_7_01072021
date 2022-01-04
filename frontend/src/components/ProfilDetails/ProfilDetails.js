@@ -378,6 +378,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
               label="Modifier e-mail"
               buttonTitle1="Sauvegarder Modifications"
               buttonTitle2="Annuler Modifications"
+              
             />
             <div className="modify-icon-profil" onClick={handleUpdatePassword}>
               <FontAwesomeIcon color="red" icon={["far", "edit"]} /> modifier mot de passe
@@ -429,12 +430,13 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
           </div>
           <div className="user-description-container">
             <div className="user-description-input">
-              <InputTextArea
+              <textarea
                 rows={4}
                 variant="outlined"
                 label="Description"
                 onChange={onChangeBio}
                 value={bio}
+                className="Input_textarea_bio"
               />
               <div className="button-modify-bio">
                 <button onClick={handleUpdateModal} title="Modifier Ma Description" className="button_modifbio"><FontAwesomeIcon color="white" icon="check" /> Valider</button>

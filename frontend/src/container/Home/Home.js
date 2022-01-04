@@ -109,7 +109,7 @@ const Home = ({ myUserId, admin, setAdmin }) => {
                 <div className="avatar-picture">
                   <img width="100%" height="100%" alt="" style={{ borderRadius: "50%" }} src={element.User.avatar} />
                 </div>
-                <div>{firstnameLastname}
+                <div className="miseneforme_avatar">{firstnameLastname}
                 <div className="message-is-admin">
                 {element.User.isAdmin && <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />}{" "}
                 {element.User.isAdmin && "Administrateur"}

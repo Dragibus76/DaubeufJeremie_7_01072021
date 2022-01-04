@@ -1,11 +1,8 @@
 .profil-details-container {
-  /* padding: 20px; */
+  margin-top: 50px;
   
 }
 
-/* .post-message-container {
-  padding: 20px 20px 20px 20px;
-} */
 
 .message-user-card-container {
   display: flex;
