@@ -17,16 +17,15 @@
 .message-card-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   margin-right: auto;
   margin-left: auto;
-
   font-family: 'Outfit', sans-serif;
+  margin-top: 30px;
 }
 
 .message-card {
-  padding: 10px;
-  margin: 10px 0;
+  /* padding: 10px; */
+
   background-color: white;
  border-radius: 10px;
  width: 50%;
@@ -104,7 +103,7 @@
   .message-card-container {
     margin-right: auto;
   margin-left: auto;
-  width: 95%;
+  
   }
   .message-card {
     margin-right: auto;
@@ -117,12 +116,12 @@
   .message-card-container {
     margin-right: auto;
   margin-left: auto;
- 
+  
   }
   .message-card {
     margin-right: auto;
     margin-left: auto;
-    
+    width: 95%;
   }
 }
 
@@ -133,13 +132,13 @@
   .message-card-container {
     margin-right: auto;
     margin-left: auto;
- 
+    
   
   }
   .message-card {
     margin-right: auto;
     margin-left: auto;
- 
+    width: 95%;
   }
 }
 
@@ -153,11 +152,11 @@
   .message-card-container {
     margin-right: auto;
     margin-left: auto;
-
+    
   }
   .message-card {
     margin-right: auto;
     margin-left: auto;
-   
+    width: 95%;
   }
 }

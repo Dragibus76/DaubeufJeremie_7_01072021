@@ -1,5 +1,4 @@
 .user-profil-big-container {
-  padding: 10px;
   border: 1px solid #dcdcde;
   margin: 10px 0;
   background-color: white;
@@ -157,22 +156,16 @@ color: orange;
 width: 200px;
 background: red!important;
 }
-@media screen and (max-width: 1700px) {
+/* @media screen and (max-width: 1700px) {
   .user-profil-big-container { 
-    width: 90%;
+    width: 50%;
     margin-right: auto;
     margin-left: auto;
   }
-}
+} */
 
-@media screen and (max-width: 1400px) {
-  .user-profil-big-container { 
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media screen and (max-width: 1025px) {
+
+@media screen and (max-width: 1255px) {
   .user-profil-container {
     display: flex;
     flex-direction: column;
@@ -185,7 +178,7 @@ background: red!important;
     margin-top: 20px;
   }
   .user-profil-big-container { 
-    width: 90%;
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -219,7 +212,7 @@ background: red!important;
     margin-top: 20px;
   }
   .user-profil-big-container { 
-    width: 90%;
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -252,7 +245,7 @@ background: red!important;
     margin-bottom: 20px;
   }
   .user-profil-big-container { 
-    width: 90%;
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
   }
