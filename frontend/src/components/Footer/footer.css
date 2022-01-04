@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+.grpm-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 190px;
+  background: #051724;
+  color: #fff;
+  bottom: 0;
+}
+
+.grpm-footer-content {
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.img-logo-Code_Dragi{
+  width: 130px;
+}
+
+.heartBrokenFooter{
+  color: red;
+}

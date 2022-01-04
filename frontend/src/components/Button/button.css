@@ -1,0 +1,27 @@
+.button {
+  border: inherit;
+  border-radius: 0.5em;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #54DECE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #54DECE;
+  transition: ease 0.5s;
+}
+
+.button:active {
+ transform: scale(1.2);
+}
+
+.icon-button {
+  margin-right: 5px;
+}
+.addPhotoIcon {
+  color: #54DECE;
+}

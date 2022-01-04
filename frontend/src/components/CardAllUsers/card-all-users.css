@@ -1,0 +1,67 @@
+
+
+.Users_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 50%;
+  
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px!important;
+  background: white;
+ 
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Users_search{
+  border: none;
+  background: #cacaca;
+  opacity: 50%;
+  border-radius: 30px;
+  height: 30px;
+  width: 250px;
+  text-align: center;
+
+}
+
+.Seach_User_Icon{
+  margin: 0px;
+  padding:7px;
+  position: absolute;
+}
+
+.form_avatar{
+  width: 14em;
+  height: 45px;
+  color: black;
+  border: #0E88FA;
+  border-radius:50px;
+  margin-right: 50px;
+  
+
+}
+
+@media screen and (max-width: 1255px) {
+  .Users_container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .Users_container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  .Users_container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

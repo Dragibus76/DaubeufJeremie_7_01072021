@@ -1,0 +1,40 @@
+.button_modif_comment_yes{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #0E88FA;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.button_modif_comment_yes:hover{
+    background: white;
+  border: 1px solid #0E88FA;
+  color: #0E88FA;
+  transform: scale(1.1);
+}
+
+.button_modif_close_modale{
+    color: #0E88FA;
+    font-size: 20px;
+    transition: 0.5s ease;
+}
+.button_modif_close_modale:hover{
+    color: red;
+    font-size: 20px;
+    transform: scale(1.2);
+}
+
+.input_modif_comment{
+    width: 250px;
+    height: 150px;
+    border: none;
+    display: flex;
+    padding: 10px;
+}
+.input_modif_comment:focus{
+ border: 1px solid #CACACA;
+ border-radius: 15px;
+}

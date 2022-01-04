@@ -1,0 +1,50 @@
+.confirm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirm-buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.confirm-button-yes {
+  margin-right: 10px;
+}
+
+.confirm_delete_message_yes{
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.confirm_delete_message_yes:hover{
+  border: 1px solid red;
+  background-color: white;
+  color: red;
+}
+
+
+.confirm_delete_message_no{
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0E88FA;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.confirm_delete_message_no:hover{
+  border: 1px solid #0E88FA;
+  background-color: white;
+  color: #0E88FA;
+}

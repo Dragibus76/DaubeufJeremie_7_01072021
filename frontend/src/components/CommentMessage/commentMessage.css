@@ -1,0 +1,56 @@
+.comment-icon {
+  margin-bottom: 5px;
+  width: 180px;
+}
+
+.accordions {
+  margin-bottom: 10px;
+}
+
+.comment-input-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+}
+
+.comment-input {
+  margin-bottom: 5px;
+ height: 40px;
+ 
+ border-radius: 20px;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  
+  
+}
+.reaction_container{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: center;
+}
+.label_com_input{
+  width: 100%;
+  outline: none;
+  background:#F0F2F5;
+  border-radius: 20px;
+  height: 35px;
+  border: none;
+  text-align: center;
+  
+}
+.comment-button {
+  margin-bottom: 10px;
+}
+
+.Send_icon{
+  font-size: 20px;
+  color: #0E88FA;
+ 
+  padding:9px;
+  position: absolute;
+}

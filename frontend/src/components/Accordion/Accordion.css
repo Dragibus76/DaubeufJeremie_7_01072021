@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+.accordions {
+  width: 100%;
+}
+.accordion__title {
+  
+  padding: 1rem;
+  font-weight: bold;
+  font-family: 'Outfit', sans-serif;
+}
+
+.accordion__title:hover,
+.active .accordion__title {
+  cursor: pointer;
+}
+
+.container_comments{
+  display: flex;
+}
+
+.active .accordion__icon::before {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+
+.accordion__content {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: all 0.2s ease-in;
+  width: 100%;
+ 
+}
+
+.active .accordion__content {
+  visibility: visible;
+  height: 300px;
+  
+  overflow: visible;
+  padding: 1rem;
+  opacity: 1;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.accordion-comment-card {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #eee;
+  width: auto;
+}
+
+.accordion-avatar-name {
+  padding-top: 5px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fc930c;
+}
+
+.avatar-comment-picture {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.accordion-comment-content {
+  background: #CACACA;
+  opacity: 50%;
+  border-radius: 15px;
+  padding: 10px;
+  word-break: break-all;
+  margin: 10px;
+  width: 70%;
+}
+
+.accordion-comment-like-modify-delete-container {
+ display: flex;
+ justify-content: space-between;
+ 
+}
+
+
+@media screen and (max-width: 1259px) {
+  .accordion-comment-content{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .accordion-comment-content{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .accordion-comment-content{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 228px) {
+  .accordion-comment-content{
+    width: 50%;
+  }
+}

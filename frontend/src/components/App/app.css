@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+body {
+  font-family: 'Outfit', sans-serif;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  padding-top: 95px;
+  min-height: calc(100vh - 145px);
+}
+
+
+@media screen and (max-width: 640px) {
+  .main-container {
+    padding-top: 150px;
+  }
+}

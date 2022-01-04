@@ -1,0 +1,113 @@
+.modif-pop-up-container {
+  padding: 30px;
+}
+
+.modif-pop-up-inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modif-pop-up-input-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.modif_title_input{
+  width: 400px;
+  height: 50px;
+  border: none;
+  text-align: center;
+  border-radius: 15px;
+}
+.modif_title_input:hover{
+  border: 2px solid #cacaca;
+}
+.modif_title_input:focus{
+  border: 2px solid #0E88FA;
+}
+.Icon_modif_photo{
+  transition: 0.5s ease;
+}
+.Icon_modif_photo:hover{
+  transform: scale(1.5);
+}
+.modif_textarea{
+  width: 400px;
+  height: 150px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.modif_textarea:hover{
+  border: 2px solid #cacaca;
+}
+.modif_textarea:focus{
+  border: 2px solid #0E88FA;
+}
+.modif-pop-up-picture {
+  margin-top: 10px;
+}
+
+.modif-pop-up-input-file {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modif-pop-up-icon-picture {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.modif-pop-up-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.button-save-modif {
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Button_Modif_Message{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #0E88FA;
+  color: white;
+  transition: 0.5s ease;
+}
+.Button_Modif_Message:hover{
+  background: white;
+  border: 1px solid #0E88FA;
+  color: #0E88FA;
+  transform: scale(1.1);
+}
+
+
+.Button_Annul_Message{
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: red;
+  color: white;
+  outline: none;
+  border: none;
+  text-align: center;
+  transition: 0.5s ease;
+}
+
+.Button_Annul_Message:hover{
+  background: white;
+  color: black;
+  border: 1px solid red;
+}

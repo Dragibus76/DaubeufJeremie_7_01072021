@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+.login-container {
+  border: 1px solid #dcdcde;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 130px 20%;
+  padding: 10px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.login-title {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.login-input-email {
+  margin-top: 20px;
+}
+input {
+  background: transparent;
+  border: none;
+  outline:none;
+  border-bottom: 1px solid #0E88FA;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.Button_Connexion{
+  width: 9em;
+  height: 3em;
+  border-radius: 20px;
+  background: #0E88FA;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.Button_Connexion:hover{
+  transition: 0.3s ease;
+ background: white;
+ color: #0E88FA;
+ border: 1px solid #0E88FA;
+}
+
+.Inscription{
+  font-size: 20px;
+  text-decoration: none;
+  color: #0E88FA;
+  transition: 0.5s ease;
+}
+.Inscription:hover {
+  transform: scale(1.2);
+}
+.Icons{
+  color: #0E88FA;
+  margin: 0 10px;
+  font-size: 20px;
+}
+.subtitle{
+  font-style: italic;
+  font-size: 18px;
+}
+.login-input-password {
+  margin-top: 15px;
+}
+
+.login-button {
+  margin: 20px 0 20px;
+}
+
+@media screen and (max-width: 1259px) {
+  .login-container {
+    margin: 130px 10%;
+  }
+  .logo_img{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .login-container {
+    margin: 130px 10%;
+  }
+  .logo_img{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .login-container {
+    margin: 130px 10%;
+  }
+  .logo_img{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 228px) {
+  .login-container {
+    margin: 130px 10%;
+  }
+  .logo_img{
+    width: 50%;
+  }
+}

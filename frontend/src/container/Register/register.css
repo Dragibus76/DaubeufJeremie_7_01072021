@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+.register-container {
+  border: 1px solid #dcdcde;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  margin: 15px 20%;
+  padding: 10px;
+}
+textarea{
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #0E88FA;
+  font-family: 'Outfit', sans-serif;
+  resize : none;
+}
+
+.Button_Inscription{
+  width: 9em;
+  height: 3em;
+  border-radius: 20px;
+  background: #0E88FA;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.Button_Inscription:hover{
+  transition: 0.3s ease;
+ background: white;
+ color: #0E88FA;
+ border: 1px solid #0E88FA;
+}
+.register-title {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+
+.register-input {
+  margin-top: 15px;
+}
+
+.register-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1259px) {
+  .register-container {
+    margin: 130px 10%;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .register-container {
+    margin: 130px 10%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .register-container {
+    margin: 130px 10%;
+  }
+}
+@media screen and (max-width: 228px) {
+  .register-container {
+    margin: 130px 10%;
+  }
+}

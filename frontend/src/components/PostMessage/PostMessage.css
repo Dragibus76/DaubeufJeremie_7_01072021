@@ -1,0 +1,150 @@
+.post-message {
+  
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.post-message-title {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.Pen_Icons{
+  color: #0E88FA;
+  margin: 12px 15px;
+  font-size: 20px;
+}
+.Post_circle{
+  width: 50px;
+  height: 50px;
+  background: #E1E1E1;
+  border-radius: 30px;
+  margin: 20px;
+  display: flex;
+}
+
+
+.input-container {
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.input-title {
+  padding-left: 10px;
+  text-align: center;
+  width: 70%;
+ 
+}
+.title_input{
+  border: none;
+  background: #E1E1E1;
+  border-radius: 30px;
+  height: 30px;
+  width: 50%;
+  text-align: center;
+}
+input[type="file"] { 
+  position: absolute;
+  opacity: 0;
+  border: none;
+}
+.textarea_publi{
+  width: 95%;
+  height: 70px;
+  border: none;
+  border: 2px solid #E1E1E1;
+  text-align: center;
+  border-radius: 15px;
+}
+.input-file {
+    color: #F0B418;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    
+}
+
+.picture-name {
+  padding: 5px;
+  text-align: center;
+  word-break: break-all;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+.input-content {
+  padding-right: 10px;
+}
+span{
+  color: black;
+}
+.button-publish {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  width: 100px;
+  text-align: center;
+  align-content: flex-start;
+}
+
+.Button_Send{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #0E88FA;
+  color: white;
+  transition: 0.5s ease;
+}
+.Button_Send:hover{
+  background: white;
+  border: 1px solid #0E88FA;
+  color: #0E88FA;
+  transform: scale(1.1);
+}
+.switch_profil{
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1255px) {
+  .post-message {
+    width: 99%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .post-message {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-message {
+    width: 95%;
+  }
+}
