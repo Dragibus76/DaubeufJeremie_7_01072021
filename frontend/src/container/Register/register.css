@@ -20,6 +20,9 @@ textarea{
   font-family: 'Outfit', sans-serif;
   resize : none;
 }
+ .Biographie {
+   border-bottom: 1px solid #0E88FA;
+ }
 
 .Button_Inscription{
   width: 9em;
@@ -52,7 +55,9 @@ textarea{
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
+.subtitle{
+  text-align: center;
+}
 @media screen and (max-width: 1259px) {
   .register-container {
     margin: 130px 10%;

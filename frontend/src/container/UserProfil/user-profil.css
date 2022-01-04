@@ -22,7 +22,9 @@
   margin-top: 20px;
 }
 
-
+.Like_Message2{
+  margin-top: 5px;
+}
 @media screen and (max-width: 1255px) {
   .profil-details-container {
     padding: 0;

@@ -93,12 +93,16 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 </div>
                 <div>{firstnameLastname}</div>
               </div>
+              <div className="date">
               <div className="message-date">Publiée {moment(new Date(element.createdAt)).fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
                 <div className="message-date">Modifiée {moment(new Date(element.updatedAt)).fromNow()}</div>
               )}
+              </div>
+              <div className="line_container"></div>
               <div className="message-container">
                 <div className="message-title">{element.title}</div>
+                <div className="line_container"></div>
                 {element.attachment && (
                   <div className="picture-container">
                     <img src={element.attachment} alt="img" width="100%" height="100%" />
@@ -106,6 +110,8 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 )}
                 <div className="message-content">{element.content}</div>
               </div>
+              <div className="line_container"></div>
+              <div className="Like_Message2"></div>
               <LikeDislikeMessage
                 changeLike={changeLike}
                 like={element.likes}
@@ -113,6 +119,7 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 messageId={element.id}
                 messageLikeByCurrentUser={messageLikeByCurrentUser}
               />
+              <div className="line_container"></div>
               <CommentMessage
                 admin={admin}
                 setAllMessages={setAllMessages}

@@ -123,7 +123,7 @@ const Home = ({ myUserId, admin, setAdmin }) => {
               )}
               
               </div>
-                
+              <div className="line_container"></div>
               <div className="message-container">
               
                 <div className="message-title">{element.title}</div>

@@ -114,6 +114,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
     <div className="register-container">
       <div className="register-title">Bienvenue sur Groupomania.com</div>
       <img src={Login_img} alt="logo de la page de connexion" className="logo_img"/>
+      <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="register-input">
       <FontAwesomeIcon icon="envelope" className="Icons"/><input onChange={onChangeEmail} value={email} label="e-mail" placeholder="Email" />
       </div>
@@ -141,7 +142,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       </div>
       {errorConfirmPassword && <ErrorMessage message={errorConfirmPassword} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="book-reader" className="Icons"/> <textarea rows={4} variant="outlined" label="Description" onChange={onChangeBio} value={bio} placeholder="Biographie"/>
+      <FontAwesomeIcon icon="book-reader" className="Icons"/> <textarea rows={4} variant="outlined" label="Description" onChange={onChangeBio} value={bio} placeholder="Biographie" className="Biographie"/>
       </div>
       <div className="register-button">
         <button onClick={onRegister} title="S'inscrire" className="Button_Inscription">Inscription</button>

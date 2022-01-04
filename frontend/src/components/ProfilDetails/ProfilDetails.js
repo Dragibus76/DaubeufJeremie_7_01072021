@@ -336,7 +336,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         <div className="user-profil-title">
           {firstname}{lastname}
           
-          <div className="avatar-picture">
+          <div className="avatar-picture2">
               <img width="100%" height="100%" alt="avatar" style={{ borderRadius: "50%" }} src={avatar} className="img_upload"/>
               
           </div>
