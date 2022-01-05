@@ -5,7 +5,12 @@
   background-color: white;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-
+  width: 50%;
+  border-radius: 15px;
+  align-items:flex-end;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .users-profil-infos {
@@ -28,8 +33,9 @@
 
 .users-buttons-container {
   display: flex;
-  justify-content: flex-end;
-  margin: 0 15px 15px 15px;
+ margin-right: auto;
+ margin-left: auto;
+  margin: 0 15px 15px auto;
 }
 
 .users-button-be-admin {
@@ -37,18 +43,27 @@
 }
 
 .message-other-user-card-container {
+  
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 550px;
+margin-right: auto;
+margin-left: auto;
+  
 }
 
 .message-other-user-card {
-  padding: 10px;
+  
   border: 1px solid #dcdcde;
   margin: 10px 0;
   background-color: white;
-  box-shadow: 5px 5px 5px 5px #dcdcde;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+margin-right: auto;
+margin-left: auto;
+padding: 10px;
+width: 50%;
+
+  border-radius: 15px;
 }
 
 .Button_Droits_Other_Profil{
@@ -60,6 +75,7 @@
   background: #0E88FA;
   color: white;
   transition: 0.5s ease;
+  
 }
 
 .Button_Droits_Other_Profil:hover{
@@ -86,27 +102,38 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 1700px) {
-  .message-other-user-card-container {
-    margin: 0 200px;
-  }
-}
 
-@media screen and (max-width: 1400px) {
-  .message-other-user-card-container {
-    margin: 0 200px;
-  }
-}
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1255px) {
   .message-other-user-card-container {
-    margin: 0 200px;
+    margin: auto;
+    width: 95%;
+  }
+  .message-other-user-card {
+    width: 95%;
+  }
+  .users-profil-big-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .message-other-user-card-container {
-    margin: 0 50px;
+    margin: auto;
+    width: 95%;
+  }
+  .message-other-user-card {
+    width: 95%;
+  }
+  .users-profil-big-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
   }
 }
 
@@ -115,8 +142,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
   }
   .message-other-user-card-container {
     margin: auto;
+    width: 95%;
+  }
+  .message-other-user-card {
+    width: 95%;
   }
 }

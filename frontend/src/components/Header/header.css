@@ -32,14 +32,17 @@
   font-size: 20px;
 }
 .grpm-logo_1 {
-  margin-left: 20px;
+ 
   height: auto;
-  width: 13em;
+  width: 10em;
+  margin-right: 20px;;
 }
 .img-logo-1 {
   height: auto;
   width: 100%;
   cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .grpm-buttons-log-1 {

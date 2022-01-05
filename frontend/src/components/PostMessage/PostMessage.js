@@ -163,11 +163,12 @@ class PostMessage extends Component {
 
     return (
       <div className="post-message">
-        <div className="container">
+        <div className="container_post">
+          
           <div className="Post_circle">
             <FontAwesomeIcon icon="pen" className="Pen_Icons"/>
           </div>
-          <p>Nouveau Post</p>
+          <div className="title_post">Nouveau Post</div>
         </div>
         
         <div className="input-title">
