@@ -51,7 +51,7 @@ const ModifyComment = ({ myUserId, idUserComment, commentId, content, messageId,
     <div>
       {myUserId === idUserComment && (
         <div className="modify-icon" onClick={handleModal}>
-          <FontAwesomeIcon color="#0E88FA" icon={["far", "edit"]} /> modifier
+          <FontAwesomeIcon color="#0E88FA" icon={["fas", "edit"]} /> modifier
         </div>
       )}
       <ModifCommentPopUp

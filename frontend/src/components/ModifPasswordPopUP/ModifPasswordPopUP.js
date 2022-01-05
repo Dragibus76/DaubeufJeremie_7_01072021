@@ -4,6 +4,7 @@ import Input from "../../components/Input/Input";
 import Button from "../Button/Button";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import '../ModifPasswordPopUP/modifPasswordPopUp.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ModifPasswordPopUp = ({
   open,
@@ -23,7 +24,9 @@ const ModifPasswordPopUp = ({
 }) => {
   return (
     <Dialog open={open} onClose={handleModal}>
+      
       <div className="modif-pop-up-container">
+      <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} onClick={handleModal}/>
         <div className="modif-pop-up-inputs-container">
           <div className="modif-pop-up-title">
             <DialogTitle>{modalTitle}</DialogTitle>

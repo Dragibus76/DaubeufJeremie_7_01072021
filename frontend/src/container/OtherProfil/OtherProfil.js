@@ -132,7 +132,7 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
       <div className="users-profil-big-container">
         <div className="users-profil-infos">
           <div className="users-avatar">
-            {infoFirstname} {infoLastname} //reprendre ici
+            {infoFirstname} {infoLastname} 
             <img className="avatar-picture" alt="avatar" src={infoAvatar} />
           </div>
           <div className="other-user-pseudo">Prénom : {infoFirstname}</div>

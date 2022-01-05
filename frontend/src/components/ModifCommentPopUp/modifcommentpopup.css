@@ -34,9 +34,11 @@
     display: flex;
     padding: 10px;
     border: 1px solid #CACACA;
-    border-radius: 15px;
+    border-radius: 0;
     transition: 1s ease;
+    background: white;
 }
 .input_modif_comment:focus{
- border: 1px solid #0E88FA;
+ background: #CACACA;
+ border-radius: 5px;
 }

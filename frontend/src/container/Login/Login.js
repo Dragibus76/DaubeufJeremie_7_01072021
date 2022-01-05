@@ -42,6 +42,7 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
   };
 
   return (
+    
     <div className="login-container">
       <div className="login-title">Bienvenue sur Groupomania.com</div>
       <img src={Login_img} alt="logo de la page de connexion" className="logo_img"/>
@@ -56,8 +57,8 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
       <div className="login-button">
         <button onClick={onLogin} title="Connexion" className="Button_Connexion">Connexion</button>
       </div>
-      <div>
-       Pas encore membre? <a  className="Inscription" href="/inscription">Inscription</a>
+      <div className="circle_button">
+        <a  className="Inscription" href="/inscription"><FontAwesomeIcon icon="arrow-right" className="Icon_Circle_Button"/></a>
       </div>
       {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>

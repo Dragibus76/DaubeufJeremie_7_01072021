@@ -86,7 +86,7 @@ const ModifyMessage = ({
     <div>
       {(myUserId === idUserMessage || admin === true) && (
         <div className="modify-icon" onClick={handleModal}>
-          <FontAwesomeIcon color="#0E88FA" icon={["far", "edit"]} /> modifier
+          <FontAwesomeIcon color="#0E88FA" icon={["fas", "edit"]} /> modifier
         </div>
       )}
       <ModifPopUp

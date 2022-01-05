@@ -44,21 +44,17 @@ export default function OutlinedChips({ myUserId }) {
 
   return (
     <div className="Users_container">
+      <div className="test">
+      
+      </div>
       <div className="input-users">
+        <div className="text_users">Utilisateurs</div>
+      <div className="line-container_User_Card"></div>
       <FontAwesomeIcon icon="search" className="Seach_User_Icon"/>
         <input label="Rechercher utilisateur" type="search" value={searchBarValue} onChange={handleChange} placeholder="Rechercher un utilisateur" className="Users_search"/>
       </div>
-      <div
-        style={{
-          width: "100%",
-
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          overflowY: "scroll",
-          marginTop: "10px",
-        }}
+      <div className="User_Component"
+        
       >
         {allUsers
           .filter((element) => {

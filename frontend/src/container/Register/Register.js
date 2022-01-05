@@ -147,10 +147,11 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       <div className="register-button">
         <button onClick={onRegister} title="S'inscrire" className="Button_Inscription">Inscription</button>
       </div>
-      <div>
-       Déjà membre? <a  className="Inscription" href="/">Connexion</a>
+      <div className="circle_button2">
+      <a  className="Inscription" href="/"><FontAwesomeIcon icon="arrow-left" className="Icon_Circle_Button"/></a>
       </div>
-    </div>
+      </div>
+    
   );
 };
 export default Register;

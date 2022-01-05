@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import InputTextArea from "../../components/Input/InputTextARea";
-import Switch from "@material-ui/core/Switch";
 import ConfirmPopUp from "../ConfirmPopUp/ConfirmPopUp";
 import api from "../../Config/Api";
 import { toastTrigger } from "../../helper/toast";
@@ -37,8 +35,11 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   const [errorLastname, setErrorLastname] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-  const groupomaniaUser = JSON.parse(sessionStorage.getItem("groupomania-user"));
-  const name_regex = /^([A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ-]* ?[A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ]+$)$/;
+  const groupomaniaUser = JSON.parse(
+    sessionStorage.getItem("groupomania-user")
+  );
+  const name_regex =
+    /^([A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ-]* ?[A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ]+$)$/;
 
   useEffect(() => {
     if (sessionStorage.getItem("groupomania-user")) {
@@ -126,7 +127,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onUpdateFirstname = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
     if (newFirstname === groupomaniaUser.firstname) {
       toastTrigger("success", "Prénom inchangé");
 
@@ -155,7 +158,10 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
       let oldSessionStorage = groupomaniaUser;
       oldSessionStorage.firstname = response.data.firstname;
-      sessionStorage.setItem("groupomania-user", JSON.stringify(oldSessionStorage));
+      sessionStorage.setItem(
+        "groupomania-user",
+        JSON.stringify(oldSessionStorage)
+      );
       setFirstname(response.data.firstname);
       toastTrigger("success", "Profil Mis à Jour 👌🏼");
       setErrorFirstname("");
@@ -165,7 +171,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onUpdateLastname = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
     if (newLastname === groupomaniaUser.lastname) {
       toastTrigger("success", "NOM inchangé");
       setOpenLastname(false);
@@ -192,7 +200,10 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
       let oldSessionStorage = groupomaniaUser;
       oldSessionStorage.lastname = response.data.lastname;
-      sessionStorage.setItem("groupomania-user", JSON.stringify(oldSessionStorage));
+      sessionStorage.setItem(
+        "groupomania-user",
+        JSON.stringify(oldSessionStorage)
+      );
       setLastname(response.data.lastname);
       toastTrigger("success", "Profil Mis à Jour 👌🏼");
       setErrorLastname("");
@@ -202,7 +213,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onUpdateEmail = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
 
     if (newEmail === groupomaniaUser.email) {
       toastTrigger("success", "e-mail inchangé");
@@ -212,7 +225,10 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
     if (newEmail) {
       const groupomaniaEmail = newEmail.split("@");
       if (groupomaniaEmail[1] !== "groupomania.com") {
-        toastTrigger("error", "Votre e-mail doit se terminer par @groupomania.com ⛔️");
+        toastTrigger(
+          "error",
+          "Votre e-mail doit se terminer par @groupomania.com ⛔️"
+        );
         setErrorEmail("votre e-mail doit se terminer par @groupomania.com");
         return;
       }
@@ -232,7 +248,10 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
       let oldSessionStorage = groupomaniaUser;
       oldSessionStorage.email = response.data.email;
-      sessionStorage.setItem("groupomania-user", JSON.stringify(oldSessionStorage));
+      sessionStorage.setItem(
+        "groupomania-user",
+        JSON.stringify(oldSessionStorage)
+      );
       setEmail(response.data.email);
       toastTrigger("success", "e-mail Mis à Jour 👌🏼");
       setErrorEmail("");
@@ -242,8 +261,11 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onUpdatePassword = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
-    const password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
+    const password_regex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
     const obj = { oldPassword, newPassword };
     if (!password_regex.test(oldPassword)) {
       toastTrigger("error", "mot de passe non valide ⛔️");
@@ -278,7 +300,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onUpdateBio = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
     if (bio === groupomaniaUser.bio) {
       toastTrigger("success", "Description inchangé");
       setOpenUpdate(false);
@@ -297,7 +321,10 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
       let oldSessionStorage = groupomaniaUser;
       oldSessionStorage.bio = response.data.bio;
-      sessionStorage.setItem("groupomania-user", JSON.stringify(oldSessionStorage));
+      sessionStorage.setItem(
+        "groupomania-user",
+        JSON.stringify(oldSessionStorage)
+      );
       setOpenUpdate(!openUpdate);
 
       setIsDisable(true);
@@ -308,7 +335,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   };
 
   const onDeleteUser = async () => {
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
 
     try {
       await api({
@@ -332,130 +361,187 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
   return (
     <div>
-      
-        <div className="user-profil-title">
-          {firstname}{lastname}
-          
-          <div className="avatar-picture2">
-              <img width="100%" height="100%" alt="avatar" style={{ borderRadius: "50%" }} src={avatar} className="img_upload"/>
-              
-          </div>
-          <div className="img_upload_circle">
-              <FontAwesomeIcon icon="camera" className="img_upload_circle_plane" onClick={handleModal}/>
-              </div>
-              
-              <Avatar
-              onChangeAvatar={onChangeAvatar}
-              avatar={avatar}
-              setAvatar={setAvatar}
-              open={open}
-              close={handleModal}
-            />
-            <div className="roles_typo">{isAdmin && "Administrateur"}</div>
-        </div>
+      {/* Avatar Section */}
+      <div className="user-profil-title">
         
-        <div className="user-profil-big-container"> 
-        <div className="user-profil-container">
-          <div className="avatar-container">
-            
-          
-          </div>
-          <div className="user-name-container">
-            <div className="message-is-admin">
-              {isAdmin && <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />} {isAdmin && "Administrateur"}
-            </div>
-            <div className="user-email"> <FontAwesomeIcon icon="envelope" className="icons_profil"/> {email} </div>
-            <div className="modify-icon-profil" onClick={handleUpdateEmail}>
-              <FontAwesomeIcon color="red" icon={["far", "edit"]} /> modifier e-mail
-            </div>
-            <ModifCommentPopUp
-              open={openEmail}
-              error={errorEmail}
-              onChange={onChangeEmail}
-              handleModal={handleUpdateEmail}
-              onUpdate={onUpdateEmail}
-              modalTitle="Modifier votre e-mail"
-              label="Modifier e-mail"
-              buttonTitle1="Sauvegarder Modifications"
-              buttonTitle2="Annuler Modifications"
-              
-            />
-            <div className="modify-icon-profil" onClick={handleUpdatePassword}>
-              <FontAwesomeIcon color="red" icon={["far", "edit"]} /> modifier mot de passe
-            </div>
-            <ModifPasswordPopUp
-              open={openPassword}
-              error={errorPassword}
-              errorConfirm={errorConfirmPassword}
-              onChange={onChangeOldPassword}
-              onChange2={onChangeNewPassword}
-              handleModal={handleUpdatePassword}
-              onUpdate={onUpdatePassword}
-              modalTitle="Modifier votre mot de passe"
-              label="ancien mot de passe"
-              label2="nouveau mot de passe"
-              buttonTitle1="Sauvegarder Modifications"
-              buttonTitle2="Annuler Modifications"
-            />
-            <div className="user-name"><FontAwesomeIcon icon="user" className="icons_profil"/> {firstname}</div>
-            <div className="modify-icon-profil" onClick={handleUpdateFirstname}>
-              <FontAwesomeIcon color="red" icon={["far", "edit"]} /> modifier Prénom
-            </div>
-            <ModifCommentPopUp
-              open={openFirstname}
-              error={errorFirstname}
-              onChange={onChangeFirstname}
-              handleModal={handleUpdateFirstname}
-              onUpdate={onUpdateFirstname}
-              modalTitle="Modifier votre Prénom"
-              label="Modifier Prénom"
-              buttonTitle1="Sauvegarder Modifications"
-              buttonTitle2="Annuler Modifications"
-            />
-            <div className="user-name"><FontAwesomeIcon icon="user" className="icons_profil"/> {lastname}</div>
-            <div className="modify-icon-profil" onClick={handleUpdateLastname}>
-              <FontAwesomeIcon color="red" icon={["far", "edit"]} /> modifier NOM
-            </div>
-            <ModifCommentPopUp
-              open={openLastname}
-              error={errorLastname}
-              onChange={onChangeLastname}
-              handleModal={handleUpdateLastname}
-              onUpdate={onUpdateLastname}
-              modalTitle="Modifier votre NOM"
-              label="Modifier NOM"
-              buttonTitle1="Sauvegarder Modifications"
-              buttonTitle2="Annuler Modifications"
-            />
-          </div>
-          <div className="user-description-container">
-            <div className="user-description-input">
-              <textarea
-                rows={4}
-                variant="outlined"
-                label="Description"
-                onChange={onChangeBio}
-                value={bio}
-                className="Input_textarea_bio"
-              />
-              <div className="button-modify-bio">
-                <button onClick={handleUpdateModal} title="Modifier Ma Description" className="button_modifbio"><FontAwesomeIcon color="white" icon="check" /> Valider</button>
-                <ConfirmPopUp
-                  open={openUpdate}
-                  handleModal={handleUpdateModal}
-                  modalTitle="Modifier la Description ?"
-                  buttonTitle1="Oui"
-                  buttonTitle2="Non"
-                  confirmModalAction={onUpdateBio}
-                  bio={bio}
-                  setBio={setBio}
-                />
-              </div>
-            </div>
-          </div>
+        <div className="avatar-picture2">
+          <img
+            width="100%"
+            height="100%"
+            alt="avatar"
+            style={{ borderRadius: "50%" }}
+            src={avatar}
+            className="img_upload"
+          />
+        </div>
+        <div className="img_upload_circle">
+          <FontAwesomeIcon
+            icon="camera"
+            className="img_upload_circle_plane"
+            onClick={handleModal}
+          />
+        </div>
+        {firstname} {lastname}
+        <Avatar
+          onChangeAvatar={onChangeAvatar}
+          avatar={avatar}
+          setAvatar={setAvatar}
+          open={open}
+          close={handleModal}
+        />
+        <div className="roles_typo">{isAdmin && "Administrateur"}</div>
+      </div>
+      
+      <div className="user-profil-big-container">
+        {/* Profil Section */}
+        <div className="Profil_Section">Profil</div>
+        {/* Bio Section */}
+        <div className="Pseudo_Button_Section">Modifier votre bio</div>
+        <div className="display_bio">
+          <textarea
+            rows={4}
+            variant="outlined"
+            label="Description"
+            onChange={onChangeBio}
+            value={bio}
+            className="Input_textarea_bio"
+          />
+        </div>
+        {/* Button Bio Section */}
+        <div className="button-modify-bio">
+          <button
+            onClick={handleUpdateModal}
+            title="Modifier Ma Description"
+            className="button_modifbio"
+          >
+            <FontAwesomeIcon color="white" icon="check" /> Valider
+          </button>
+          <ConfirmPopUp
+            open={openUpdate}
+            handleModal={handleUpdateModal}
+            modalTitle="Modifier la Description ?"
+            buttonTitle1="Oui"
+            buttonTitle2="Non"
+            confirmModalAction={onUpdateBio}
+            bio={bio}
+            setBio={setBio}
+          />
+        </div>
+        {/* Infos Section */}
+        <div className="Pseudo_Button_Section">Modifier les infos</div>
+        {/* Role Section */}
+        <div className="message-is-admin">
+          {isAdmin && (
+            <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />
+          )}{" "}
+          {isAdmin && "Administrateur"}
+        </div>
+        {/* Email Section */}
+        <div className="line_container_profil"></div>
+        <div className="text_section">Email</div>
+        <div className="user-email">
+          {" "}
+          <FontAwesomeIcon icon="envelope" className="icons_profil" /> {email}{" "}
+        </div>
 
-          <div className="button-delete-my-account">
-            <button onClick={handleDeleteModal} title="Supprimer Mon Compte" className="delete_profil" ><FontAwesomeIcon color="white" icon="trash" /> Supprimer mon compte</button>
+        <button
+          onClick={handleUpdateEmail}
+          title="Modifier Ma Description"
+          className="button_modifbio"
+        >
+          Modifier email
+        </button>
+
+        <ModifCommentPopUp
+          open={openEmail}
+          error={errorEmail}
+          onChange={onChangeEmail}
+          handleModal={handleUpdateEmail}
+          onUpdate={onUpdateEmail}
+          modalTitle="Modifier votre e-mail"
+          label="Modifier e-mail"
+          buttonTitle1="Sauvegarder Modifications"
+          buttonTitle2="Annuler Modifications"
+        />
+        <div className="line_container_profil"></div>
+        <div className="text_section">Mot de passe</div>
+        {/* Password Section */}
+
+        <button
+          onClick={handleUpdatePassword}
+          title="Modifier Ma Description"
+          className="button_modifbio"
+        >
+          Modifier mot de passe
+        </button>
+
+        
+        <ModifPasswordPopUp
+          open={openPassword}
+          error={errorPassword}
+          errorConfirm={errorConfirmPassword}
+          onChange={onChangeOldPassword}
+          onChange2={onChangeNewPassword}
+          handleModal={handleUpdatePassword}
+          onUpdate={onUpdatePassword}
+          modalTitle="Modifier votre mot de passe"
+          label="ancien mot de passe"
+          label2="nouveau mot de passe"
+          buttonTitle1="Sauvegarder Modifications"
+          buttonTitle2="Annuler Modifications"
+        />
+        {/* Name Section */}
+        <div className="line_container_profil"></div>
+        <div className="text_section">Prénom</div>
+        <div className="user-name">
+          <FontAwesomeIcon icon="user" className="icons_profil" /> {firstname}
+        </div>
+
+        <button onClick={handleUpdateFirstname} title="Modifier Ma Description" className="button_modifbio">
+          Modifier prénom
+        </button>
+        <ModifCommentPopUp
+          open={openFirstname}
+          error={errorFirstname}
+          onChange={onChangeFirstname}
+          handleModal={handleUpdateFirstname}
+          onUpdate={onUpdateFirstname}
+          modalTitle="Modifier votre Prénom"
+          label="Modifier Prénom"
+          buttonTitle1="Sauvegarder Modifications"
+          buttonTitle2="Annuler Modifications"
+        />
+        {/* Lastname Section */}
+        <div className="line_container_profil"></div>
+        <div className="text_section">Nom</div>
+        <div className="user-name">
+          <FontAwesomeIcon icon="user" className="icons_profil" /> {lastname}
+        </div>
+        <button onClick={handleUpdateLastname} title="Modifier Ma Description" className="button_modifbio">
+          Modifier Nom
+        </button>
+        <ModifCommentPopUp
+          open={openLastname}
+          error={errorLastname}
+          onChange={onChangeLastname}
+          handleModal={handleUpdateLastname}
+          onUpdate={onUpdateLastname}
+          modalTitle="Modifier votre NOM"
+          label="Modifier NOM"
+          buttonTitle1="Sauvegarder Modifications"
+          buttonTitle2="Annuler Modifications"
+        />
+        <div className="line_container_profil"></div>
+       {/* Delete Profil Section */}
+        <div className="button-delete-my-account">
+            <button
+              onClick={handleDeleteModal}
+              title="Supprimer Mon Compte"
+              className="delete_profil"
+            >
+              <FontAwesomeIcon color="white" icon="trash" /> Supprimer mon
+              compte
+            </button>
             <ConfirmPopUp
               open={openDelete}
               handleModal={handleDeleteModal}
@@ -465,7 +551,6 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
               buttonTitle2="Non"
             />
           </div>
-        </div>
       </div>
     </div>
   );

@@ -1,14 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
 .user-profil-big-container {
-  border: 1px solid #dcdcde;
-  margin: 10px 0;
   background-color: white;
   border-radius: 15px;
-  width: 50%;
+  width: 20%;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
+  margin:20px;
+  margin-top: 25px;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
+
+.Profil_Section {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.button_modifbio {
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: #0e88fa;
+  color: white;
+  transition: 0.5s ease;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button_modifbio:hover {
+  background: white;
+  border: 1px solid #0e88fa;
+  color: #0e88fa;
+  transform: scale(1.1);
+}
+
+.Input_textarea_bio {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #cacaca;
+  width: 20em;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.Input_textarea_bio:focus {
+  border: 1px solid #0e88fa;
+}
+.Pseudo_Button_Section {
+  width: auto;
+  background: #cacaca;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+
+.message-is-admin{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user-email {
+  word-break: break-all;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.text_section{
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.user-name {
+  word-break: break-all;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+
 
 .user-profil-title {
   display: flex;
@@ -59,16 +157,31 @@
   margin-bottom: 20px;
 }
 
-.user-email {
-  word-break: break-all;
-  font-weight: bold;
+.delete_profil {
   margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: red;
+  color: white;
+  transition: 0.5s ease;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete_profil:hover {
+  background: white;
+  border: 1px solid red;
+  color: red;
+  transform: scale(1.1);
 }
 
-.user-name {
-  word-break: break-all;
-  font-weight: bold;
-}
+
+
 
 .modify-icon-profil {
   cursor: pointer;
@@ -83,103 +196,61 @@
 .user-description-input {
   margin-right: 10px;
 }
- .img_upload{
- margin-right: auto;
- margin-left: auto;
-  margin-bottom: -25px;
-  margin-top: 5px;
-  width: 100px;
-  
- }
- .img_upload_circle{
-   width: 25px;
-   height: 25px;
-   background-color: #CACACA;
-   border-radius: 30px;
-   border: 2px solid white;
-   z-index: 10;
-   margin-bottom:10px;
-   margin-left: 60px;
- }
-
- .img_upload_circle_plane{
-   font-size: 15px;
-   margin-bottom: 8px;
-   margin-left: 5px;
-   color: black;
-   transition: 0.5s ease;
- }
- .img_upload_circle_plane:hover{
- color: #0E88FA;
- transform: scale(1.2);
-}
-.icons_profil{
-  color: #0E88FA;
-}
-.roles_typo{
-font-size: 17px;
-font-style: italic;
-color: orange;
-}
-.button_modifbio{
-  margin-top: 10px;
-  width: 200px;
-  height: 40px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  background: #0E88FA;
-  color: white;
-  transition: 0.5s ease;
+.img_upload {
   margin-right: auto;
   margin-left: auto;
-}
-.button_modifbio:hover{
-  background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
-  transform: scale(1.1);
-}
-.delete_profil{
-  margin-top: 10px;
+  margin-bottom: -25px;
+  margin-top: 5px;
   width: 200px;
-  height: 40px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  background: red;
-  color: white;
-  transition: 0.5s ease;
 }
-.delete_profil:hover{
-  background: white;
-  border: 1px solid red;
-  color: red;
-  transform: scale(1.1);
+.img_upload_circle {
+  width: 45px;
+  height: 45px;
+  background-color: #cacaca;
+  border-radius: 30px;
+  border: 2px solid white;
+  z-index: 10;
+  margin-top: -25px;
+  margin-left: 130px;
 }
 
-.input_psswd_modif{
-width: 200px;
-background: red!important;
+.img_upload_circle_plane {
+  font-size: 25px;
+  margin: 9px;
+  color: black;
+  transition: 0.5s ease;
 }
-/* @media screen and (max-width: 1700px) {
-  .user-profil-big-container { 
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-} */
-.Input_textarea_bio{
+.img_upload_circle_plane:hover {
+  color: #0e88fa;
+  transform: scale(1.2);
+}
+.icons_profil {
+  color: #0e88fa;
+  font-size: 18px;
+  
+}
+.line_container_profil{
+  width: 90%;
+height: 1px;
+background: #cacaca;
 margin-right: auto;
 margin-left: auto;
-border: 1px solid #cacaca;
-width: 100%;
-text-align: center;
-border-radius: 15px;
+margin-top: 10px;
 }
-.Input_textarea_bio:focus{
-  border: 1px solid #0E88FA;
-  }
+.roles_typo {
+  font-size: 17px;
+  font-style: italic;
+  color: orange;
+}
+
+
+
+.input_psswd_modif {
+  width: 200px;
+  background: red !important;
+}
+
+
 @media screen and (max-width: 1255px) {
   .user-profil-container {
     display: flex;
@@ -192,19 +263,20 @@ border-radius: 15px;
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .user-profil-big-container { 
+  .user-profil-big-container {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
   }
-  .delete_profil{
+  .delete_profil {
     background: red;
     border-radius: 15px;
     border: none;
     height: 30px;
     color: white;
-   margin-right: auto;
-   margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -214,19 +286,21 @@ border-radius: 15px;
     border-radius: 10px;
     text-align: center;
   }
-  .button_modifbio{
+  .button_modifbio {
     margin-top: 10px;
     width: 200px;
     height: 40px;
     border-radius: 10px;
-  
+    outline: none;
     border: none;
-    background: #0E88FA;
+    background: #0e88fa;
     color: white;
     transition: 0.5s ease;
     margin-right: auto;
-    margin-left: 10px;
-    text-align: center;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media screen and (max-width: 800px) {
@@ -245,19 +319,20 @@ border-radius: 15px;
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .user-profil-big-container { 
+  .user-profil-big-container {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
   }
-  .delete_profil{
+  .delete_profil {
     background: red;
     border-radius: 15px;
     border: none;
     height: 30px;
     color: white;
-   margin-right: auto;
-   margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
     align-items: center;
     display: flex;
     margin-top: 10px;
@@ -266,19 +341,21 @@ border-radius: 15px;
     border-radius: 10px;
     text-align: center;
   }
-  .button_modifbio{
+  .button_modifbio {
     margin-top: 10px;
     width: 200px;
     height: 40px;
     border-radius: 10px;
-  
+    outline: none;
     border: none;
-    background: #0E88FA;
+    background: #0e88fa;
     color: white;
     transition: 0.5s ease;
     margin-right: auto;
-    margin-left: 10px;
-    text-align: center;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media screen and (max-width: 640px) {
@@ -296,12 +373,13 @@ border-radius: 15px;
     align-items: center;
     margin-bottom: 20px;
   }
-  .user-profil-big-container { 
+  .user-profil-big-container {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
   }
-  .delete_profil{
+  .delete_profil {
     background: red;
     border-radius: 15px;
     border: none;
@@ -317,17 +395,20 @@ border-radius: 15px;
     border-radius: 10px;
     text-align: center;
   }
-  .button_modifbio{
+  .button_modifbio {
     margin-top: 10px;
     width: 200px;
     height: 40px;
     border-radius: 10px;
     outline: none;
     border: none;
-    background: #0E88FA;
+    background: #0e88fa;
     color: white;
     transition: 0.5s ease;
-    
-    margin-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

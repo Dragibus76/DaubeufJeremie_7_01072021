@@ -58,6 +58,20 @@ textarea{
 .subtitle{
   text-align: center;
 }
+.circle_button2{
+  display: flex;
+  width: 80px;
+  height: 80px;
+  background: #0E88FA;
+  border-radius: 50px;
+  /* position: fixed; */
+  margin-right: 60%;
+  transition: 0.5s ease;
+}
+.circle_button2:hover{
+  background: white;
+  border: 1px solid #0E88FA;
+}
 @media screen and (max-width: 1259px) {
   .register-container {
     margin: 130px 10%;
