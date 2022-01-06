@@ -127,7 +127,7 @@ const Home = ({ myUserId, admin, setAdmin }) => {
               <div className="message-container">
               
                 <div className="message-title">{element.title}</div>
-                <div className="line_container"></div>
+                
                 {element.attachment && (
                   <div className="picture-container">
                     <img src={element.attachment} alt="" width="100%" height="100%" />

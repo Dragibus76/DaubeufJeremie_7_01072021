@@ -102,7 +102,7 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
               <div className="line_container"></div>
               <div className="message-container">
                 <div className="message-title">{element.title}</div>
-                <div className="line_container"></div>
+                
                 {element.attachment && (
                   <div className="picture-container">
                     <img src={element.attachment} alt="img" width="100%" height="100%" />

@@ -414,7 +414,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
             title="Modifier Ma Description"
             className="button_modifbio"
           >
-            <FontAwesomeIcon color="white" icon="check" /> Valider
+             Valider
           </button>
           <ConfirmPopUp
             open={openUpdate}

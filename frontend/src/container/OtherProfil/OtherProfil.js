@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useHistory } from "react-router";
 import api from "../../Config/Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -128,25 +128,33 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
   };
 
   return (
-    <div className="profil-details-container">
-      <div className="users-profil-big-container">
-        <div className="users-profil-infos">
-          <div className="users-avatar">
-            {infoFirstname} {infoLastname} 
-            <img className="avatar-picture" alt="avatar" src={infoAvatar} />
-          </div>
-          <div className="other-user-pseudo">Prénom : {infoFirstname}</div>
-          <div className="other-user-pseudo">NOM : {infoLastname}</div>
-          <div className="message-is-admin">
-            {isOtherUserAdmin && <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />}{" "}
-            {isOtherUserAdmin && "Administrateur"}
-          </div>
-          <div className="other-user-bio">Description : {infoBio}</div>
+    <Fragment>
+      <div className="profil_picture">
+        <img className="avatar-picture_profil" alt="avatar" src={infoAvatar} />
+        <div className="Text_Profil_User">
+          {" "}
+          {infoFirstname} {infoLastname}{" "}
         </div>
-        {admin && (
-          <div className="users-buttons-container">
-            <div className="users-button-be-admin">
-              <button className="Button_Droits_Other_Profil"
+      </div>
+
+      <div className="profil-details-container">
+        <div className="users-profil-big-container">
+          <div className="users-profil-infos">
+            <div className="Other_Profil_Section">Profil</div>
+            <div className="Section_Button_Other_Profil">Biographie</div>
+            <div className="Biographie_Other_User">{infoBio}</div>
+            <div className="Section_Button_Other_Profil">Informations</div>
+            <div className="users-avatar"></div>
+            <div className="other-user-pseudo"><FontAwesomeIcon icon="user" className="icons_profil" /> {infoFirstname}</div>
+            <div className="other-user-pseudo"><FontAwesomeIcon icon="user" className="icons_profil" /> {infoLastname}</div>
+            <div className="message-is-admin">
+              {isOtherUserAdmin && (
+                <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />
+              )}{" "}
+              {isOtherUserAdmin && "Administrateur"}
+            </div>
+
+            <button className="Button_Droits_Other_Profil"
                 onClick={handleAdminToUserModal}
               >{isOtherUserAdmin ? "Retirer les droits" : "Donner les droits"}</button>
               <ConfirmPopUp
@@ -157,9 +165,8 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 buttonTitle1="Oui"
                 buttonTitle2="Non"
               />
-            </div>
-            <div>
-              <button onClick={handleDeleteModal} title="Supprimer Son Compte" className="Button_Delete_Profil_Other_Profil" >Supprimer Son Compte</button>
+
+<button onClick={handleDeleteModal} title="Supprimer Son Compte" className="Button_Delete_Profil_Other_Profil" >Supprimer Son Compte</button>
               <ConfirmPopUp
                 open={openDelete}
                 handleModal={handleDeleteModal}
@@ -168,6 +175,18 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 buttonTitle1="Oui"
                 buttonTitle2="Non"
               />
+          </div>
+
+
+          <div className="display_button_other_profil">
+          
+              </div>
+        {admin && (
+          
+          <div className="users-buttons-container">
+            
+            <div>
+              
             </div>
           </div>
         )}
@@ -194,10 +213,13 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 {element.User.isAdmin && <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />}{" "}
                 {element.User.isAdmin && "Administrateur"}
               </div>
+              <div className="date">
               <div className="message-date">Publiée {moment(new Date(element.createdAt)).fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
                 <div className="message-date">Modifiée {moment(new Date(element.updatedAt)).fromNow()}</div>
               )}
+              </div>
+              <div className="line_container"></div>
               <div className="message-container">
                 <div className="message-title">{element.title}</div>
                 {element.attachment && (
@@ -207,13 +229,16 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 )}
                 <div className="message-content">{element.content}</div>
               </div>
+              <div className="line_container"></div>
               <LikeDislikeMessage
                 changeLike={changeLike}
                 like={element.likes}
                 dislike={element.dislikes}
                 messageId={element.id}
                 messageLikeByCurrentUser={messageLikeByCurrentUser}
+                className="mar_like"
               />
+              <div className="line_container"></div>
               <CommentMessage
                 admin={admin}
                 setMessagesOtherUser={setMessagesOtherUser}
@@ -248,6 +273,7 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
         })}
       </div>
     </div>
+    </Fragment>
   );
 };
 export default OtherProfil;
