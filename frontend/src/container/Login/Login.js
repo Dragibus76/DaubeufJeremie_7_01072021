@@ -1,6 +1,6 @@
 
 import api from "../../Config/Api";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useHistory } from "react-router";
 import { toastTrigger } from "../../helper/toast";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -42,6 +42,7 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
   };
 
   return (
+    <Fragment>
     
     <div className="login-container">
       <div className="login-title">Bienvenue sur Groupomania.com</div>
@@ -57,11 +58,12 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
       <div className="login-button">
         <button onClick={onLogin} title="Connexion" className="Button_Connexion">Connexion</button>
       </div>
-      <div className="circle_button">
-        <a  className="Inscription" href="/inscription"><FontAwesomeIcon icon="arrow-right" className="Icon_Circle_Button"/></a>
-      </div>
+      
+      Pas encore inscrit?<a  className="Inscription" href="/inscription">Inscription</a>
+      
       {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
+    </Fragment>
   );
 };
 

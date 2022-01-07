@@ -14,14 +14,27 @@
 .message-user-card {
   padding: 10px;
   border-radius: 15px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   width:50%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
+  color: white;
 }
-
+.Circle_Avatar{
+  width: 77px;
+  height: 77px;
+  border-radius: 80px;
+  
+  position: absolute;
+  z-index: -10;
+  margin: -4px;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
 .Like_Message2{
   margin-top: 5px;
 }

@@ -363,7 +363,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
     <div>
       {/* Avatar Section */}
       <div className="user-profil-title">
-        
+        <div className="Rounded_Linear"></div>
         <div className="avatar-picture2">
           <img
             width="100%"
@@ -374,6 +374,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
             className="img_upload"
           />
         </div>
+        
         <div className="img_upload_circle">
           <FontAwesomeIcon
             icon="camera"
@@ -449,7 +450,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
           title="Modifier Ma Description"
           className="button_modifbio"
         >
-          Modifier email
+          Modifier
         </button>
 
         <ModifCommentPopUp
@@ -472,7 +473,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
           title="Modifier Ma Description"
           className="button_modifbio"
         >
-          Modifier mot de passe
+          Modifier
         </button>
 
         
@@ -498,7 +499,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         </div>
 
         <button onClick={handleUpdateFirstname} title="Modifier Ma Description" className="button_modifbio">
-          Modifier prénom
+          Modifier
         </button>
         <ModifCommentPopUp
           open={openFirstname}
@@ -518,7 +519,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
           <FontAwesomeIcon icon="user" className="icons_profil" /> {lastname}
         </div>
         <button onClick={handleUpdateLastname} title="Modifier Ma Description" className="button_modifbio">
-          Modifier Nom
+          Modifier
         </button>
         <ModifCommentPopUp
           open={openLastname}
@@ -539,7 +540,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
               title="Supprimer Mon Compte"
               className="delete_profil"
             >
-              <FontAwesomeIcon color="white" icon="trash" /> Supprimer mon
+               Supprimer mon
               compte
             </button>
             <ConfirmPopUp

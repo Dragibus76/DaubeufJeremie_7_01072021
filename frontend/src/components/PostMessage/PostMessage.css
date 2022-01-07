@@ -1,6 +1,9 @@
 .post-message {
   padding: 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  /* opacity: 30%; */
+  /* border: 1px solid white; */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -32,20 +35,22 @@
   
 }
 .Pen_Icons{
-  color: #0E88FA;
+  color: black;
   margin: 10px 11px;
   font-size: 20px;
 }
 .Post_circle{
   width: 40px;
   height: 40px;
-  background: #E1E1E1;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   margin: 20px;
   display: flex;
 }
 
-
+.title_post {
+  color: white;
+}
 .input-container {
   text-align: center;
   flex-direction: row;
@@ -62,11 +67,16 @@
 }
 .title_input{
   border: none;
-  background: #E1E1E1;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   height: 30px;
   width: 50%;
   text-align: center;
+  color: white;
+}
+.title_input::placeholder{
+  color: white;
+  opacity: 80%;
 }
 input[type="file"] { 
   position: absolute;
@@ -77,9 +87,23 @@ input[type="file"] {
   width: 95%;
   height: 70px;
   border: none;
-  border: 2px solid #E1E1E1;
+  border: 2px solid rgba(196, 188, 189, 0.25);
   text-align: center;
   border-radius: 15px;
+  color: white;
+}
+.textarea_publi:focus{
+  width: 95%;
+  height: 70px;
+  border: none;
+  border: 2px solid rgba(51, 51, 51, 0.8);
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+}
+.textarea_publi::placeholder{
+  opacity: 80%;
+  color: white;
 }
 .input-file {
     color: #F0B418;
@@ -100,8 +124,9 @@ input[type="file"] {
 .input-content {
   padding-right: 10px;
 }
-span{
-  color: black;
+
+.title_input_file{
+  color: white;
 }
 .button-publish {
   justify-content: center;
@@ -120,14 +145,15 @@ span{
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0E88FA;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
+  margin-top: 15px;
 }
 .Button_Send:hover{
   background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
+  /* border: 1px solid rgba(51, 51, 51, 0.8); */
+  color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
 .switch_profil{

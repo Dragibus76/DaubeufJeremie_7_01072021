@@ -1,18 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
 .login-container {
-  border: 1px solid #dcdcde;
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 130px 20%;
+  margin-top: 130px;
   padding: 10px;
   font-family: 'Outfit', sans-serif;
+  color: white;
 }
-
+.testimg{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  position: absolute;
+  margin-top: -40px;
+}
 .login-title {
   font-weight: bold;
   margin-top: 10px;
@@ -26,15 +35,25 @@ input {
   background: transparent;
   border: none;
   outline:none;
-  border-bottom: 1px solid #0E88FA;
+  border: 2px solid rgba(196, 188, 189, 0.25);
   font-size: 15px;
   margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+input:focus {
+  border: 2px solid rgba(51, 51, 51, 0.8);
+}
+input::placeholder {
+  color: white;
+  opacity: 50%;
 }
 .Button_Connexion{
   width: 9em;
   height: 3em;
-  border-radius: 15px;
-  background: #0E88FA;
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   font-size: 15px;
   border: none;
@@ -43,12 +62,11 @@ input {
 .Button_Connexion:hover{
   transition: 0.3s ease;
  background: white;
- color: #0E88FA;
- border: 1px solid #0E88FA;
+ color:rgba(51, 51, 51, 0.8);
 }
 
 .Inscription{
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
   color: #0E88FA;
   transition: 0.5s ease;
@@ -57,7 +75,7 @@ input {
   transform: scale(1.2);
 }
 .Icons{
-  color: #0E88FA;
+  color: rgba(255, 255, 255, 0.3);
   margin: 0 10px;
   font-size: 20px;
 }
@@ -75,8 +93,8 @@ input {
 
 .circle_button{
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   background: #0E88FA;
   border-radius: 50px;
   /* position: fixed; */
@@ -99,6 +117,7 @@ input {
 @media screen and (max-width: 1259px) {
   .login-container {
     margin: 130px 10%;
+    margin-top: 180px;
   }
   .logo_img{
     width: 50%;
@@ -107,14 +126,16 @@ input {
 @media screen and (max-width: 1035px) {
   .login-container {
     margin: 130px 10%;
+    margin-top: 200px;
   }
   .logo_img{
     width: 50%;
   }
 }
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 628px) {
   .login-container {
     margin: 130px 10%;
+    margin-top: 250px;
   }
   .logo_img{
     width: 50%;

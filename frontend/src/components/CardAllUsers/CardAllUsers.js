@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import { useEffect, useState } from "react";
@@ -64,13 +64,20 @@ export default function OutlinedChips({ myUserId }) {
           .map((element) => {
             const firstnameLastname = element.firstname + " " + element.lastname;
             return (
+             
+              
+              
               <Chip
                 style={{
                   width: "14em",
                   height: "45px",
-                  color: "black",
-                  border: "none",
+                  color: "#fff!important",
+                  border: "1px solid rgba(51, 51, 51, 0.8)",
                   borderRadius: "50px",
+                  background: "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+                  animation: "gradient 15s ease infinite",
+                  backgroundSize: "400% 400%",
+                  
                   
                   displayFlex: "flex",
                   justifyContent: "start",
@@ -87,6 +94,7 @@ export default function OutlinedChips({ myUserId }) {
                 color="primary"
                 variant="outlined"
               />
+              
             );
           })}
       </div>

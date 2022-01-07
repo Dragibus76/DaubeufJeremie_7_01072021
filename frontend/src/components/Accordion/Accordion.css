@@ -37,20 +37,25 @@
 .active .accordion__content {
   visibility: visible;
   height: 300px;
-  
+  width: 100%;
   overflow: visible;
   padding: 1rem;
   opacity: 1;
   padding-bottom: 10px;
   overflow-y: scroll;
+  
+  margin-left: 70px;
 }
 
 .accordion-comment-card {
   padding-top: 10px;
   padding-bottom: 5px;
   border-bottom: 2px solid #eee;
-  width: auto;
+
+  display: flex;
+  flex-direction: column;
 }
+
 
 .accordion-avatar-name {
   padding-top: 5px;
@@ -68,13 +73,14 @@
 }
 
 .accordion-comment-content {
-  background: #CACACA;
+  background: rgba(255, 255, 255, 0.3);
   opacity: 50%;
   border-radius: 15px;
   padding: 10px;
   word-break: break-all;
   margin: 10px;
   width: 70%;
+  color: white;
 }
 
 .accordion-comment-like-modify-delete-container {
@@ -83,6 +89,9 @@
  
 }
 
+.accordion-comment-username{
+  width: 100%;
+}
 
 @media screen and (max-width: 1259px) {
   .accordion-comment-content{
@@ -93,14 +102,23 @@
   .accordion-comment-content{
     width: 50%;
   }
+  .active .accordion__content {
+    margin-left: 50px;
+  }
 }
 @media screen and (max-width: 428px) {
   .accordion-comment-content{
     width: 50%;
   }
+  .active .accordion__content {
+    margin-left: 50px;
+  }
 }
 @media screen and (max-width: 228px) {
   .accordion-comment-content{
     width: 50%;
+  }
+  .active .accordion__content {
+    margin-left: 50px;
   }
 }

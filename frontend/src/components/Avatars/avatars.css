@@ -1,18 +1,32 @@
 .avatar-choice-container {
   font-size: 14px;
-
+  
   line-height: 25px;
   margin-bottom: 0px;
   padding: 15px 15px 0px 15px;
-  height: 400px;
-  overflow-y: scroll;
+  height: auto;
+  width: 100%;
+  /* overflow-y: scroll; */
   text-align: justify;
 }
 
 .avatar-button {
   margin: 10px;
+  position: fixed;
+  margin-left: 230px;
+  
 }
 
+.Avatar_Display{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+.Avatar_Row{
+  margin: 10px;
+  width: 400px;
+}
 .Validate_Modif_Avatar{
   width: 150px;
   height: 40px;
@@ -22,7 +36,7 @@
   background: #0E88FA;
   color: white;
   transition: 0.5s ease;
-  margin-left: 5px;
+ 
 }
 .Validate_Modif_Avatar:hover{
   background: white;
@@ -30,3 +44,22 @@
   color: #0E88FA;
   transform: scale(1.1);
 }
+
+/* @media screen and (max-width: 800px) {
+  .avatar-button {
+    margin: 10px;
+    position: fixed;
+    margin-left: 220px;
+    
+  }
+}
+@media screen and (max-width: 628px) {
+  .avatar-button {
+    margin: 10px;
+    position: fixed;
+    margin-left: 150px;
+    
+  }
+} */
+
+/* reprendre ici */

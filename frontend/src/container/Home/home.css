@@ -27,10 +27,11 @@
 
 .message-card {
   padding: 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
  border-radius: 10px;
  width: 50%;
-
+color: white;
  margin-right: auto;
  margin-left: auto;
  margin-top: 30px;
@@ -40,7 +41,7 @@
 
 .avatar-name {
   font-weight: bold;
-  color: black;
+  color: white;
   cursor: pointer;
   width: 210px;
   height: 60px;
@@ -51,14 +52,16 @@
   width: 200px;
 }
 .message-is-admin {
-  font-style: italic;
+  color: orange;
 }
 
 .date{
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  width: 100%;
+  margin-left: auto;
+    margin-right: auto;
+    width: 97%;
 }
 .message-date {
   padding-bottom: 5px;
@@ -132,6 +135,11 @@
     margin-left: auto;
     width: 90%;
   }
+  .date {
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+  }
 }
 
 @media screen and (max-width: 428px) {
@@ -149,6 +157,12 @@
     margin-left: auto;
     width: 90%;
   }
+  .date {
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+  }
+  
 }
 
 @media screen and (max-width: 228px) {
@@ -167,5 +181,10 @@
     margin-right: auto;
     margin-left: auto;
     width: 90%;
+  }
+  .date {
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
   }
 }

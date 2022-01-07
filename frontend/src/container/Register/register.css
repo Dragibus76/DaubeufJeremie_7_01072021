@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
 .register-container {
-  border: 1px solid #dcdcde;
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   border-radius: 5px;
   display: flex;
@@ -11,24 +11,35 @@
   font-family: 'Outfit', sans-serif;
   margin: 15px 20%;
   padding: 10px;
+  margin-top: 40px;
+  color: white;
 }
 textarea{
   outline: none;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #0E88FA;
+  border-bottom: 1px solid white;
   font-family: 'Outfit', sans-serif;
   resize : none;
 }
  .Biographie {
-   border-bottom: 1px solid #0E88FA;
+  border: 2px solid rgba(196, 188, 189, 0.25);
+   padding: 10px;
+   border-radius: 5px;
+   margin-right: 5px;
  }
-
+ .Biographie::placeholder {
+  color: white;
+  opacity: 50%;
+ }
+ .Biographie:focus {
+  border: 2px solid rgba(51, 51, 51, 0.8);
+ }
 .Button_Inscription{
   width: 9em;
   height: 3em;
-  border-radius: 15px;
-  background: #0E88FA;
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   font-size: 15px;
   border: none;
@@ -37,8 +48,7 @@ textarea{
 .Button_Inscription:hover{
   transition: 0.3s ease;
  background: white;
- color: #0E88FA;
- border: 1px solid #0E88FA;
+ color: rgba(51, 51, 51, 0.8);
 }
 .register-title {
   font-weight: bold;
@@ -75,20 +85,24 @@ textarea{
 @media screen and (max-width: 1259px) {
   .register-container {
     margin: 130px 10%;
+    margin-top: 100px;
   }
 }
 @media screen and (max-width: 1035px) {
   .register-container {
     margin: 130px 10%;
+    margin-top: 170px;
   }
 }
 @media screen and (max-width: 428px) {
   .register-container {
     margin: 130px 10%;
+    margin-top: 180px;
   }
 }
 @media screen and (max-width: 228px) {
   .register-container {
     margin: 130px 10%;
+    margin-top: 200px;
   }
 }

@@ -81,13 +81,17 @@ const Accordion = ({
                   Modifié {moment(new Date(element.updatedAt)).fromNow()}
                 </div>
               )}
+              
               <div className="container_comments">
+                
                 <div className="accordion-avatar-name">
+                
                   <div className="avatar-comment-picture">
+                    
                     <img
                       width="100%"
                       height="100%"
-                      style={{ borderRadius: "50%" }}
+                      style={{ borderRadius: "50%", border: "2px solid black"}}
                       alt="avatar"
                       src={element.User.avatar}
                     />

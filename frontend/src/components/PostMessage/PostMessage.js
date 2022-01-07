@@ -196,7 +196,7 @@ class PostMessage extends Component {
           <div className="container2">
           <div className="input-file">
             <input onChange={this.onUploadFile} type="file" theinputkey={this.state.theinputkey} />
-            <FontAwesomeIcon icon="photo-video"/> <span>photo/vidéo</span>
+            <FontAwesomeIcon icon="photo-video"/> <div className="title_input_file">photo/vidéo</div>
           </div>
           {this.state.activePicture && this.state.file?.name !== undefined && (
           <div className="picture-name">{this.state.file?.name}</div>

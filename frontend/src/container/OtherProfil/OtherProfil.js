@@ -129,7 +129,9 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
 
   return (
     <Fragment>
+      
       <div className="profil_picture">
+      <div className="Rounded_Linear2"></div>
         <img className="avatar-picture_profil" alt="avatar" src={infoAvatar} />
         <div className="Text_Profil_User">
           {" "}

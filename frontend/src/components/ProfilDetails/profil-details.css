@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 .user-profil-big-container {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
   width: 20%;
   height: auto;
@@ -12,6 +13,7 @@
   padding: 10px;
   position:absolute;
   display: flex;
+  color:white;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
@@ -31,7 +33,7 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0e88fa;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
   margin-right: auto;
@@ -42,8 +44,8 @@
 }
 .button_modifbio:hover {
   background: white;
-  border: 1px solid #0e88fa;
-  color: #0e88fa;
+  /* border: 1px solid #0e88fa; */
+  color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
 
@@ -51,25 +53,27 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #cacaca;
+  border: 2px solid rgba(196, 188, 189, 0.25);
   width: 20em;
   text-align: center;
   border-radius: 10px;
   margin-top: 10px;
+  color: white;
+}
+.Input_textarea_bio:focus {
+  border: 2px solid rgba(51, 51, 51, 0.8);
 }
 
-.Input_textarea_bio:focus {
-  border: 1px solid #0e88fa;
-}
+
 .Pseudo_Button_Section {
   width: auto;
-  background: #cacaca;
+  background: rgba(255, 255, 255, 0.3);
   height: 30px;
   border-radius: 10px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
-  color: black;
+  color: white;
   font-weight: 700;
   text-align: center;
   padding: 5px;
@@ -93,6 +97,7 @@
   margin-top: 10px;
   text-align: center;
   font-weight: bold;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .user-name {
@@ -115,7 +120,7 @@
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: black;
+  color: white;
 }
 
 .user-profil-container {
@@ -197,6 +202,31 @@
 .user-description-input {
   margin-right: 10px;
 }
+
+.Rounded_Linear{
+  width: 210px;
+  height: 210px;
+  background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  margin-top: -1px;
+  position: absolute;
+  z-index: -100;
+  border-radius: 150px;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
 .img_upload {
   margin-right: auto;
   margin-left: auto;
@@ -207,7 +237,7 @@
 .img_upload_circle {
   width: 45px;
   height: 45px;
-  background-color: #cacaca;
+  background: rgba(51, 51, 51, 0.8);
   border-radius: 30px;
   border: 2px solid white;
   z-index: 10;
@@ -218,15 +248,14 @@
 .img_upload_circle_plane {
   font-size: 25px;
   margin: 9px;
-  color: black;
+  color: white;
   transition: 0.5s ease;
 }
 .img_upload_circle_plane:hover {
-  color: #0e88fa;
   transform: scale(1.2);
 }
 .icons_profil {
-  color: #0e88fa;
+  color: rgba(255, 255, 255, 0.3);
   font-size: 18px;
   
 }
@@ -240,7 +269,6 @@ margin-top: 10px;
 }
 .roles_typo {
   font-size: 17px;
-  font-style: italic;
   color: orange;
 }
 
@@ -349,7 +377,7 @@ margin-top: 10px;
     border-radius: 10px;
     outline: none;
     border: none;
-    background: #0e88fa;
+    
     color: white;
     transition: 0.5s ease;
     margin-right: auto;
@@ -403,7 +431,7 @@ margin-top: 10px;
     border-radius: 10px;
     outline: none;
     border: none;
-    background: #0e88fa;
+    background: rgba(51, 51, 51, 0.8);
     color: white;
     transition: 0.5s ease;
     margin-right: auto;

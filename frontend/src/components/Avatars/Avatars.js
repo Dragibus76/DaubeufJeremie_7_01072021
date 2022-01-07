@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../../Config/Api";
 import "./avatars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../Button/Button";
+
 import Dialog from "@material-ui/core/Dialog";
 
 function importAll(r) {
@@ -54,7 +54,7 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
       let oldSessionStorage = groupomaniaUser;
       oldSessionStorage.avatar = response.data.avatar;
       sessionStorage.setItem("groupomania-user", JSON.stringify(oldSessionStorage));
-      //setFirstname(response.data.firstname);
+      
       onChangeAvatar(response.data.avatar);
       close();
     } catch (error) {}
@@ -65,13 +65,14 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
       <div>
       
         <div className="avatar-choice-container">
-          <div>
+        <FontAwesomeIcon icon="times"  className="button_modif_close_modale"  onClick={close}/>
+          <div className="Avatar_Display">
        
             {tab &&
               tab.map((element, i) => {
                 return (
-                  <div key={i} onClick={(e) => onSubmitAvatar(e, i)}>
-                    <Card selectCardIndex={selectCardIndex} number={element} />
+                  <div  className="Avatar_Row" key={i} onClick={(e) => onSubmitAvatar(e, i)}>
+                    <Card selectCardIndex={selectCardIndex} number={element}  />
                   </div>
                 );
               })}
