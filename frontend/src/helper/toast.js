@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./toast.css"
 
 export const toastTrigger = (status, message) => {
   switch (status) {
@@ -8,6 +9,7 @@ export const toastTrigger = (status, message) => {
         autoClose: 2000,
       });
     case "success":
+      <div className="toast"></div>
       return toast.success(message, {
         autoClose: 2000,
       });

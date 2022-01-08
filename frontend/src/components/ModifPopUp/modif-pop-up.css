@@ -1,7 +1,14 @@
 .modif-pop-up-container {
   padding: 30px;
+  background: transparent!important;
 }
-
+.MuiPaper-root{
+  background-color: rgba(0, 0, 0, 0.25)!important;
+  backdrop-filter: blur(10px)!important;
+}
+.MuiTypography-h6{
+  color: white!important;
+}
 .modif-pop-up-inputs-container {
   display: flex;
   flex-direction: column;
@@ -21,13 +28,15 @@
   text-align: center;
   border-radius: 0;
   background: white;
-  border: 1px solid #cacaca;
+  color: white;
   transition: 0.5s ease;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .modif_title_input:focus{
-  background: #cacaca;
+  
   border-radius: 5px;
+  border: 2px solid rgba(51, 51, 51, 0.8);
 }
 .Icon_modif_photo{
   transition: 0.5s ease;
@@ -42,14 +51,14 @@
   border-radius: 0;
   padding: 10px;
   overflow-y: scroll;
-  background: white;
+  background: rgba(255, 255, 255, 0.3);
   transition: 0.5s ease;
-  border: 1px solid #cacaca;
+  color: white;
+  text-align: center;
 }
 
 .modif_textarea:focus{
   border-radius: 5px;
-  background-color: #cacaca;
 }
 .modif-pop-up-picture {
   margin-top: 10px;
@@ -85,14 +94,13 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0E88FA;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
 }
 .Button_Modif_Message:hover{
   background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
+  color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
 

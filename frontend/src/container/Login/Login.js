@@ -6,6 +6,7 @@ import { toastTrigger } from "../../helper/toast";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import "./login.css";
 import Login_img from "../../assets/Login_img.png";
+import test from "../../assets/test.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {

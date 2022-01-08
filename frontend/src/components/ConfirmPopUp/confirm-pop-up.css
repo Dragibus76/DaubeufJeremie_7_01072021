@@ -38,13 +38,12 @@
   height: 40px;
   border-radius: 10px;
   border: none;
-  background-color: #0E88FA;
+  background-color: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
 }
 
 .confirm_delete_message_no:hover{
-  border: 1px solid #0E88FA;
   background-color: white;
-  color: #0E88FA;
+  color: rgba(51, 51, 51, 0.8);
 }

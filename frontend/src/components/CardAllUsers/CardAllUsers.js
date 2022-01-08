@@ -72,13 +72,11 @@ export default function OutlinedChips({ myUserId }) {
                   width: "14em",
                   height: "45px",
                   color: "#fff!important",
-                  border: "1px solid rgba(51, 51, 51, 0.8)",
+                  border: "1px solid white",
                   borderRadius: "50px",
                   background: "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
                   animation: "gradient 15s ease infinite",
                   backgroundSize: "400% 400%",
-                  
-                  
                   displayFlex: "flex",
                   justifyContent: "start",
                   margin: "5px",

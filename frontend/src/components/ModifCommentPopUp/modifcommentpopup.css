@@ -4,15 +4,14 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0E88FA;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
 }
 
 .button_modif_comment_yes:hover{
     background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
+  color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
 
@@ -33,12 +32,11 @@
     border: none;
     display: flex;
     padding: 10px;
-    border: 1px solid #CACACA;
     border-radius: 0;
     transition: 1s ease;
-    background: white;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
 }
 .input_modif_comment:focus{
- background: #CACACA;
  border-radius: 5px;
 }

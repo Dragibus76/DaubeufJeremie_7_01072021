@@ -27,6 +27,7 @@ textarea{
    padding: 10px;
    border-radius: 5px;
    margin-right: 5px;
+   color: rgba(51, 51, 51, 0.8);
  }
  .Biographie::placeholder {
   color: white;

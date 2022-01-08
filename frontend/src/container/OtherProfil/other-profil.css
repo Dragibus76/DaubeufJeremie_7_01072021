@@ -70,7 +70,7 @@
   width: 200px;
   height: 30px;
   margin-top: 10px;
-  background-color: #cacaca;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 5px;
   padding-top: 7px;
   border-radius: 5px;
@@ -82,8 +82,8 @@
   height: auto;
   padding: 10px;
   text-align: center;
-  border: 1px solid #cacaca;
-  color: black;
+  border: 1px solid rgba(196, 188, 189, 0.25);
+  color: white;
   border-radius: 5px;
 }
 .Rounded_Linear2{
@@ -165,7 +165,7 @@ color: white;
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0E88FA;
+  background: rgba(51, 51, 51, 0.8);
   color: white;
   transition: 0.5s ease;
   margin-top: 10px;
@@ -173,8 +173,7 @@ color: white;
 
 .Button_Droits_Other_Profil:hover{
   background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
+  color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
 
