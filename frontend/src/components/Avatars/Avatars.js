@@ -2,8 +2,10 @@ import { useState } from "react";
 import api from "../../Config/Api";
 import "./avatars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import * as React from 'react';
 import Dialog from "@material-ui/core/Dialog";
+import Slide from '@mui/material/Slide';
+
 
 function importAll(r) {
   let images = {};
@@ -59,10 +61,15 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
       close();
     } catch (error) {}
   };
+  
+  
+ 
 
   return (
-    <Dialog open={open} >
-      <div>
+    <Dialog open={open}
+    fullScreen
+     >
+      <div className="testavatar">
       
         <div className="avatar-choice-container">
         <FontAwesomeIcon icon="times"  className="button_modif_close_modale"  onClick={close}/>
@@ -71,17 +78,18 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
             {tab &&
               tab.map((element, i) => {
                 return (
-                  <div  className="Avatar_Row" key={i} onClick={(e) => onSubmitAvatar(e, i)}>
-                    <Card selectCardIndex={selectCardIndex} number={element}  />
+                  <div  className="Avatar_Row" key={i} onClick={(e) => onSubmitAvatar(e, i)} >
+                    <Card selectCardIndex={selectCardIndex} number={element} />
                   </div>
                 );
               })}
           </div>
         </div>
-        <div className="avatar-button">
-          <button onClick={onSubmit} title="Valider l'avatar" className="Validate_Modif_Avatar">Valider</button>
-        </div>
+        
       </div>
+      {/* <div className="avatar-button">
+          <button onClick={onSubmit} title="Valider l'avatar" className="Validate_Modif_Avatar">Valider</button>
+        </div> */}
     </Dialog >
   );
 };

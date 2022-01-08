@@ -1,10 +1,14 @@
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "./confirm-pop-up.css";
+import * as React from 'react';
+
+
+
 
 const ConfirmPopUp = ({ open, confirmModalAction, handleModal, buttonTitle1, buttonTitle2, modalTitle }) => {
   return (
-    <Dialog open={open} onClose={handleModal}>
+    <Dialog open={open} onClose={handleModal} className="TransitionModale">
       <div className="confirm-container">
         <div className="confirm-title">
           <DialogTitle>{modalTitle}</DialogTitle>

@@ -269,10 +269,14 @@ margin-top: 10px;
 }
 .roles_typo {
   font-size: 17px;
-  color: orange;
+  color: black;
 }
 
-
+.red{
+  width: 100px;
+  height: 100px;
+  background: red;
+}
 
 .input_psswd_modif {
   width: 200px;

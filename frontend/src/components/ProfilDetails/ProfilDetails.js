@@ -361,6 +361,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
 
   return (
     <div>
+      
       {/* Avatar Section */}
       <div className="user-profil-title">
         <div className="Rounded_Linear"></div>

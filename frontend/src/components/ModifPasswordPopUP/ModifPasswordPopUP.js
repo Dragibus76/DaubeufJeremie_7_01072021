@@ -1,10 +1,11 @@
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Input from "../../components/Input/Input";
-import Button from "../Button/Button";
+import * as React from 'react';
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import '../ModifPasswordPopUP/modifPasswordPopUp.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 
 const ModifPasswordPopUp = ({
   open,
@@ -23,7 +24,7 @@ const ModifPasswordPopUp = ({
   errorConfirm,
 }) => {
   return (
-    <Dialog open={open} onClose={handleModal}>
+    <Dialog open={open} onClose={handleModal} className="TransitionModale">
       
       <div className="modif-pop-up-container">
       <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} onClick={handleModal}/>

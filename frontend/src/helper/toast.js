@@ -9,7 +9,6 @@ export const toastTrigger = (status, message) => {
         autoClose: 2000,
       });
     case "success":
-      <div className="toast"></div>
       return toast.success(message, {
         autoClose: 2000,
       });

@@ -3,6 +3,10 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import "./modifcommentpopup.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as React from 'react';
+
+
+
 
 const ModifCommentPopUp = ({
   open,
@@ -17,7 +21,7 @@ const ModifCommentPopUp = ({
   error,
 }) => {
   return (
-    <Dialog open={open} onClose={handleModal}>
+    <Dialog open={open} onClose={handleModal} className="TransitionModale" >
       <div className="modif-pop-up-container">
         <div className="modif-pop-up-inputs-container">
           <div className="modif-pop-up-title">

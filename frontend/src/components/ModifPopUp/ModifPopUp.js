@@ -2,6 +2,8 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "./modif-pop-up.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from 'react';
+
 
 const ModifPopUp = ({
   open,
@@ -38,8 +40,10 @@ const ModifPopUp = ({
     setNewContent(e.target.value);
   };
 
+  
+
   return (
-    <Dialog open={open} onClose={handleModal}>
+    <Dialog open={open} onClose={handleModal} className="TransitionModale">
       <div className="modif-pop-up-container">
       <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} onClick={handleModal}/>
         <div className="modif-pop-up-inputs-container">

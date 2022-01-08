@@ -5,27 +5,30 @@
   margin-bottom: 0px;
   padding: 15px 15px 0px 15px;
   height: auto;
-  width: 100%;
-  /* overflow-y: scroll; */
+  
   text-align: justify;
 }
 
 .avatar-button {
   margin: 10px;
-  position: fixed;
-  margin-left: 230px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+display: flex;
+justify-content: center;
   
 }
 
 .Avatar_Display{
   display: flex;
   flex-direction: row;
-  
+ 
+
   
 }
 .Avatar_Row{
   margin: 10px;
-  width: 400px;
 }
 .Validate_Modif_Avatar{
   width: 150px;
@@ -36,6 +39,7 @@
   background: #0E88FA;
   color: white;
   transition: 0.5s ease;
+
  
 }
 .Validate_Modif_Avatar:hover{
@@ -45,21 +49,51 @@
   transform: scale(1.1);
 }
 
-/* @media screen and (max-width: 800px) {
-  .avatar-button {
-    margin: 10px;
-    position: fixed;
-    margin-left: 220px;
-    
+@media screen and (max-width: 1255px) {
+  .Avatar_Display{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    overflow-x: none;
+    margin-left: 230px;
+
+  }
+  .avatar-choice-container{
+    overflow-x: none;
   }
 }
-@media screen and (max-width: 628px) {
-  .avatar-button {
-    margin: 10px;
-    position: fixed;
-    margin-left: 150px;
-    
+
+ @media screen and (max-width: 800px) {
+  .Avatar_Display{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    overflow-x: none;
+    margin-left: 90px;
+
   }
-} */
+  .avatar-choice-container{
+    overflow-x: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .Avatar_Display{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    overflow-x: none;
+    margin-left: 40px;
+
+  }
+  .avatar-choice-container{
+    overflow-x: none;
+  }
+} 
 
 /* reprendre ici */
