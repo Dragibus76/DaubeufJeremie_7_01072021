@@ -8,12 +8,15 @@ const fs = require("fs");
 // Constantes
 const email_regex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{4,}$/;
-const name_regex = /^([A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ-]* ?[A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ]+$)$/;
+const password_regex =
+  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{4,}$/;
+const name_regex =
+  /^([A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ-]* ?[A-zàâäçéèêëîïôùûüÿæœÀÂÄÇÉÈÊËÎÏÔÙÛÜŸÆŒ]+$)$/;
 module.exports = {
   registrer: function (req, res) {
     // Paramètres
-    let { email, firstname, lastname, password, confirmPassword, bio } = req.body;
+    let { email, firstname, lastname, password, confirmPassword, bio } =
+      req.body;
     const avatar = "/static/media/1.589279a0.jpg";
 
     if (!email || !firstname || !lastname || !password) {
@@ -50,7 +53,9 @@ module.exports = {
     }
 
     if (password !== confirmPassword) {
-      return res.status(400).json({ error: "vous n'avez pas saisie le même mot de passe" });
+      return res
+        .status(400)
+        .json({ error: "vous n'avez pas saisie le même mot de passe" });
     }
 
     const groupomaniaEmail = email.split("@");
@@ -74,7 +79,9 @@ module.exports = {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         // si utilisateur n'est pas existant, on utilise bcrypt pour hasher le password
@@ -97,7 +104,9 @@ module.exports = {
               done(null, userFound, bcryptedPassword, firstnameFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, bcryptedPassword, firstnameFound, done) {
@@ -106,21 +115,47 @@ module.exports = {
             where: { lastname },
           })
             .then(function (lastnameFound) {
-              done(null, userFound, bcryptedPassword, firstnameFound, lastnameFound);
+              done(
+                null,
+                userFound,
+                bcryptedPassword,
+                firstnameFound,
+                lastnameFound
+              );
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "2 vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "2 vérification utilisateur impossible" });
             });
         },
-        function (userFound, bcryptedPassword, firstnameFound, lastnameFound, done) {
+        function (
+          userFound,
+          bcryptedPassword,
+          firstnameFound,
+          lastnameFound,
+          done
+        ) {
           if (!firstnameFound) {
-            done(null, userFound, bcryptedPassword, firstnameFound, lastnameFound);
+            done(
+              null,
+              userFound,
+              bcryptedPassword,
+              firstnameFound,
+              lastnameFound
+            );
           } else {
             return res.status(409).json({ error: "Pseudonyme déjà existant" });
           }
         },
         // si mot de passe hasher, on crée un nouvel utilisateur
-        function (userFound, bcryptedPassword, firstnameFound, lastnameFound, done) {
+        function (
+          userFound,
+          bcryptedPassword,
+          firstnameFound,
+          lastnameFound,
+          done
+        ) {
           const newUser = models.User.create({
             email: email,
             firstname: firstname,
@@ -134,7 +169,9 @@ module.exports = {
               done(newUser);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "ajout utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "ajout utilisateur impossible" });
             });
         },
       ],
@@ -143,10 +180,16 @@ module.exports = {
         if (newUser) {
           return res.status(201).json({
             userId: newUser.id,
-            token: jwt.sign({ userId: newUser.id, isAdmin: newUser.isAdmin }, process.env.TOKEN, { expiresIn: "24h" }),
+            token: jwt.sign(
+              { userId: newUser.id, isAdmin: newUser.isAdmin },
+              process.env.TOKEN,
+              { expiresIn: "24h" }
+            ),
           });
         } else {
-          return res.status(500).json({ error: "ajout utilisateur impossible" });
+          return res
+            .status(500)
+            .json({ error: "ajout utilisateur impossible" });
         }
       }
     );
@@ -170,17 +213,25 @@ module.exports = {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         // si utilisateur trouvé via son mail, on compare le mot de passe
         function (userFound, done) {
           if (userFound) {
-            bcrypt.compare(password, userFound.password, function (errBycrypt, resBycrypt) {
-              done(null, userFound, resBycrypt);
-            });
+            bcrypt.compare(
+              password,
+              userFound.password,
+              function (errBycrypt, resBycrypt) {
+                done(null, userFound, resBycrypt);
+              }
+            );
           } else {
-            return res.status(404).json({ error: "utilisateur absent de la base de donnée" });
+            return res
+              .status(404)
+              .json({ error: "utilisateur absent de la base de donnée" });
           }
         },
         // si le mot de passe est décodé, c'est bien le bon utilisateur
@@ -209,7 +260,9 @@ module.exports = {
             ),
           });
         } else {
-          return res.status(500).json({ error: "login utilisateur impossible" });
+          return res
+            .status(500)
+            .json({ error: "login utilisateur impossible" });
         }
       }
     );
@@ -220,7 +273,15 @@ module.exports = {
     const userId = decodedToken.userId;
 
     models.User.findOne({
-      attributes: ["id", "email", "firstname", "lastname", "bio", "avatar", "isAdmin"],
+      attributes: [
+        "id",
+        "email",
+        "firstname",
+        "lastname",
+        "bio",
+        "avatar",
+        "isAdmin",
+      ],
       where: { id: userId },
     })
       .then(function (user) {
@@ -231,13 +292,15 @@ module.exports = {
         }
       })
       .catch(function (err) {
-        res.status(500).json({ error: "impossible de récupérer l'utilisateur" });
+        res
+          .status(500)
+          .json({ error: "impossible de récupérer l'utilisateur" });
       });
   },
   getOtherUserProfile: function (req, res) {
-   
-
-    models.User.findByPk(req.params.userId, { attributes: ["firstname", "lastname", "bio", "avatar", "isAdmin"] })
+    models.User.findByPk(req.params.userId, {
+      attributes: ["firstname", "lastname", "bio", "avatar", "isAdmin"],
+    })
       .then(function (user) {
         if (user) {
           res.status(201).json(user);
@@ -246,7 +309,9 @@ module.exports = {
         }
       })
       .catch(function (err) {
-        res.status(500).json({ error: "impossible de récupérer l'utilisateur" });
+        res
+          .status(500)
+          .json({ error: "impossible de récupérer l'utilisateur" });
       });
   },
   getAllOtherUser: function (req, res) {
@@ -264,7 +329,9 @@ module.exports = {
         }
       })
       .catch(function (err) {
-        res.status(500).json({ error: "impossible de récupérer les utilisateurs" });
+        res
+          .status(500)
+          .json({ error: "impossible de récupérer les utilisateurs" });
       });
   },
   updateUserProfile: function (req, res) {
@@ -281,14 +348,15 @@ module.exports = {
         // récupère l'utilisateur dans la DBase
         function (done) {
           models.User.findOne({
-            //attributes: ["id", "bio"],
             where: { id: userId },
           })
             .then(function (userFound) {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, done) {
@@ -302,7 +370,9 @@ module.exports = {
                 done(userFound);
               })
               .catch(function (err) {
-                res.status(500).json({ error: "mise à jour utilisateur impossible" });
+                res
+                  .status(500)
+                  .json({ error: "mise à jour utilisateur impossible" });
               });
           } else {
             res.status(404).json({ error: "utilisateur introuvable" });
@@ -313,7 +383,9 @@ module.exports = {
         if (userFound) {
           return res.status(201).json(userFound);
         } else {
-          return res.status(500).json({ error: "mise à jour du profil utilisateur impossible" });
+          return res
+            .status(500)
+            .json({ error: "mise à jour du profil utilisateur impossible" });
         }
       }
     );
@@ -335,14 +407,15 @@ module.exports = {
         // récupère l'utilisateur dans la DBase
         function (done) {
           models.User.findOne({
-            //attributes: ["id", "bio"],
             where: { id: userId },
           })
             .then(function (userFound) {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, done) {
@@ -355,7 +428,9 @@ module.exports = {
                 done(userFound);
               })
               .catch(function (err) {
-                res.status(500).json({ error: "mise à jour utilisateur impossible" });
+                res
+                  .status(500)
+                  .json({ error: "mise à jour utilisateur impossible" });
               });
           } else {
             res.status(404).json({ error: "utilisateur introuvable" });
@@ -366,7 +441,11 @@ module.exports = {
         if (userFound) {
           return res.status(201).json(userFound);
         } else {
-          return res.status(500).json({ error: "mise à jour du pseudonyme utilisateur impossible" });
+          return res
+            .status(500)
+            .json({
+              error: "mise à jour du pseudonyme utilisateur impossible",
+            });
         }
       }
     );
@@ -387,14 +466,15 @@ module.exports = {
         // récupère l'utilisateur dans la DBase
         function (done) {
           models.User.findOne({
-            //attributes: ["id", "bio"],
             where: { id: userId },
           })
             .then(function (userFound) {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, done) {
@@ -407,7 +487,9 @@ module.exports = {
                 done(userFound);
               })
               .catch(function (err) {
-                res.status(500).json({ error: "mise à jour utilisateur impossible" });
+                res
+                  .status(500)
+                  .json({ error: "mise à jour utilisateur impossible" });
               });
           } else {
             res.status(404).json({ error: "utilisateur introuvable" });
@@ -418,7 +500,11 @@ module.exports = {
         if (userFound) {
           return res.status(201).json(userFound);
         } else {
-          return res.status(500).json({ error: "mise à jour du pseudonyme utilisateur impossible" });
+          return res
+            .status(500)
+            .json({
+              error: "mise à jour du pseudonyme utilisateur impossible",
+            });
         }
       }
     );
@@ -451,7 +537,9 @@ module.exports = {
               done(null, userFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
 
@@ -464,7 +552,9 @@ module.exports = {
               done(null, userFound, mailFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, mailFound, done) {
@@ -495,7 +585,9 @@ module.exports = {
         if (userFound) {
           return res.status(201).json(userFound);
         } else {
-          return res.status(500).json({ error: "mise à jour de l'e-mail impossible" });
+          return res
+            .status(500)
+            .json({ error: "mise à jour de l'e-mail impossible" });
         }
       }
     );
@@ -524,16 +616,24 @@ module.exports = {
             done(null, userFound);
           })
           .catch(function (err) {
-            return res.status(500).json({ error: "vérification utilisateur impossible" });
+            return res
+              .status(500)
+              .json({ error: "vérification utilisateur impossible" });
           });
       },
       function (userFound, done) {
         if (userFound) {
-          bcrypt.compare(oldPassword, userFound.password, function (errBycrypt, resBycrypt) {
-            done(null, userFound, resBycrypt);
-          });
+          bcrypt.compare(
+            oldPassword,
+            userFound.password,
+            function (errBycrypt, resBycrypt) {
+              done(null, userFound, resBycrypt);
+            }
+          );
         } else {
-          return res.status(404).json({ error: "utilisateur absent de la base de donnée" });
+          return res
+            .status(404)
+            .json({ error: "utilisateur absent de la base de donnée" });
         }
       },
       function (userFound, resBycrypt, done) {
@@ -555,7 +655,9 @@ module.exports = {
               return res.status(201).json(updatedUser);
             });
         } else {
-          return res.status(500).json({ error: "mise à jour du mot de passe impossible" });
+          return res
+            .status(500)
+            .json({ error: "mise à jour du mot de passe impossible" });
         }
       },
     ]);
@@ -572,7 +674,11 @@ module.exports = {
         where: { isAdmin: true },
       }).then((allUserAdmin) => {
         if (userFound.isAdmin && allUserAdmin.count < 2) {
-          return res.status(400).json({ error: "Donner les droits d'administrateur à un autre compte" });
+          return res
+            .status(400)
+            .json({
+              error: "Donner les droits d'administrateur à un autre compte",
+            });
         } else {
           asyncLib.waterfall([
             function (done) {
@@ -581,7 +687,9 @@ module.exports = {
                   done(null, userFound);
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "1 impossible de vérifier l'utilisateur" });
+                  return res
+                    .status(500)
+                    .json({ error: "1 impossible de vérifier l'utilisateur" });
                 });
             },
             function (userFound, done) {
@@ -592,12 +700,20 @@ module.exports = {
                   done(null, userFound, userAdminFound);
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "2 impossible de vérifier l'utilisateur" });
+                  return res
+                    .status(500)
+                    .json({ error: "2 impossible de vérifier l'utilisateur" });
                 });
             },
             function (userFound, userAdminFound, done) {
               models.Message.findAll({
-                attributes: ["id", "attachment", "likes", "dislikes", "comments"],
+                attributes: [
+                  "id",
+                  "attachment",
+                  "likes",
+                  "dislikes",
+                  "comments",
+                ],
               })
                 .then((allMessageFound) => {
                   let messageIdTab = [];
@@ -607,7 +723,11 @@ module.exports = {
                   done(null, userFound, userAdminFound, messageIdTab);
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "3 impossible de vérifier tous les messages" });
+                  return res
+                    .status(500)
+                    .json({
+                      error: "3 impossible de vérifier tous les messages",
+                    });
                 });
             },
 
@@ -617,27 +737,61 @@ module.exports = {
                 attributes: ["messageId"],
               })
                 .then(function (allLikeFoundDislike) {
-                  done(null, userFound, userAdminFound, messageIdTab, allLikeFoundDislike);
+                  done(
+                    null,
+                    userFound,
+                    userAdminFound,
+                    messageIdTab,
+                    allLikeFoundDislike
+                  );
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "4 impossible de vérifier tous les userDislike" });
+                  return res
+                    .status(500)
+                    .json({
+                      error: "4 impossible de vérifier tous les userDislike",
+                    });
                 });
             },
 
-            function (userFound, userAdminFound, messageIdTab, allLikeFoundDislike, done) {
+            function (
+              userFound,
+              userAdminFound,
+              messageIdTab,
+              allLikeFoundDislike,
+              done
+            ) {
               models.Like.findAll({
                 where: { userId: userFound.id, userLike: true },
                 attributes: ["messageId"],
               })
                 .then(function (allLikeFoundLike) {
-                  done(null, userFound, userAdminFound, messageIdTab, allLikeFoundDislike, allLikeFoundLike);
+                  done(
+                    null,
+                    userFound,
+                    userAdminFound,
+                    messageIdTab,
+                    allLikeFoundDislike,
+                    allLikeFoundLike
+                  );
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "5 impossible de vérifier tous les userLike" });
+                  return res
+                    .status(500)
+                    .json({
+                      error: "5 impossible de vérifier tous les userLike",
+                    });
                 });
             },
 
-            function (userFound, userAdminFound, messageIdTab, allLikeFoundDislike, allLikeFoundLike, done) {
+            function (
+              userFound,
+              userAdminFound,
+              messageIdTab,
+              allLikeFoundDislike,
+              allLikeFoundLike,
+              done
+            ) {
               models.Comment.findAll({
                 where: { userId: userFound.id, messageId: messageIdTab },
                 attributes: ["id", "messageId"],
@@ -651,8 +805,13 @@ module.exports = {
                       return a;
                     }, {})
                   );
-                  const abc = JSON.parse(JSON.stringify(allCommentFound)).sort((a, b) =>
-                    a.messageId < b.messageId ? 1 : b.messageId < a.messageId ? -1 : 0
+                  const abc = JSON.parse(JSON.stringify(allCommentFound)).sort(
+                    (a, b) =>
+                      a.messageId < b.messageId
+                        ? 1
+                        : b.messageId < a.messageId
+                        ? -1
+                        : 0
                   );
                   const userMessageComment =
                     abc.length > 0
@@ -672,7 +831,11 @@ module.exports = {
                   );
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "6 impossible de vérifier tous les commentaires" });
+                  return res
+                    .status(500)
+                    .json({
+                      error: "6 impossible de vérifier tous les commentaires",
+                    });
                 });
             },
 
@@ -702,7 +865,11 @@ module.exports = {
                   );
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "7 impossible de vérifier tous les commentsLike" });
+                  return res
+                    .status(500)
+                    .json({
+                      error: "7 impossible de vérifier tous les commentsLike",
+                    });
                 });
             },
 
@@ -734,7 +901,12 @@ module.exports = {
                   );
                 })
                 .catch(function (err) {
-                  return res.status(500).json({ error: "8 impossible de vérifier tous les commentsDislike" });
+                  return res
+                    .status(500)
+                    .json({
+                      error:
+                        "8 impossible de vérifier tous les commentsDislike",
+                    });
                 });
             },
             function (
@@ -748,7 +920,11 @@ module.exports = {
               userMessageComment,
               done
             ) {
-              if (userFound.id === userId || (userAdminFound.isAdmin === true && userAdminFound.id === userId)) {
+              if (
+                userFound.id === userId ||
+                (userAdminFound.isAdmin === true &&
+                  userAdminFound.id === userId)
+              ) {
                 models.Message.findAll({
                   where: { userId: userFound.id },
                   attributes: ["id"],
@@ -802,11 +978,17 @@ module.exports = {
                         );
                       })
                       .catch((err) => {
-                        return res.status(500).json({ error: "9 impossible de supprimer les likes" });
+                        return res
+                          .status(500)
+                          .json({
+                            error: "9 impossible de supprimer les likes",
+                          });
                       });
                   });
               } else {
-                return res.status(500).json({ error: "Vous n'avez pas les droits" });
+                return res
+                  .status(500)
+                  .json({ error: "Vous n'avez pas les droits" });
               }
             },
 
@@ -819,7 +1001,11 @@ module.exports = {
               messageToDelete,
               done
             ) {
-              if (userFound.id === userId || (userAdminFound.isAdmin === true && userAdminFound.id === userId)) {
+              if (
+                userFound.id === userId ||
+                (userAdminFound.isAdmin === true &&
+                  userAdminFound.id === userId)
+              ) {
                 models.Message.findAll({
                   where: { userId: userFound.id },
                   attributes: ["id"],
@@ -852,7 +1038,9 @@ module.exports = {
                           .then(() => {
                             let commentLikeMessageIdTablike = [];
                             allCommentLikeFoundLike.forEach((element) => {
-                              commentLikeMessageIdTablike.push(element.commentId);
+                              commentLikeMessageIdTablike.push(
+                                element.commentId
+                              );
                             });
                             models.Comment.decrement(
                               { commentLikes: 1 },
@@ -864,7 +1052,9 @@ module.exports = {
                           .then(() => {
                             let commentLikeMessageIdTabDislike = [];
                             allCommentLikeFoundDislike.forEach((element) => {
-                              commentLikeMessageIdTabDislike.push(element.commentId);
+                              commentLikeMessageIdTabDislike.push(
+                                element.commentId
+                              );
                             });
                             models.Comment.decrement(
                               { commentDislikes: 1 },
@@ -874,20 +1064,43 @@ module.exports = {
                             );
                           })
                           .then(() => {
-                            done(null, userFound, userAdminFound, userMessageComment, messageToDelete);
+                            done(
+                              null,
+                              userFound,
+                              userAdminFound,
+                              userMessageComment,
+                              messageToDelete
+                            );
                           })
                           .catch((err) => {
-                            return res.status(500).json({ error: "10 impossible de supprimer les commentaires" });
+                            return res
+                              .status(500)
+                              .json({
+                                error:
+                                  "10 impossible de supprimer les commentaires",
+                              });
                           });
                       });
                   });
               } else {
-                return res.status(500).json({ error: "Vous n'avez pas les droits" });
+                return res
+                  .status(500)
+                  .json({ error: "Vous n'avez pas les droits" });
               }
             },
 
-            function (userFound, userAdminFound, userMessageComment, messageToDelete, done) {
-              if (userFound.id === userId || (userAdminFound.isAdmin === true && userAdminFound.id === userId)) {
+            function (
+              userFound,
+              userAdminFound,
+              userMessageComment,
+              messageToDelete,
+              done
+            ) {
+              if (
+                userFound.id === userId ||
+                (userAdminFound.isAdmin === true &&
+                  userAdminFound.id === userId)
+              ) {
                 models.Message.findAll({
                   where: { userId: userFound.id },
                   attributes: ["id"],
@@ -935,19 +1148,30 @@ module.exports = {
                           done(null, userFound, userAdminFound);
                         })
                         .catch((err) => {
-                          return res.status(500).json({ error: "11 impossible de supprimer les commentLikes" });
+                          return res
+                            .status(500)
+                            .json({
+                              error:
+                                "11 impossible de supprimer les commentLikes",
+                            });
                         });
                     } else {
                       done(null, userFound);
                     }
                   });
               } else {
-                return res.status(500).json({ error: "Vous n'avez pas les droits" });
+                return res
+                  .status(500)
+                  .json({ error: "Vous n'avez pas les droits" });
               }
             },
 
             function (userFound, userAdminFound, done) {
-              if (userFound.id === userId || (userAdminFound.isAdmin === true && userAdminFound.id === userId)) {
+              if (
+                userFound.id === userId ||
+                (userAdminFound.isAdmin === true &&
+                  userAdminFound.id === userId)
+              ) {
                 models.Message.findAll({
                   where: { userId: userFound.id },
                 }).then((result) => {
@@ -955,12 +1179,18 @@ module.exports = {
                     return attachment !== null;
                   });
                   if (resultAttachment.length) {
-                    const dynamiquePath = __dirname.split("controllers").shift();
-                    const files = resultAttachment.map((message) => message.attachment);
+                    const dynamiquePath = __dirname
+                      .split("controllers")
+                      .shift();
+                    const files = resultAttachment.map(
+                      (message) => message.attachment
+                    );
                     const deleteFiles = (files, callback) => {
                       let i = files.length;
                       files.forEach((filepath) => {
-                        let fileName = filepath.split("http://localhost:8080/").pop();
+                        let fileName = filepath
+                          .split("http://localhost:8080/")
+                          .pop();
                         fileName = dynamiquePath + fileName;
 
                         fs.unlink(fileName, (err) => {
@@ -986,7 +1216,12 @@ module.exports = {
                             done(null, userFound, userAdminFound);
                           })
                           .catch((err) => {
-                            return res.status(500).json({ error: "12 impossible de supprimer les messages" });
+                            return res
+                              .status(500)
+                              .json({
+                                error:
+                                  "12 impossible de supprimer les messages",
+                              });
                           });
                       }
                     });
@@ -998,26 +1233,40 @@ module.exports = {
                         done(null, userFound, userAdminFound);
                       })
                       .catch((err) => {
-                        return res.status(500).json({ error: "13 impossible de supprimer les messages" });
+                        return res
+                          .status(500)
+                          .json({
+                            error: "13 impossible de supprimer les messages",
+                          });
                       });
                   }
                 });
               } else {
-                return res.status(500).json({ error: "vous n'avez pas les droits" });
+                return res
+                  .status(500)
+                  .json({ error: "vous n'avez pas les droits" });
               }
             },
 
             function (userFound, userAdminFound, done) {
-              if (userFound.id === userId || (userAdminFound.isAdmin === true && userAdminFound.id === userId)) {
+              if (
+                userFound.id === userId ||
+                (userAdminFound.isAdmin === true &&
+                  userAdminFound.id === userId)
+              ) {
                 userFound
                   .destroy({
                     where: { userId: userFound.id },
                   })
                   .then(() => {
-                    return res.status(201).json("Le compte à été supprimé avec succès");
+                    return res
+                      .status(201)
+                      .json("Le compte à été supprimé avec succès");
                   });
               } else {
-                return res.status(500).json({ error: "vous n'avez pas les droits" });
+                return res
+                  .status(500)
+                  .json({ error: "vous n'avez pas les droits" });
               }
             },
           ]);
@@ -1038,7 +1287,9 @@ module.exports = {
               done(null, userfound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "impossible de vérifier l'utilisateur" });
+              return res
+                .status(500)
+                .json({ error: "impossible de vérifier l'utilisateur" });
             });
         },
         function (userfound, done) {
@@ -1049,7 +1300,9 @@ module.exports = {
               done(null, userfound, userAdminFound);
             })
             .catch(function (err) {
-              return res.status(500).json({ error: "impossible de vérifier l'admin" });
+              return res
+                .status(500)
+                .json({ error: "impossible de vérifier l'admin" });
             });
         },
 
@@ -1073,7 +1326,9 @@ module.exports = {
                 });
             }
           } else {
-            return res.status(500).json({ error: "vous n'avez pas les droits" });
+            return res
+              .status(500)
+              .json({ error: "vous n'avez pas les droits" });
           }
         },
       ],
@@ -1081,7 +1336,9 @@ module.exports = {
         if (userFound) {
           return res.status(201).json(userFound);
         } else {
-          return res.status(500).json({ error: "impossible de donner les droits à l'utilisateur" });
+          return res
+            .status(500)
+            .json({ error: "impossible de donner les droits à l'utilisateur" });
         }
       }
     );

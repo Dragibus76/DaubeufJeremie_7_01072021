@@ -176,9 +176,6 @@ console.log(postedDate);
 
             if (allMessageFound) {
               const messagesFormated = allMessageFoundParsed.map((element) => {
-                /*const date = moment(element.createdAt).local().format("LL");
-                const hour = moment(element.createdAt).local().format("LT");
-                element.createdAt = `Le ${date} à ${hour}`;*/
                 const postedDate = moment(element.createdAt).local().format("MMMM Do YYYY, h:mm:ss a");
                 element.createdAt = postedDate;
 
@@ -321,9 +318,6 @@ console.log(postedDate);
         const messagesParsed = JSON.parse(JSON.stringify(messages));
         if (messages) {
           const messagesFormated = messagesParsed.map((element) => {
-            /*const date = moment(element.createdAt).local().format("LL");
-            const hour = moment(element.createdAt).local().format("LT");
-            element.createdAt = `Le ${date} à ${hour}`;*/
             const postedDate = moment(element.createdAt).local().format("MMMM Do YYYY, h:mm:ss");
             element.createdAt = postedDate;
 

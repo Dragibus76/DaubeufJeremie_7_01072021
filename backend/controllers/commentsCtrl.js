@@ -30,7 +30,9 @@ module.exports = {
               done(null, userFound);
             })
             .catch(function (_err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, done) {
@@ -42,7 +44,9 @@ module.exports = {
                 done(null, messageFound, userFound);
               })
               .catch(function (_err) {
-                return res.status(500).json({ error: "publication introuvable" });
+                return res
+                  .status(500)
+                  .json({ error: "publication introuvable" });
               });
           } else {
             return res.status(404).json({ error: "utilisateur introuvable" });
@@ -73,7 +77,9 @@ module.exports = {
         if (newComment) {
           return res.status(201).json(newComment);
         } else {
-          return res.status(500).json({ error: "publication commentaire impossible" });
+          return res
+            .status(500)
+            .json({ error: "publication commentaire impossible" });
         }
       }
     );
@@ -112,10 +118,14 @@ module.exports = {
         const messagesParsed = JSON.parse(JSON.stringify(messages));
         if (messages) {
           const messagesFormated = messagesParsed.map((element) => {
-            const postedDate = moment(element.createdAt).local().format("MMMM Do YYYY, h:mm:ss a");
+            const postedDate = moment(element.createdAt)
+              .local()
+              .format("MMMM Do YYYY, h:mm:ss a");
             element.createdAt = postedDate;
 
-            const updatedDate = moment(element.updatedAt).local().format("MMMM Do YYYY, h:mm:ss a");
+            const updatedDate = moment(element.updatedAt)
+              .local()
+              .format("MMMM Do YYYY, h:mm:ss a");
             element.updatedAt = updatedDate;
             return element;
           });
@@ -149,7 +159,9 @@ module.exports = {
               done(null, userFound);
             })
             .catch(function (_err) {
-              return res.status(500).json({ error: "vérification utilisateur impossible" });
+              return res
+                .status(500)
+                .json({ error: "vérification utilisateur impossible" });
             });
         },
         function (userFound, done) {
@@ -161,7 +173,9 @@ module.exports = {
                 done(null, commentFound);
               })
               .catch(function (_err) {
-                return res.status(500).json({ error: "commentaire introuvable" });
+                return res
+                  .status(500)
+                  .json({ error: "commentaire introuvable" });
               });
           } else {
             return res.status(404).json({ error: "utilisateur introuvable" });
@@ -185,7 +199,9 @@ module.exports = {
         if (commentFound) {
           return res.status(201).json(commentFound);
         } else {
-          return res.status(500).json({ error: "publication commentaire impossible" });
+          return res
+            .status(500)
+            .json({ error: "publication commentaire impossible" });
         }
       }
     );
@@ -213,7 +229,9 @@ module.exports = {
             done(null, messageFound);
           })
           .catch(function (_err) {
-            return res.status(500).json({ error: "impossible de vérifier la publication" });
+            return res
+              .status(500)
+              .json({ error: "impossible de vérifier la publication" });
           });
       },
       function (messageFound, done) {
@@ -224,10 +242,12 @@ module.exports = {
             done(null, messageFound, commentFound);
           })
           .catch(function (_err) {
-            return res.status(500).json({ error: "impossible de vérifier le commentaire" });
+            return res
+              .status(500)
+              .json({ error: "impossible de vérifier le commentaire" });
           });
       },
-    
+
       function (messageFound, commentFound, done) {
         models.User.findOne({
           where: { id: userId },
@@ -236,7 +256,9 @@ module.exports = {
             done(null, messageFound, commentFound, userFoundAdmin);
           })
           .catch(function (_err) {
-            return res.status(500).json({ error: "impossible de vérifier l'utilisateur" });
+            return res
+              .status(500)
+              .json({ error: "impossible de vérifier l'utilisateur" });
           });
       },
       function (messageFound, commentFound, userFoundAdmin, done) {
@@ -270,7 +292,13 @@ module.exports = {
               commentLikeIds.push(id);
             });
 
-            done(null, messageFound, commentFound, userFoundAdmin, commentLikeIds);
+            done(
+              null,
+              messageFound,
+              commentFound,
+              userFoundAdmin,
+              commentLikeIds
+            );
           })
           .catch(function (_err) {
             res.status(500).json({
@@ -278,7 +306,13 @@ module.exports = {
             });
           });
       },
-      function (messageFound, commentFound, userFoundAdmin, commentLikeIds, done) {
+      function (
+        messageFound,
+        commentFound,
+        userFoundAdmin,
+        commentLikeIds,
+        done
+      ) {
         models.CommentsLike.destroy({
           where: { id: commentLikeIds },
         })
@@ -291,10 +325,13 @@ module.exports = {
             });
           });
       },
-     
+
       function (messageFound, commentFound, userFoundAdmin, _done) {
         if (commentFound) {
-          if (commentFound.UserId === userId || (userFoundAdmin.isAdmin === true && userFoundAdmin.id === userId)) {
+          if (
+            commentFound.UserId === userId ||
+            (userFoundAdmin.isAdmin === true && userFoundAdmin.id === userId)
+          ) {
             models.Comment.destroy({
               where: { id: commentId },
             })
@@ -305,7 +342,9 @@ module.exports = {
                 return res.status(201).json(commentFound);
               })
               .catch((_err) => {
-                return res.status(500).json({ error: "impossible de supprimer ce commentaire" });
+                return res
+                  .status(500)
+                  .json({ error: "impossible de supprimer ce commentaire" });
               });
           } else {
             models.Comment.destroy({
@@ -319,7 +358,9 @@ module.exports = {
                 return res.status(201).json(commentFound);
               })
               .catch((_err) => {
-                return res.status(500).json({ error: "impossible de supprimer ce commentaire" });
+                return res
+                  .status(500)
+                  .json({ error: "impossible de supprimer ce commentaire" });
               });
           }
         } else {
