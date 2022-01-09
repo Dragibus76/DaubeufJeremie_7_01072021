@@ -43,13 +43,14 @@ color: white;
   font-weight: bold;
   color: white;
   cursor: pointer;
-  width: 210px;
+  width: 250px;
   height: 60px;
   z-index: 100;
 }
 .miseneforme_avatar{
-  margin:0;
-  width: 200px;
+  margin-right:30px;
+  margin-top: 10px;
+  width: 150px;
 }
 .message-is-admin {
   color: orange;
@@ -58,7 +59,7 @@ color: white;
 .date{
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: auto;
     margin-right: auto;
     width: 97%;

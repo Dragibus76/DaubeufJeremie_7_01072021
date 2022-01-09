@@ -92,7 +92,7 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                     src={element.User.avatar}
                   />
                 </div>
-                <div>{firstnameLastname}</div>
+                <div className="UserName_UserProfil">{firstnameLastname}</div>
               </div>
               <div className="date">
               <div className="message-date">Publiée {moment(new Date(element.createdAt)).fromNow()}</div>

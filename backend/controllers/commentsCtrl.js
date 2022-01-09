@@ -137,7 +137,6 @@ module.exports = {
     // Paramètres
 
     const content = req.body.content;
-    // const messageId = parseInt(req.params.messageId);
     const commentId = parseInt(req.params.commentId);
 
     asyncLib.waterfall(
@@ -192,7 +191,6 @@ module.exports = {
     );
   },
   deleteComment: function (req, res) {
-    // var messageId = req.params.id
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.TOKEN);
     const userId = decodedToken.userId;
@@ -235,13 +233,13 @@ module.exports = {
           where: { id: userId },
         })
           .then(function (userFoundAdmin) {
-            done(null, messageFound, commentFound, /*userFound,*/ userFoundAdmin);
+            done(null, messageFound, commentFound, userFoundAdmin);
           })
           .catch(function (_err) {
             return res.status(500).json({ error: "impossible de vérifier l'utilisateur" });
           });
       },
-      function (messageFound, commentFound, /*userFound,*/ userFoundAdmin, done) {
+      function (messageFound, commentFound, userFoundAdmin, done) {
         if (commentFound) {
           models.Comment.findOne({
             where: {
@@ -249,7 +247,7 @@ module.exports = {
             },
           })
             .then(function (commentFound) {
-              done(null, messageFound, commentFound, /*userFound,*/ userFoundAdmin);
+              done(null, messageFound, commentFound, userFoundAdmin);
             })
             .catch(function (_err) {
               return res.status(500).json({
@@ -260,7 +258,7 @@ module.exports = {
           return res.status(500).json({ error: "ce commentaire n'existe pas" });
         }
       },
-      function (messageFound, /*userFound,*/ commentFound, userFoundAdmin, done) {
+      function (messageFound, commentFound, userFoundAdmin, done) {
         models.CommentsLike.findAll({
           where: { commentId },
           attributes: ["id"],
@@ -272,7 +270,7 @@ module.exports = {
               commentLikeIds.push(id);
             });
 
-            done(null, messageFound, /*userFound,*/ commentFound, userFoundAdmin, commentLikeIds);
+            done(null, messageFound, commentFound, userFoundAdmin, commentLikeIds);
           })
           .catch(function (_err) {
             res.status(500).json({
@@ -280,12 +278,12 @@ module.exports = {
             });
           });
       },
-      function (messageFound, /*userFound,*/ commentFound, userFoundAdmin, commentLikeIds, done) {
+      function (messageFound, commentFound, userFoundAdmin, commentLikeIds, done) {
         models.CommentsLike.destroy({
           where: { id: commentLikeIds },
         })
           .then(function () {
-            done(null, messageFound, /*userFound,*/ commentFound, userFoundAdmin);
+            done(null, messageFound, commentFound, userFoundAdmin);
           })
           .catch(function (_err) {
             res.status(500).json({

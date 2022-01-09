@@ -48,6 +48,9 @@
   margin-bottom: 30px;
   color: black;
 }
+.UserName_OtherProfil{
+  margin-top: 10px;
+}
 .users-avatar {
   display: flex;
   align-items: center;

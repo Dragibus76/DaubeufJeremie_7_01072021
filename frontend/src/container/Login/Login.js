@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { toastTrigger } from "../../helper/toast";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import "./login.css";
-import Login_img from "../../assets/Login_img.png";
+import logo_industry from "../../assets/logo_industry.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
@@ -46,7 +46,7 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
     
     <div className="login-container">
       <div className="login-title">Bienvenue sur Groupomania.com</div>
-      <img src={Login_img} alt="logo de la page de connexion" className="logo_img"/>
+      <img src={logo_industry} alt="logo de la page de connexion" className="logo_img"/>
       <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="login-title">Connexion</div>
       <div className="login-input-email">

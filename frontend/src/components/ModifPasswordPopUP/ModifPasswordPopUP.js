@@ -43,11 +43,9 @@ const ModifPasswordPopUp = ({
           {errorConfirm && <ErrorMessage message={errorConfirm} />}
           <div className="modif-pop-up-buttons">
             <div className="button-save-modif">
-              <button title={buttonTitle1} onClick={onUpdate} className="Validate_Modif_Password">{buttonTitle1}</button>
+              <button title={buttonTitle1} onClick={onUpdate} className="Validate_Modif_Password">Sauvegarder</button>
             </div>
-            <div>
-              <button title={buttonTitle2} onClick={handleModal} className="Annul_Modif_Password">{buttonTitle2}</button>
-            </div>
+            
           </div>
         </div>
       </div>

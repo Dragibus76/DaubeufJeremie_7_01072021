@@ -23,6 +23,11 @@
   margin-top: -40px;
 }
 
+.logo_img{
+  object-fit: cover;
+  width: 50%;
+  height: 50%;
+}
 .login-title {
   font-weight: bold;
   margin-top: 10px;
@@ -127,27 +132,34 @@ input::placeholder {
 }
 @media screen and (max-width: 1035px) {
   .login-container {
-    margin: 130px 10%;
-    margin-top: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    width: 90%;
   }
   .logo_img{
-    width: 50%;
+    width: 80%;
   }
 }
 @media screen and (max-width: 628px) {
   .login-container {
-    margin: 130px 10%;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 250px;
+    width: 90%;
   }
   .logo_img{
-    width: 50%;
+    width: 80%;
   }
 }
 @media screen and (max-width: 228px) {
   .login-container {
-    margin: 130px 10%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 250px;
+    width: 90%;
   }
   .logo_img{
-    width: 50%;
+    width: 80%;
   }
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import { toastTrigger } from "../../helper/toast";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import Login_img from "../../assets/Login_img.png";
+import logo_industry from "../../assets/logo_industry.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./register.css";
 
@@ -113,7 +113,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
   return (
     <div className="register-container">
       <div className="register-title">Bienvenue sur Groupomania.com</div>
-      <img src={Login_img} alt="logo de la page de connexion" className="logo_img"/>
+      <img src={logo_industry} alt="logo de la page de connexion" className="logo_img"/>
       <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="register-input">
       <FontAwesomeIcon icon="envelope" className="Icons"/><input onChange={onChangeEmail} value={email} label="e-mail" placeholder="Email" />

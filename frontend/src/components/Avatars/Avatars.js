@@ -68,6 +68,7 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
   return (
     <Dialog open={open}
     fullScreen
+    className="TransitionModale"
      >
       <div className="testavatar">
       
@@ -87,9 +88,9 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
         </div>
         
       </div>
-      {/* <div className="avatar-button">
+      <div className="avatar-button">
           <button onClick={onSubmit} title="Valider l'avatar" className="Validate_Modif_Avatar">Valider</button>
-        </div> */}
+        </div>
     </Dialog >
   );
 };
