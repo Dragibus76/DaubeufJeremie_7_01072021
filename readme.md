@@ -9,15 +9,24 @@
 
 ## BACKEND
 
-1 - Décompresser l'archive.
+1 - Décompresser l'archive. 
+
 2 - Ouvrer le dossier avec **Visual Studio Code**.
+
 3 - Ouvrer le **Terminal**.
+
 4 - Taper ensuite cd **backend**.
+
 5 - Ensuite, taper **yarn** ou **npm install**.
+
 6 - Avec **TablePlus** ou **Autres** creer une **base de données** du nom que vous souhaitez.
+
 7 - **Importer** la base de donnée au format **.sql** situer dans le dossier **/backend/DataBase** et **sauvegarder** votre base de donnée.
+
 8- Aller dans le dossier **backend** et situer-vous dans le fichier **config.json**.
+
 9-  Mettez-y vos **Informations** de connexion à votre **Base de donnée**.
+
 **Exemple :**
 		
 				{
@@ -43,10 +52,13 @@
 ## FRONTEND
 
 1 - Ouvrez un nouveau **Terminal** et faites **cd frontend**.
+
 2 - Tapez ensuite **yarn** ou **npm install**.
+
 3 - Dans le dossier **/frontend/Config/** situez-vous sur le fichier **Api.js** et modifier les informations suivantes :
 
 	baseURL: "http://localhost:4000"(port de votre Api(backend))
+        
 4 - Dans le **Terminal**, tapez **yarn start** ou **npm start**.
 	
 # Informations de connexion 🇫🇷
@@ -80,17 +92,26 @@ Il s'agit du **Projet 7** de la formation **Développeur Web** sur **Openclassro
 
 # Steps 🇬🇧
 
-**BACKEND**
+## BACKEND
 
 1 - Unzip the archive.
+
 2 - Open the file with **Visual Studio Code**.
+
 3 - Open the **Terminal**.
+
 4 - Type  **cd backend**.
+
 5 - Next, type **yarn** ou **npm install**.
+
 6 - Now, with **TablePlus** or **Other Software** create a  **DataBase** with the name you want.
+
 7 - ** Import ** the database in **. Sql format ** located in the ** / backend / DataBase ** folder and ** save ** your database.
+
 8- Go to the ** backend ** folder and locate yourself in the ** config.json ** file.
+
 9-  Enter your ** Information ** for connection to your ** Database **.
+
 **Example :**
 		
 				{
@@ -113,13 +134,16 @@ Il s'agit du **Projet 7** de la formation **Développeur Web** sur **Openclassro
 	
 11 - To ** Finish** in ** Terminal **, do ** yarn start ** or ** npm start **.
 
-**FRONTEND**
+## FRONTEND
 
 1 - Open a new ** Terminal ** and do ** cd frontend **.
+
 2 - Then type ** yarn ** or ** npm install **.
+
 3 - In the ** / frontend / Config / ** folder, find the ** Api.js ** file and modify the following information:
 
 	baseURL: "http://localhost:4000"(Port of your API(backend))
+        
 4 - In the ** Terminal **, type ** yarn start ** or ** npm start **.
 
 # Login Infos  🇬🇧
@@ -142,4 +166,7 @@ This is **Project 7** of the **Web Developer** training on **Openclassrooms**.
 
 # Copyright 
 
-![Logo CodeDragi](https://zupimages.net/up/21/49/d21v.png)
+
+<p align="center">
+  <img src="https://zupimages.net/up/21/49/d21v.png" />
+</p>
