@@ -4,7 +4,6 @@ import "./avatars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from 'react';
 import Dialog from "@material-ui/core/Dialog";
-import Slide from '@mui/material/Slide';
 
 
 function importAll(r) {

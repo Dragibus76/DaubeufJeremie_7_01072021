@@ -6,7 +6,6 @@ import LikeDislikeMessage from "../../components/LikeMessage/LikeMessage";
 import CommentMessage from "../../components/CommentMessage/CommentMessage";
 import ModifyMessage from "../../components/ModifyMessage/ModifyMessage";
 import DeleteMessage from "../../components/DeleteMessage/DeleteMessage";
-import Button from "../../components/Button/Button";
 import ConfirmPopUp from "../../components/ConfirmPopUp/ConfirmPopUp";
 import { toastTrigger } from "../../helper/toast";
 import moment from "moment";

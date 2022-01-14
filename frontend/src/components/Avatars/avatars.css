@@ -29,7 +29,15 @@ justify-content: center;
 }
 .Avatar_Row{
   margin: 10px;
+  width: 150px;
+  height: 150px;
+  transition: 0.5s ease;
 }
+.Avatar_Row:hover{
+  transform: scale(1.2);
+ 
+}
+
 .Validate_Modif_Avatar{
   width: 150px;
   height: 40px;
