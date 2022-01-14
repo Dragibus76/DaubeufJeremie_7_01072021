@@ -29,19 +29,21 @@
 
 **Exemple :**
 		
-				{
-					"development": {
-							"username": "User",
-							"password": "Password",
-							"database": "DatabaseName",
-							"host": "localhost",
-							"dialect": "mysql",
-							"dialectOptions": {
-							"charset": "utf8_general_ci"
-					},
-							"port": 3306
-					}
-				}
+	{
+	  "development": 
+	    {
+	        "username": "User",
+		"password": "Password",
+		"database": "DatabaseName",
+		"host": "localhost",
+		"dialect": "mysql",
+		"dialectOptions": {
+		"charset": "utf8_general_ci"
+	    },
+		"port": 3306
+	    }
+	}
+	
 10 - A la racine du dossier **backend**, creer un fichier **.env** et entrer les informations suivantes :
 
 	TOKEN = "1234567890azertyuiop"(votre token)
@@ -114,19 +116,21 @@ Il s'agit du **Projet 7** de la formation **Développeur Web** sur **Openclassro
 
 **Example :**
 		
-				{
-					"development": {
-							"username": "User",
-							"password": "Password",
-							"database": "DatabaseName",
-							"host": "localhost",
-							"dialect": "mysql",
-							"dialectOptions": {
-							"charset": "utf8_general_ci"
-					},
-							"port": 3306
-					}
-				}
+	{
+	  "development": 
+	    {
+	        "username": "User",
+		"password": "Password",
+		"database": "DatabaseName",
+		"host": "localhost",
+		"dialect": "mysql",
+		"dialectOptions": {
+		"charset": "utf8_general_ci"
+	    },
+		"port": 3306
+	    }
+	}
+	
 10 - At the root of the ** backend ** folder, create a **. Env ** file and enter the following information:
 
 	TOKEN = "1234567890azertyuiop"(Your Token)
