@@ -27,6 +27,7 @@
   object-fit: cover;
   width: 50%;
   height: 50%;
+  margin-top: 10px;
 }
 .login-title {
   font-weight: bold;
