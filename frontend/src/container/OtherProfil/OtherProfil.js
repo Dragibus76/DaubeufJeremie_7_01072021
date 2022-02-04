@@ -214,6 +214,10 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
             );
             const firstnameLastname =
               element.User.firstname + " " + element.User.lastname;
+              const dateFormater = (date) => {
+                let [yy, mm, dd] = date.split(" ");
+                return [mm, yy, dd].join(" ");
+              };
             return (
               <div className="message-other-user-card" key={element.id}>
                 <div className="avatar-name">
@@ -239,11 +243,11 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 </div>
                 <div className="date">
                   <div className="message-date">
-                    Publiée {moment(new Date(element.createdAt)).fromNow()}
+                  Publiée le : {dateFormater(element.createdAt)}
                   </div>
                   {element.createdAt !== element.updatedAt && (
                     <div className="message-date">
-                      Modifiée {moment(new Date(element.updatedAt)).fromNow()}
+                     Modifiée le : {dateFormater(element.updatedAt)}
                     </div>
                   )}
                 </div>

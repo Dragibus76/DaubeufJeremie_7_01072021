@@ -60,7 +60,7 @@ const Header = ({ isLoggedin, setIsLoggedin }) => {
       {isLogPage && (
         <div className="grpm-button-back">
           <Button onClick={() => history.goBack()} title="Retour">
-            <ArrowBackIcon />
+            
           </Button>
         </div>
       )}

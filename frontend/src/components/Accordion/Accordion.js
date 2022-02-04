@@ -73,12 +73,16 @@ const Accordion = ({
             );
           const firstnameLastname =
             element.User.firstname + " " + element.User.lastname;
+            const dateFormater = (date) => {
+              let [yy, mm, dd] = date.split(" ");
+              return [mm, yy, dd].join(" ");
+            };
           return (
             <div className="accordion-comment-card" key={element.id}>
-              <div>Publié {moment(new Date(element.createdAt)).fromNow()}</div>
+              <div>Publiée le : {dateFormater(element.createdAt)}</div>
               {element.createdAt !== element.updatedAt && (
                 <div>
-                  Modifié {moment(new Date(element.updatedAt)).fromNow()}
+                Modifiée le : {dateFormater(element.updatedAt)}
                 </div>
               )}
               

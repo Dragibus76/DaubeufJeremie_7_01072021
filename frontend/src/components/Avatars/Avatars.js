@@ -15,14 +15,14 @@ function importAll(r) {
   return images;
 }
 
-const images = importAll(require.context("../../assets/avatars", false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context("../../assets/avatars", true, /\.(png|jpe?g|svg)$/));
 
 const Card = ({ number, selectCardIndex }) => {
   return (
     <img
       style={selectCardIndex === number ? { border: "1px solid black" } : null}
-      name={images[`${number}.jpg`].default}
-      src={images[`${number}.jpg`].default}
+      name={images[`${number}.jpg`]}
+      src={images[`${number}.jpg`]}
       alt={number}
       height={150}
       width={150}

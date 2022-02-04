@@ -7,7 +7,6 @@ import LikeDislikeMessage from "../../components/LikeMessage/LikeMessage";
 import CommentMessage from "../../components/CommentMessage/CommentMessage";
 import DeleteMessage from "../../components/DeleteMessage/DeleteMessage";
 import ModifyMessage from "../../components/ModifyMessage/ModifyMessage";
-import moment from "moment";
 import "./user-profil.css";
 
 const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
@@ -79,11 +78,15 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
         {allMessages.map((element) => {
           const messageLikeByCurrentUser = element?.Likes?.filter((elt) => groupomaniaUser.id === elt.userId);
           const firstnameLastname = element.User.firstname + " " + element.User.lastname;
+          const dateFormater = (date) => {
+            let [yy, mm, dd] = date.split(" ");
+            return [mm, yy, dd].join(" ");
+          };
           return (
             <div className="message-user-card" key={element.id}>
               <div className="avatar-name">
                 <div className="avatar-picture">
-                  <div className="Circle_Avatar"></div>
+                  <div className="Circle_Avatar2"></div>
                   <img
                     width="100%"
                     height="100%"
@@ -95,9 +98,9 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 <div className="UserName_UserProfil">{firstnameLastname}</div>
               </div>
               <div className="date">
-              <div className="message-date">Publiée {moment(new Date(element.createdAt)).fromNow()}</div>
+              <div className="message-date">Publiée le : {dateFormater(element.createdAt)}</div>
               {element.createdAt !== element.updatedAt && (
-                <div className="message-date">Modifiée {moment(new Date(element.updatedAt)).fromNow()}</div>
+                <div className="message-date">Modifiée le {dateFormater(element.updatedAt)}</div>
               )}
               </div>
               <div className="line_container"></div>

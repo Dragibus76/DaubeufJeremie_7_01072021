@@ -10,9 +10,11 @@ import DeleteMessage from "../../components/DeleteMessage/DeleteMessage";
 import ModifyMessage from "../../components/ModifyMessage/ModifyMessage";
 import moment from "moment";
 import "./home.css";
+import DayJS from 'react-dayjs';
 
 
 const Home = ({ myUserId, admin, setAdmin }) => {
+  
   const [allMessages, setAllMessages] = useState([]);
   const [user, setUser] = useState({});
 
@@ -103,6 +105,11 @@ const Home = ({ myUserId, admin, setAdmin }) => {
         {allMessages.map((element) => {
           const messageLikeByCurrentUser = element?.Likes?.filter((elt) => groupomaniaUser.id === elt.userId);
           const firstnameLastname = element.User.firstname + " " + element.User.lastname;
+          const dateFormater = (date) => {
+            let [yy, mm, dd] = date.split(" ");
+            return [mm, yy, dd].join(" ");
+          };
+          
           return (
             <div className="message-card" key={element.id}>
               <div className="avatar-name" onClick={() => goToOtherProfil(element.UserId)}>
@@ -114,13 +121,14 @@ const Home = ({ myUserId, admin, setAdmin }) => {
                 <div className="message-is-admin">
                 {element.User.isAdmin && <FontAwesomeIcon color="#fc930c" icon={["fas", "user-cog"]} />}{" "}
                 {element.User.isAdmin && "Administrateur"}
+                
               </div>
                 </div>
               </div>
               <div className="date">
-              <div className="message-date">Publiée {moment(new Date(element.createdAt)).fromNow()}</div>
+              <div className="message-date">Publiée le : {dateFormater(element.createdAt)}</div>
               {element.createdAt !== element.updatedAt && (
-                <div className="message-date">Modifiée {moment(new Date(element.updatedAt)).fromNow()}</div>
+                <div className="message-date">Modifiée le {dateFormater(element.updatedAt)}</div>
               )}
               
               </div>
