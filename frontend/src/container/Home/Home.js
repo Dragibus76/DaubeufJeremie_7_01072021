@@ -126,9 +126,9 @@ const Home = ({ myUserId, admin, setAdmin }) => {
                 </div>
               </div>
               <div className="date">
-              <div className="message-date">Publiée le : {dateFormater(element.createdAt)}</div>
+              <div className="message-date">Publiée le : {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
-                <div className="message-date">Modifiée le {dateFormater(element.updatedAt)}</div>
+                <div className="message-date">Modifiée le {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               )}
               
               </div>

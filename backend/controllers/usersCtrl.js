@@ -17,7 +17,7 @@ module.exports = {
     // Paramètres
     let { email, firstname, lastname, password, confirmPassword, bio } =
       req.body;
-    const avatar = "/static/media/1.589279a0.jpg";
+    const avatar = "/static/media/.jpg";
 
     if (!email || !firstname || !lastname || !password) {
       return res.status(400).json({ error: "champ(s) manquant(s)" });

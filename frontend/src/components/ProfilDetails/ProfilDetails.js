@@ -8,7 +8,7 @@ import Avatar from "../Avatars/Avatars";
 import "./profil-details.css";
 import ModifCommentPopUp from "../ModifCommentPopUp/ModifCommentPopUP";
 import ModifPasswordPopUp from "../ModifPasswordPopUP/ModifPasswordPopUP";
-
+import defaultAvatar from "../../assets/default.png"
 const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   const [openUpdate, setOpenUpdate] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
