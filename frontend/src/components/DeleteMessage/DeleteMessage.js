@@ -42,8 +42,8 @@ const DeleteMessage = ({ messageId, myUserId, idUserMessage, changeDeleteMessage
         open={open}
         confirmModalAction={onDeleteMessage}
         handleModal={handleModal}
-        buttonTitle1="Oui"
-        buttonTitle2="Non"
+        buttonTitle1="OuiConfirm"
+        buttonTitle2="NonConfirm"
         modalTitle="Voulez vous supprimer la publication ?"
       />
     </div>

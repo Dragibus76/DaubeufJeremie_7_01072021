@@ -96,7 +96,7 @@ const Accordion = ({
                       width="100%"
                       height="100%"
                       style={{ borderRadius: "50%", border: "2px solid black"}}
-                      alt="avatar"
+                      alt={element.UserId}
                       src={element.User.avatar}
                     />
                   </div>

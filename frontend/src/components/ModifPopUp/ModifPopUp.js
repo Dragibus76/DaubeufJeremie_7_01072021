@@ -51,7 +51,10 @@ const ModifPopUp = ({
             <DialogTitle>   <FontAwesomeIcon icon="pen" color="#0E88FA" className="Icon_modif_photo"/> {modalTitle}</DialogTitle>
           </div>
           <div className="modif-pop-up-input-title">
-            <input value={newTitle} onChange={onChangeTitle} label="Titre" type="text" className="modif_title_input" />
+            <label id="InputTitle" for="Title">
+            <div className="LabelAria" >Choisir une image ou un gif</div>
+            <input value={newTitle} onChange={onChangeTitle} label="Titre" type="text" className="modif_title_input" aria-labelledby="InputTitle" id="Title"/>
+            </label>
             {attachment ? (
               <div style={{ width: "90%" }} className="modif-pop-up-picture">
                 <img src={newFile} alt="img" style={{ width: "100%", height: "100%" }} />
@@ -62,13 +65,17 @@ const ModifPopUp = ({
           </div>
           <div className="modif-pop-up-input-file">
             <div className="modif-pop-up-icon-picture">
-              
-            <input onChange={onUploadFile} type="file" />
+              <label id="InputImg" for="Img">
+              <div className="LabelAria" >Choisir une image ou un gif</div>
+              </label>
+            <input onChange={onUploadFile} type="file" aria-labelledby="InputImg" id="Img"/>
             <FontAwesomeIcon icon="photo-video" color="#F0B418" className="Icon_modif_photo"/> 
             </div>
             
           </div>
           <div>
+            <label id="InputEmail" for="Email">
+            <div className="LabelAria" >Choisir une image ou un gif</div>
             <textarea
               value={newContent}
               onChange={onChangeContent}
@@ -76,7 +83,10 @@ const ModifPopUp = ({
               rows={4}
               variant="outlined"
               className="modif_textarea"
+              aria-labelledby="InputEmail"
+              id="Email"
             />
+            </label>
           </div>
         </div>
         <div className="modif-pop-up-buttons">

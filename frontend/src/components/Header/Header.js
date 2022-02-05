@@ -33,24 +33,24 @@ const Header = ({ isLoggedin, setIsLoggedin }) => {
       {isLoggedin && (
         <div className="grpm-buttons-log-1">
           <div className="grpm-buttons-log-2">
-            <button style={{ marginRight: "20px" }} onClick={() => history.push("/accueil")}  title="Accueil" className="Button_Header">
-            <FontAwesomeIcon icon="home" className="Header_logo"/>
+            <button style={{ marginRight: "20px" }} onClick={() => history.push("/accueil")}  title="Accueil" className="Button_Header" aria-label="Home Logo">
+            <FontAwesomeIcon icon="home" className="Header_logo"/> 
             </button>
-            <button style={{ marginRight: "20px" }} onClick={() => history.push("/profil")} title="Profil" className="Button_Header">
+            <button style={{ marginRight: "20px" }} onClick={() => history.push("/profil")} title="Profil" className="Button_Header" aria-label="Profil Logo">
             <FontAwesomeIcon icon="id-card" className="Header_logo"/>
             </button>
-            <button style={{ marginRight: "20px" }} title="Déconnexion" onClick={onLogout} className="Button_Header">
+            <button style={{ marginRight: "20px" }} title="Déconnexion" onClick={onLogout} className="Button_Header" aria-label="Logout Logo">
             <FontAwesomeIcon icon="sign-out-alt" className="Header_logo"/>
             </button>
           </div>
           <div className="grpm-buttons-log-3">
-            <button style={{ marginRight: "20px" }} onClick={() => history.push("/accueil")} className="Button_Header">
+            <button style={{ marginRight: "20px" }} onClick={() => history.push("/accueil")} className="Button_Header" aria-label="Home Logo">
             <FontAwesomeIcon icon="home" className="Header_logo"/>
             </button>
-            <button style={{ marginRight: "20px" }} onClick={() => history.push("/profil")} className="Button_Header">
+            <button style={{ marginRight: "20px" }} onClick={() => history.push("/profil")} className="Button_Header" aria-label="Profil Logo">
             <FontAwesomeIcon icon="id-card" className="Header_logo"/>
             </button>
-            <button style={{ marginRight: "20px" }} onClick={onLogout} className="Button_Header">
+            <button style={{ marginRight: "20px" }} onClick={onLogout} className="Button_Header" aria-label="Logout Logo">
             <FontAwesomeIcon icon="sign-out-alt" className="Header_logo"/>
             </button>
           </div>

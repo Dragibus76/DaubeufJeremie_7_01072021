@@ -51,7 +51,10 @@ export default function OutlinedChips({ myUserId }) {
         <div className="text_users">Utilisateurs</div>
       <div className="line-container_User_Card"></div>
       <FontAwesomeIcon icon="search" className="Seach_User_Icon"/>
-        <input label="Rechercher utilisateur" type="search" value={searchBarValue} onChange={handleChange} placeholder="Rechercher un utilisateur" className="Users_search"/>
+      <label id="SearchUsers" for="Search">
+      <div className="LabelAria" >Choisir une image ou un gif</div>
+      </label>
+        <input label="Rechercher utilisateur" type="search" value={searchBarValue} onChange={handleChange} placeholder="Rechercher un utilisateur" className="Users_search" aria-labelledby="SearchUsers" id="Search"/>
       </div>
       <div className="User_Component"
         

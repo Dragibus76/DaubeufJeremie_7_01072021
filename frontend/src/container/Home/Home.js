@@ -139,7 +139,7 @@ const Home = ({ myUserId, admin, setAdmin }) => {
                 
                 {element.attachment && (
                   <div className="picture-container">
-                    <img src={element.attachment} alt="" width="100%" height="100%" />
+                    <img src={element.attachment} alt={element.title} width="100%" height="100%" />
                   </div>
                 )}
                 <div className="message-content">{element.content}</div>

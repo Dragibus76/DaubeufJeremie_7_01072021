@@ -85,8 +85,8 @@ const DeleteComment = ({
         open={open}
         confirmModalAction={onDeleteComment}
         handleModal={handleModal}
-        buttonTitle1="Oui"
-        buttonTitle2="Non"
+        buttonTitle1="OuiConfirm"
+        buttonTitle2="NonConfirm"
         modalTitle="Voulez vous supprimer le commentaire ?"
       />
     </div>

@@ -427,8 +427,8 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
             open={openUpdate}
             handleModal={handleUpdateModal}
             modalTitle="Modifier la Description ?"
-            buttonTitle1="Oui"
-            buttonTitle2="Non"
+            buttonTitle1="OuiConfirm"
+            buttonTitle2="NonConfirm"
             confirmModalAction={onUpdateBio}
             bio={bio}
             setBio={setBio}
@@ -507,6 +507,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         <button onClick={handleUpdateFirstname} title="Modifier Ma Description" className="button_modifbio">
           Modifier
         </button>
+        
         <ModifCommentPopUp
           open={openFirstname}
           error={errorFirstname}
@@ -517,7 +518,9 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
           label="Modifier Prénom"
           buttonTitle1="Sauvegarder Modifications"
           buttonTitle2="Annuler Modifications"
+          
         />
+       
         {/* Lastname Section */}
         <div className="line_container_profil"></div>
         <div className="text_section">Nom</div>
@@ -543,7 +546,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         <div className="button-delete-my-account">
             <button
               onClick={handleDeleteModal}
-              title="Supprimer Mon Compte"
+              title="Supprimer Mon CompteConfirm"
               className="delete_profil"
             >
                Supprimer mon
@@ -554,8 +557,8 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
               handleModal={handleDeleteModal}
               confirmModalAction={onDeleteUser}
               modalTitle="Supprimer votre compte ?"
-              buttonTitle1="Oui"
-              buttonTitle2="Non"
+              buttonTitle1="OuiConfirm"
+              buttonTitle2="NonCinfirm"
             />
           </div>
       </div>

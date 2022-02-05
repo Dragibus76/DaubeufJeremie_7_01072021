@@ -116,33 +116,58 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       <img src={Logo_img} alt="logo de la page de connexion" className="logo_img"/>
       <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="register-input">
-      <FontAwesomeIcon icon="envelope" className="Icons"/><input onChange={onChangeEmail} value={email} label="e-mail" placeholder="Email" />
+      <FontAwesomeIcon icon="envelope" className="Icons"/>
+      <label id="InputEmailInsc" for="EmailInsc">
+      <div className="LabelAria" >Email</div>
+      </label>
+      <input onChange={onChangeEmail} value={email} label="e-mail" placeholder="Email" aria-labelledby="InputEmailInsc" id="EmailInsc" />
       </div>
       {errorEmail && <ErrorMessage message={errorEmail} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="user" className="Icons"/><input onChange={onChangeFirstname} value={firstname} label="Prénom" placeholder="Prénom"/>
+      <FontAwesomeIcon icon="user" className="Icons"/>
+      <label id="InputFirstnameInsc" for="FirstnameInsc">
+      <div className="LabelAria" >Nom</div>
+      </label>
+      <input onChange={onChangeFirstname} value={firstname} label="Prénom" placeholder="Prénom" aria-labelledby="InputFirstnameInsc" id="FirstnameInsc"/>
       </div>
       {errorFirstname && <ErrorMessage message={errorFirstname} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="user" className="Icons"/><input onChange={onChangeLastname} value={lastname} label="NOM" placeholder="Nom"/>
+      <FontAwesomeIcon icon="user" className="Icons"/>
+      <label id="InputLastnameInsc" for="LastnameInsc">
+      <div className="LabelAria" >Prenom</div>
+      </label>
+      <input onChange={onChangeLastname} value={lastname} label="NOM" placeholder="Nom" aria-labelledby="InputLastnameInsc" id="LastnameInsc"/>
       </div>
       {errorLastname && <ErrorMessage message={errorLastname} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="lock" className="Icons"/><input onChange={onChangePassword} value={password} label="mot de passe" type="password"  placeholder="Mot de passe"/>
+      <FontAwesomeIcon icon="lock" className="Icons"/>
+      <label id="InputPasswordInsc" for="PasswordInsc">
+      <div className="LabelAria" >Password</div>
+      </label>
+      <input onChange={onChangePassword} value={password} label="mot de passe" type="password"  placeholder="Mot de passe" aria-labelledby="InputPasswordInsc" id="PasswordInsc"/>
       </div>
       {errorPassword && <ErrorMessage message={errorPassword} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="lock" className="Icons"/><input
+      <FontAwesomeIcon icon="lock" className="Icons"/>
+      <label id="InputConfirmPasswordInsc" for="ConfirmPasswordInsc">
+      <div className="LabelAria" > Confirm Password</div>
+      </label>
+      <input
           onChange={onChangeConfirmPassword}
           value={confirmPassword}
           label="confirmer mot de passe"
           type="password"
           placeholder="Confirmer mot de passe"
+          aria-labelledby="InputConfirmPasswordInsc" id="ConfirmPasswordInsc"
         />
       </div>
       {errorConfirmPassword && <ErrorMessage message={errorConfirmPassword} />}
       <div className="register-input">
-      <FontAwesomeIcon icon="book-reader" className="Icons"/> <textarea rows={4} variant="outlined" label="Description" onChange={onChangeBio} value={bio} placeholder="Biographie" className="Biographie"/>
+      <FontAwesomeIcon icon="book-reader" className="Icons"/> 
+      <label id="InputConfirmBioInsc" for="ConfirmBioInsc">
+      <div className="LabelAria" >Bio</div>
+      </label>
+      <textarea rows={4} variant="outlined" label="Description" onChange={onChangeBio} value={bio} placeholder="Biographie" className="Biographie" aria-labelledby="InputConfirmBioInsc" id="ConfirmBioInsc"/>
       </div>
       <div className="register-button">
         <button onClick={onRegister} title="S'inscrire" className="Button_Inscription">Inscription</button>

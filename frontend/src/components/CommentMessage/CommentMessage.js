@@ -112,10 +112,12 @@ const CommentMessage = ({
       <div className="comment-input-button">
       <FontAwesomeIcon icon="paper-plane" className="Send_icon" onClick={onComment}/>
         <div className="comment-input">
-        <label id="Comments" for="Commentaire">
+        <label id="Comments" for={messageId} >
         <div className="LabelAria" >Commentaires</div>
-        <input value={content} onChange={onChangeContent} label="votre commentaire" type="text"  className="label_com_input" placeholder="Je met un com!"  id="Commentaire"/>
         </label>
+        
+        <input value={content} onChange={onChangeContent} label="votre commentaire" type="text"  className="label_com_input" placeholder="Je met un com!"  id={messageId}/>
+        
           
           
           {activeLimitContent && (

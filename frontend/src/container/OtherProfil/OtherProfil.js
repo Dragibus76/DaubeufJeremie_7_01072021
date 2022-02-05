@@ -184,13 +184,13 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
               handleModal={handleAdminToUserModal}
               confirmModalAction={adminPower}
               modalTitle="Donner ou Enlever les droits administrateur à cet utilisateur ?"
-              buttonTitle1="Oui"
-              buttonTitle2="Non"
+              buttonTitle1="OuiConfirm"
+              buttonTitle2="NonConfirm"
             />
 
             <button
               onClick={handleDeleteModal}
-              title="Supprimer Son Compte"
+              title="Supprimer Son CompteConfirm"
               className="Button_Delete_Profil_Other_Profil"
             >
               Supprimer Son Compte
@@ -200,8 +200,8 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
               handleModal={handleDeleteModal}
               confirmModalAction={onDeleteOtherUser}
               modalTitle="Supprimer le compte de cet Utilisateur ?"
-              buttonTitle1="Oui"
-              buttonTitle2="Non"
+              buttonTitle1="OuiConfirm"
+              buttonTitle2="NonConfirm"
             />
           </div>
           <div className="display_button_other_profil"></div>
@@ -258,7 +258,7 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                     <div className="picture-container">
                       <img
                         src={element.attachment}
-                        alt="img"
+                        alt={element.title}
                         width="100%"
                         height="100%"
                       />
