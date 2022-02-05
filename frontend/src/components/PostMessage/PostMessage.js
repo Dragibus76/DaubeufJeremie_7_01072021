@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import api from "../../Config/Api";
 import FormData from "form-data";
 import { toastTrigger } from "../../helper/toast";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./PostMessage.css";
 
 class PostMessage extends Component {
@@ -70,7 +70,9 @@ class PostMessage extends Component {
 
   onPublish = async () => {
     const { title, content, file } = this.state;
-    const token = JSON.parse(JSON.stringify(sessionStorage.getItem("groupomania-token")));
+    const token = JSON.parse(
+      JSON.stringify(sessionStorage.getItem("groupomania-token"))
+    );
 
     const obj = { title, content };
     const json = JSON.stringify(obj);
@@ -103,7 +105,12 @@ class PostMessage extends Component {
             headers: { Authorization: `Bearer ${token}` },
           });
           this.props.viewMessagesPost(response.data);
-          this.setState({ title: "", content: "", file: "", theinputkey: Math.random().toString(36) });
+          this.setState({
+            title: "",
+            content: "",
+            file: "",
+            theinputkey: Math.random().toString(36),
+          });
           toastTrigger("success", "Publication ajouté 👌🏼");
         } else {
           await api({
@@ -138,7 +145,12 @@ class PostMessage extends Component {
             },
           });
           this.props.viewMessagesPost(response.data);
-          this.setState({ title: "", content: "", file: "", theinputkey: Math.random().toString(36) });
+          this.setState({
+            title: "",
+            content: "",
+            file: "",
+            theinputkey: Math.random().toString(36),
+          });
           toastTrigger("success", "Publication ajouté 👌🏼");
         } else {
           const response = await api({
@@ -164,55 +176,93 @@ class PostMessage extends Component {
     return (
       <div className="post-message">
         <div className="container_post">
-          
           <div className="Post_circle">
-            <FontAwesomeIcon icon="pen" className="Pen_Icons"/>
+            <FontAwesomeIcon icon="pen" className="Pen_Icons" />
           </div>
           <div className="title_post">Nouveau Post</div>
         </div>
-        
+
         <div className="input-title">
-            <input value={title} onChange={this.onChangeTitle} label="Titre" type="text"className="title_input"  placeholder="Titre de la publication"/>
+          <label for="Titre" id="title">
+            <div className="LabelAria" >Titre de la Publication</div>
+            <input
+              aria-labelledby="title"
+              value={title}
+              onChange={this.onChangeTitle}
+              id=" title"
+              type="text"
+              className="title_input"
+              placeholder="Titre de la Publication"
+              
+            />
             {this.state.activeLimitTitle && (
-              <div style={{ color: "red" }}>vous avez {`${this.state.limitTitle + " " + caractere}`} en plus</div>
+              <div style={{ color: "red" }}>
+                vous avez {`${this.state.limitTitle + " " + caractere}`} en plus
+              </div>
             )}
-          </div>
+          </label>
+        </div>
         <div className="input-container">
           <div className="input-content">
+            <label id="contentTextArea" for="content">
+            <div className="LabelAria">Contenu de la publication</div>
             <textarea
               id="outlined-multiline-static"
-              label="Publication"
               rows={1}
               className="textarea_publi"
               variant="outlined"
               onChange={this.onChangeContent}
               value={content}
               placeholder="Quoi de neuf ?"
+              id="content"
+              aria-labelledby="contentTextArea"
             />
+            
             {this.state.activeLimitContent && (
-              <div style={{ color: "red" }}>vous avez {`${this.state.limitContent + " " + caractere}`} de trop</div>
+              <div style={{ color: "red" }}>
+                vous avez {`${this.state.limitContent + " " + caractere}`} de
+                trop
+              </div>
             )}
+            </label>
           </div>
           <div className="container2">
-          <div className="input-file">
-            <input onChange={this.onUploadFile} type="file" theinputkey={this.state.theinputkey} />
-            <FontAwesomeIcon icon="photo-video"/> <div className="title_input_file">photo/vidéo</div>
+            <div className="input-file">
+              <label id="InputImage" for="Photo">
+              <div className="LabelAria" >Choisir une image ou un gif</div>
+              <input
+                onChange={this.onUploadFile}
+                type="file"
+                theinputkey={this.state.theinputkey}
+                aria-labelledby="InputImage"
+                id="Photo"
+              />
+              </label>
+              
+              <FontAwesomeIcon icon="photo-video" />{" "}
+              <div className="title_input_file">photo/vidéo</div>
+            </div>
+            {this.state.activePicture &&
+              this.state.file?.name !== undefined && (
+                <div className="picture-name">{this.state.file?.name}</div>
+              )}
+            {this.state.publishError && (
+              <div style={{ color: "red" }}>
+                Le titre est obligatoire, avec une image et ou une publication
+              </div>
+            )}
+            <div className="button-publish">
+              <button
+                onClick={this.onPublish}
+                title="Publier"
+                className="Button_Send"
+              >
+                Publier <FontAwesomeIcon icon="paper-plane" />
+              </button>
+            </div>
           </div>
-          {this.state.activePicture && this.state.file?.name !== undefined && (
-          <div className="picture-name">{this.state.file?.name}</div>
-        )}
-        {this.state.publishError && (
-          <div style={{ color: "red" }}>Le titre est obligatoire, avec une image et ou une publication</div>
-        )}
-        <div className="button-publish">
-          <button onClick={this.onPublish} title="Publier" className="Button_Send">Publier <FontAwesomeIcon icon="paper-plane"/></button>
         </div>
-        </div>
-        </div>
-        
-        
       </div>
-      
     );
   }
 }

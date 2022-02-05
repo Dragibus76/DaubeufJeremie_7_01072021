@@ -168,7 +168,9 @@ input[type="file"] {
   margin-right: auto;
   margin-left: auto;
 }
-
+ .LabelAria {
+   display: none;
+ }
 @media screen and (max-width: 1255px) {
   .post-message {
     width: 90%;

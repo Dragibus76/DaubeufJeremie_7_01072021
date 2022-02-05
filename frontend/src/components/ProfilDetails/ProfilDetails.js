@@ -364,7 +364,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
       
       {/* Avatar Section */}
       <div className="user-profil-title">
-        <div className="Rounded_Linear"></div>
+        
         <div className="avatar-picture2">
           <img
             width="100%"
@@ -400,6 +400,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         {/* Bio Section */}
         <div className="Pseudo_Button_Section">Modifier votre bio</div>
         <div className="display_bio">
+          <label id="InputBio" for="bio">
           <textarea
             rows={4}
             variant="outlined"
@@ -407,7 +408,11 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
             onChange={onChangeBio}
             value={bio}
             className="Input_textarea_bio"
+            aria-labelledby="InputBio"
+            id="bio"
           />
+          </label>
+          
         </div>
         {/* Button Bio Section */}
         <div className="button-modify-bio">

@@ -112,8 +112,11 @@ const CommentMessage = ({
       <div className="comment-input-button">
       <FontAwesomeIcon icon="paper-plane" className="Send_icon" onClick={onComment}/>
         <div className="comment-input">
-        
-          <input value={content} onChange={onChangeContent} label="votre commentaire" type="text"  className="label_com_input" placeholder="Je met un com!"/>
+        <label id="Comments" for="Commentaire">
+        <div className="LabelAria" >Commentaires</div>
+        <input value={content} onChange={onChangeContent} label="votre commentaire" type="text"  className="label_com_input" placeholder="Je met un com!"  id="Commentaire"/>
+        </label>
+          
           
           {activeLimitContent && (
             <div style={{ color: "red" }}>vous avez {`${limitContent + " " + caractere}`} de trop</div>

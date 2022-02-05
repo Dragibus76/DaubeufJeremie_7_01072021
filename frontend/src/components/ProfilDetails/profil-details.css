@@ -121,7 +121,7 @@
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: white;
+  /* color: #FFFFFF; */
 }
 
 .user-profil-container {
@@ -172,7 +172,7 @@
   outline: none;
   border: none;
   background: red;
-  color: white;
+  
   transition: 0.5s ease;
   margin-right: auto;
   margin-left: auto;
