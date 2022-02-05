@@ -23,9 +23,11 @@
 
 7 - **Importer** la base de donnée au format **.sql** situer dans le dossier **/backend/DataBase** et **sauvegarder** votre base de donnée.
 
-8- Aller dans le dossier **backend** et situer-vous dans le fichier **config.json**.
+8 - Créer un dossier "config" dans **backend/**.
 
-9-  Mettez-y vos **Informations** de connexion à votre **Base de donnée**.
+9 - Situer vous dans **backend/config** et créer un fichier "config.json" et situez vous dessus.
+
+10 -  Mettez-y vos **Informations** de connexion à votre **Base de donnée**.
 
 **Exemple :**
 		
@@ -44,12 +46,12 @@
 	    }
 	}
 	
-10 - A la racine du dossier **backend**, creer un fichier **.env** et entrer les informations suivantes :
+11 - A la racine du dossier **backend**, creer un fichier **.env** et entrer les informations suivantes :
 
 	TOKEN = "1234567890azertyuiop"(votre token)
 	PORT = "4000" (votre port)
 	
-11 - Pour **Terminer** dans le **Terminal**, faites **yarn start** ou **npm start**.
+12 - Pour **Terminer** dans le **Terminal**, faites **yarn start** ou **npm start**.
 
 ## FRONTEND
 
@@ -57,7 +59,7 @@
 
 2 - Tapez ensuite **yarn** ou **npm install**.
 
-3 - Dans le dossier **/frontend/Config/** situez-vous sur le fichier **Api.js** et modifier les informations suivantes :
+3 - Dans le dossier **/frontend/src/Config/** situez-vous sur le fichier **Api.js** et modifier les informations suivantes :
 
 	baseURL: "http://localhost:4000"(port de votre Api(backend))
         
