@@ -112,7 +112,7 @@ const CommentMessage = ({
       <div className="comment-input-button">
       <FontAwesomeIcon icon="paper-plane" className="Send_icon" onClick={onComment}/>
         <div className="comment-input">
-        <label id="Comments" for={messageId} >
+        <label id="Comments" htmlFor={messageId} >
         <div className="LabelAria" >Commentaires</div>
         </label>
         

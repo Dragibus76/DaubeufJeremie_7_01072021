@@ -79,10 +79,10 @@ const Accordion = ({
             };
           return (
             <div className="accordion-comment-card" key={element.id}>
-              <div>Publiée le : {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
+              <div>Publiée {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
                 <div>
-                Modifiée le : {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+                Modifiée {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
                 </div>
               )}
               

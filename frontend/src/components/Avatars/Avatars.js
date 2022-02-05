@@ -4,7 +4,7 @@ import "./avatars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from 'react';
 import Dialog from "@material-ui/core/Dialog";
-
+import { ImageListItem } from "@material-ui/core";
 
 function importAll(r) {
   let images = {};

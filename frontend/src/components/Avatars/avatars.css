@@ -1,12 +1,14 @@
 .avatar-choice-container {
   font-size: 14px;
-  
+  display: flex;
+  justify-content: center;
   line-height: 25px;
   margin-bottom: 0px;
-  padding: 15px 15px 0px 15px;
+  padding: 55px 15px 0px 15px;
   height: auto;
-  
-  
+  margin-right: auto;
+    margin-left: auto;
+    width: 50%;
 }
 
 .avatar-button {
@@ -15,94 +17,90 @@
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-display: flex;
-justify-content: center;
-  
-}
-
-.Avatar_Display{
   display: flex;
-  flex-direction: row;
- 
-
-  
+  justify-content: center;
 }
-.Avatar_Row{
+
+.Avatar_Display {
+  display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+}
+.Avatar_Row {
   margin: 10px;
   width: 150px;
   height: 150px;
-  
+
   transition: 0.5s ease;
 }
-.Avatar_Row:hover{
+.Avatar_Row:hover {
   transform: scale(1.2);
- 
 }
 
-.Validate_Modif_Avatar{
+.Validate_Modif_Avatar {
   width: 150px;
   height: 40px;
   border-radius: 10px;
   outline: none;
   border: none;
-  background: #0E88FA;
-  
-  transition: 0.5s ease;
+  background: #0e88fa;
 
- 
+  transition: 0.5s ease;
 }
-.Validate_Modif_Avatar:hover{
+.Validate_Modif_Avatar:hover {
   background: white;
-  border: 1px solid #0E88FA;
-  color: #0E88FA;
+  border: 1px solid #0e88fa;
+  color: #0e88fa;
   transform: scale(1.1);
 }
 
 @media screen and (max-width: 1255px) {
-  .Avatar_Display{
+  .Avatar_Display {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
     overflow-x: none;
-    margin-left: 230px;
-
+    margin-right: auto;
+    margin-left: auto;
   }
-  .avatar-choice-container{
+  .avatar-choice-container {
     overflow-x: none;
   }
 }
 
- @media screen and (max-width: 800px) {
-  .Avatar_Display{
+@media screen and (max-width: 800px) {
+  .Avatar_Display {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     overflow-x: none;
-    margin-left: 90px;
-
+    margin-right: auto;
+    margin-left: auto;
   }
-  .avatar-choice-container{
+  .avatar-choice-container {
     overflow-x: none;
   }
 }
 @media screen and (max-width: 640px) {
-  .Avatar_Display{
+  .Avatar_Display {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     overflow-x: none;
-    margin-left: 40px;
-
+    margin-right: auto;
+    margin-left: auto;
   }
-  .avatar-choice-container{
+  .avatar-choice-container {
     overflow-x: none;
   }
-} 
+}
 
 /* reprendre ici */

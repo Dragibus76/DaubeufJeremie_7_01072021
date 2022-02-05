@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Avatar from "@material-ui/core/Avatar";
+import AvatarGroup from '@mui/material/AvatarGroup';
 import Chip from "@material-ui/core/Chip";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";

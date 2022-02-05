@@ -243,11 +243,11 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 </div>
                 <div className="date">
                   <div className="message-date">
-                  Publiée le : {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+                  Publiée {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
                   </div>
                   {element.createdAt !== element.updatedAt && (
                     <div className="message-date">
-                     Modifiée le : {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+                     Modifiée {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}
                     </div>
                   )}
                 </div>

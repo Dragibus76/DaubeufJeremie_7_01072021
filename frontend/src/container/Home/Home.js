@@ -89,12 +89,13 @@ const Home = ({ myUserId, admin, setAdmin }) => {
       history.push({ pathname: "/utilisateur/profil", state: { id } });
     }
   };
-  
+
   return (
     <main className="grpm-home">
       <div className="post-message-container">
         <PostMessage viewMessagesPost={viewMessagesPost} />
       </div>
+      
       <div className="search-user-container">
         <OutlinedChips myUserId={myUserId} />
       </div>
@@ -126,9 +127,9 @@ const Home = ({ myUserId, admin, setAdmin }) => {
                 </div>
               </div>
               <div className="date">
-              <div className="message-date">Publiée le : {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
+              <div className="message-date">Publiée {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
-                <div className="message-date">Modifiée le {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
+                <div className="message-date">Modifiée {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               )}
               
               </div>

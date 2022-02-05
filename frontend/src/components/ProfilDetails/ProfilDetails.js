@@ -61,7 +61,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
     groupomaniaUser.avatar,
     groupomaniaUser.isAdmin,
   ]);
-console.log(groupomaniaUser.avatar);
+
   const onChangeAvatar = (newAvatar) => {
     setAvatar(newAvatar);
   };
@@ -400,7 +400,7 @@ console.log(groupomaniaUser.avatar);
         {/* Bio Section */}
         <div className="Pseudo_Button_Section">Modifier votre bio</div>
         <div className="display_bio">
-          <label id="InputBio" for="bio">
+          <label id="InputBio" htmlFor="bio">
           <textarea
             rows={4}
             variant="outlined"

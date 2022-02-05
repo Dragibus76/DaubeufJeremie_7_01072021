@@ -117,7 +117,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="register-input">
       <FontAwesomeIcon icon="envelope" className="Icons"/>
-      <label id="InputEmailInsc" for="EmailInsc">
+      <label id="InputEmailInsc" htmlFor="EmailInsc">
       <div className="LabelAria" >Email</div>
       </label>
       <input onChange={onChangeEmail} value={email} label="e-mail" placeholder="Email" aria-labelledby="InputEmailInsc" id="EmailInsc" />
@@ -125,7 +125,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       {errorEmail && <ErrorMessage message={errorEmail} />}
       <div className="register-input">
       <FontAwesomeIcon icon="user" className="Icons"/>
-      <label id="InputFirstnameInsc" for="FirstnameInsc">
+      <label id="InputFirstnameInsc" htmlFor="FirstnameInsc">
       <div className="LabelAria" >Nom</div>
       </label>
       <input onChange={onChangeFirstname} value={firstname} label="Prénom" placeholder="Prénom" aria-labelledby="InputFirstnameInsc" id="FirstnameInsc"/>
@@ -133,7 +133,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       {errorFirstname && <ErrorMessage message={errorFirstname} />}
       <div className="register-input">
       <FontAwesomeIcon icon="user" className="Icons"/>
-      <label id="InputLastnameInsc" for="LastnameInsc">
+      <label id="InputLastnameInsc" htmlFor="LastnameInsc">
       <div className="LabelAria" >Prenom</div>
       </label>
       <input onChange={onChangeLastname} value={lastname} label="NOM" placeholder="Nom" aria-labelledby="InputLastnameInsc" id="LastnameInsc"/>
@@ -141,7 +141,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       {errorLastname && <ErrorMessage message={errorLastname} />}
       <div className="register-input">
       <FontAwesomeIcon icon="lock" className="Icons"/>
-      <label id="InputPasswordInsc" for="PasswordInsc">
+      <label id="InputPasswordInsc" htmlFor="PasswordInsc">
       <div className="LabelAria" >Password</div>
       </label>
       <input onChange={onChangePassword} value={password} label="mot de passe" type="password"  placeholder="Mot de passe" aria-labelledby="InputPasswordInsc" id="PasswordInsc"/>
@@ -149,7 +149,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       {errorPassword && <ErrorMessage message={errorPassword} />}
       <div className="register-input">
       <FontAwesomeIcon icon="lock" className="Icons"/>
-      <label id="InputConfirmPasswordInsc" for="ConfirmPasswordInsc">
+      <label id="InputConfirmPasswordInsc" htmlFor="ConfirmPasswordInsc">
       <div className="LabelAria" > Confirm Password</div>
       </label>
       <input
@@ -164,7 +164,7 @@ const Register = ({ /*setIsLoggedin*/ setMyUserId }) => {
       {errorConfirmPassword && <ErrorMessage message={errorConfirmPassword} />}
       <div className="register-input">
       <FontAwesomeIcon icon="book-reader" className="Icons"/> 
-      <label id="InputConfirmBioInsc" for="ConfirmBioInsc">
+      <label id="InputConfirmBioInsc" htmlFor="ConfirmBioInsc">
       <div className="LabelAria" >Bio</div>
       </label>
       <textarea rows={4} variant="outlined" label="Description" onChange={onChangeBio} value={bio} placeholder="Biographie" className="Biographie" aria-labelledby="InputConfirmBioInsc" id="ConfirmBioInsc"/>

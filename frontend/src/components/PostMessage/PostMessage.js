@@ -183,7 +183,7 @@ class PostMessage extends Component {
         </div>
 
         <div className="input-title">
-          <label for="Titre" id="title">
+          <label htmlFor="Titre" id="title">
             <div className="LabelAria" >Titre de la Publication</div>
             <input
               aria-labelledby="title"
@@ -204,7 +204,7 @@ class PostMessage extends Component {
         </div>
         <div className="input-container">
           <div className="input-content">
-            <label id="contentTextArea" for="content">
+            <label id="contentTextArea" htmlFor="content">
             <div className="LabelAria">Contenu de la publication</div>
             <textarea
               id="outlined-multiline-static"
@@ -228,7 +228,7 @@ class PostMessage extends Component {
           </div>
           <div className="container2">
             <div className="input-file">
-              <label id="InputImage" for="Photo">
+              <label id="InputImage" htmlFor="Photo">
               <div className="LabelAria" >Choisir une image ou un gif</div>
               <input
                 onChange={this.onUploadFile}

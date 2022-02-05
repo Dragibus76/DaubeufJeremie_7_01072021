@@ -28,7 +28,7 @@ const ModifCommentPopUp = ({
           <FontAwesomeIcon icon="times" title={buttonTitle2} onClick={handleModal} className="button_modif_close_modale"/>
             <DialogTitle>{modalTitle}</DialogTitle>
           </div>
-          <label id="InputFN" for="FN">
+          <label id="InputFN" htmlFor="FN">
           <div className="LabelAria" >Choisir une image ou un gif</div>
           <textarea value={newContent} onChange={onChange} label={label} type="text" className="input_modif_comment" aria-labelledby="InputFN" id="FN"/>
           </label>

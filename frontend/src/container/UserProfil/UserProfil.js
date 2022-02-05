@@ -8,7 +8,7 @@ import CommentMessage from "../../components/CommentMessage/CommentMessage";
 import DeleteMessage from "../../components/DeleteMessage/DeleteMessage";
 import ModifyMessage from "../../components/ModifyMessage/ModifyMessage";
 import "./user-profil.css";
-
+import moment from "moment";
 const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
   const [allMessages, setAllMessages] = useState([]);
   const history = useHistory();
@@ -99,9 +99,9 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                 <div className="UserName_UserProfil">{firstnameLastname}</div>
               </div>
               <div className="date">
-              <div className="message-date">Publiée le : {dateFormater(element.createdAt)}</div>
+              <div className="message-date">Publiée {moment(element.createdAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               {element.createdAt !== element.updatedAt && (
-                <div className="message-date">Modifiée le {dateFormater(element.updatedAt)}</div>
+                <div className="message-date">Modifiée {moment(element.updatedAt, "MMMM Do YYYY, h:mm:ss a").fromNow()}</div>
               )}
               </div>
               <div className="line_container"></div>

@@ -34,14 +34,14 @@ const ModifPasswordPopUp = ({
           </div>
 
           <div style={{ marginBottom: "10px" }}>
-            <label id="InputAncienMDP" for="AncienMDP">
+            <label id="InputAncienMDP" htmlFor="AncienMDP">
             <div className="LabelAria" >ancien mot de passe</div>
             <input value={newContent} onChange={onChange} label={label} type="password" className="Input_Prev_Password" placeholder="Ancien mot de passe" aria-labelledby="InputAncienMDP" id="AncienMDP"/>
             </label>
           </div>
           {error && <ErrorMessage message={error} />}
           <div>
-          <label id="InputNewMDP" for="NewMDP">
+          <label id="InputNewMDP" htmlFor="NewMDP">
           <div className="LabelAria" >nouveau mot de passe</div>
           <input value={newContent2} onChange={onChange2} label={label2} type="password" className="Input_Prev_Password" placeholder="Nouveau mot de passe" aria-labelledby="InputNewMDP" id="NewMDP"/>
           </label>
