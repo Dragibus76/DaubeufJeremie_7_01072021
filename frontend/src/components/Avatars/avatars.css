@@ -6,7 +6,7 @@
   padding: 15px 15px 0px 15px;
   height: auto;
   
-  text-align: justify;
+  
 }
 
 .avatar-button {
@@ -31,6 +31,7 @@ justify-content: center;
   margin: 10px;
   width: 150px;
   height: 150px;
+  
   transition: 0.5s ease;
 }
 .Avatar_Row:hover{
@@ -45,7 +46,7 @@ justify-content: center;
   outline: none;
   border: none;
   background: #0E88FA;
-  color: white;
+  
   transition: 0.5s ease;
 
  
