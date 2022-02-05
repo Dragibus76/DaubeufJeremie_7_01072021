@@ -18,7 +18,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
   const [lastname, setLastname] = useState("");
   const [isDisable, setIsDisable] = useState(true);
   const [bio, setBio] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState(null);
   const [isAdmin, setIsAdmin] = useState(null);
   const [open, setOpen] = useState(false);
   const [openFirstname, setOpenFirstname] = useState(false);
@@ -61,7 +61,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
     groupomaniaUser.avatar,
     groupomaniaUser.isAdmin,
   ]);
-
+console.log(groupomaniaUser.avatar);
   const onChangeAvatar = (newAvatar) => {
     setAvatar(newAvatar);
   };

@@ -15,7 +15,7 @@ function importAll(r) {
   return images;
 }
 
-const images = importAll(require.context("../../assets/avatars", true, /\.(png|jpeg|jpg|svg)$/));
+const images = importAll(require.context("../../assets/avatars", false, /\.(png|jpeg|jpg|svg)$/));
 
 const Card = ({ number, selectCardIndex }) => {
   return (
@@ -31,7 +31,7 @@ const Card = ({ number, selectCardIndex }) => {
 };
 
 const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState(null);
   const groupomaniaUser = JSON.parse(sessionStorage.getItem("groupomania-user"));
 
   const [selectCardIndex, setSelectCardIndex] = useState(null);
