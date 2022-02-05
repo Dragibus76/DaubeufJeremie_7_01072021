@@ -95,7 +95,7 @@ const Accordion = ({
                     <img
                       width="100%"
                       height="100%"
-                      style={{ borderRadius: "50%", border: "2px solid black"}}
+                      style={{ borderRadius: "50%", border: "2px solid black", border: "2px solid #C850C0"}}
                       alt={element.UserId}
                       src={element.User.avatar}
                     />

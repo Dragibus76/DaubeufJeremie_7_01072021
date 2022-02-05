@@ -226,7 +226,7 @@ const OtherProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
                       width="100%"
                       height="100%"
                       alt="avatar"
-                      style={{ borderRadius: "50%" }}
+                      style={{ borderRadius: "50%", border: "3px solid #C850C0" }}
                       src={element.User.avatar}
                     />
                   </div>

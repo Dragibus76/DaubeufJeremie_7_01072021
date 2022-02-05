@@ -370,7 +370,7 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
             width="100%"
             height="100%"
             alt="avatar"
-            style={{ borderRadius: "50%" }}
+            style={{ borderRadius: "50%", border: "5px solid #C850C0" }}
             src={avatar}
             className="img_upload"
           />

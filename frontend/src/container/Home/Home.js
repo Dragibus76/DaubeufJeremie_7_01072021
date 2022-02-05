@@ -114,8 +114,8 @@ const Home = ({ myUserId, admin, setAdmin }) => {
             <div className="message-card" key={element.id}>
               <div className="avatar-name" onClick={() => goToOtherProfil(element.UserId)}>
                 <div className="avatar-picture">
-                <div className="Circle_Avatar"></div>
-                  <img width="70px" height="70px" alt="" style={{ borderRadius: "50%" }} src={element.User.avatar} />
+                
+                  <img width="70px" height="70px" alt="" style={{ borderRadius: "50%" , border: "3px solid #C850C0"}} src={element.User.avatar} />
                 </div>
                 <div className="miseneforme_avatar">{firstnameLastname}
                 <div className="message-is-admin">

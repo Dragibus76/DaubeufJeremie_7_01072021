@@ -86,13 +86,14 @@ const UserProfil = ({ myUserId, admin, setIsLoggedin, setCheckLogin }) => {
             <div className="message-user-card" key={element.id}>
               <div className="avatar-name">
                 <div className="avatar-picture">
-                  <div className="Circle_Avatar2"></div>
+                  
                   <img
                     width="100%"
                     height="100%"
                     alt="avatar"
-                    style={{ borderRadius: "50%" }}
+                    style={{ borderRadius: "50%", border: "3px solid #C850C0" }}
                     src={element.User.avatar}
+                    
                   />
                 </div>
                 <div className="UserName_UserProfil">{firstnameLastname}</div>
