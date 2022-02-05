@@ -1189,7 +1189,7 @@ module.exports = {
                       let i = files.length;
                       files.forEach((filepath) => {
                         let fileName = filepath
-                          .split("http://localhost:8080/")
+                          .split("http://localhost:4000/")
                           .pop();
                         fileName = dynamiquePath + fileName;
 
