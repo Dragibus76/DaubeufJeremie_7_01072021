@@ -8,6 +8,13 @@
   cursor: pointer;
 }
 
+
 .like-icon {
   cursor: pointer;
+}
+
+.buttonLike{
+  background: transparent;
+  border: none;
+  color:white;    
 }

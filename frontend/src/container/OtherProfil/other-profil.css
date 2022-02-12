@@ -179,7 +179,9 @@ color: white;
   color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
-
+.Button_Droits_Other_Profil:focus{
+  border: 2px solid white
+}
 .Button_Delete_Profil_Other_Profil{
   width: 200px;
   height: 40px;
@@ -197,7 +199,9 @@ color: white;
   color: red;
   transform: scale(1.1);
 }
-
+.Button_Delete_Profil_Other_Profil:focus{
+  border: 2px solid white
+}
 
 
 

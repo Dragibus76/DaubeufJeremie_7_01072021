@@ -27,7 +27,9 @@ const ModifPasswordPopUp = ({
     <Dialog open={open} onClose={handleModal} className="TransitionModale">
       
       <div className="modif-pop-up-container">
-      <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} onClick={handleModal}/>
+      <button  title="close" className="close" onClick={handleModal}>
+      <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2}/>
+      </button>
         <div className="modif-pop-up-inputs-container">
           <div className="modif-pop-up-title">
             <DialogTitle>{modalTitle}</DialogTitle>

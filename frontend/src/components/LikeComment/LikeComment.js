@@ -92,11 +92,16 @@ const LikeDislikeComment = ({
   return (
     <div className="like-dislike-container">
       <div className="like-blue">
-        <FontAwesomeIcon onClick={onLike} color="#0E88FA" icon={pushLike} />
+      <button  title="Like"onClick={onLike} className="buttonLike"> 
+      
+        <FontAwesomeIcon  color="#0E88FA" icon={pushLike} />
+        </button>
         {commentLike}
       </div>
       <div className="like-icon">
-        <FontAwesomeIcon onClick={onDislike} color="red" icon={pushDislike} />
+      <button title="DisLike" onClick={onDislike} className="buttonLike">
+        <FontAwesomeIcon  color="red" icon={pushDislike} />
+        </button>
         {commentDislike}
       </div>
     </div>

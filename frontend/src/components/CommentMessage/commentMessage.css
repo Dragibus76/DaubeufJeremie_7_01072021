@@ -5,6 +5,7 @@
 
 .accordions {
   margin-bottom: 10px;
+ 
 }
 
 .comment-input-button {
@@ -32,6 +33,8 @@
 	justify-content: space-between;
 	align-items: baseline;
 	align-content: center;
+  text-decoration: none;
+  color: white
 }
 .label_com_input{
   width: 100%;
@@ -45,7 +48,7 @@
   transition: 0.5s ease;
 }
 .label_com_input:focus{
-  border: 2px solid rgba(51, 51, 51, 0.8);
+  border: 2px solid white;
 }
 .label_com_input::placeholder{
   color: white;
@@ -61,4 +64,27 @@
  
   padding:9px;
   position: absolute;
+}
+
+.Button_Cooment_Send{
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.8);
+  border: none;
+  margin: 5px;
+  color: white;
+  width: auto;
+}
+
+.Button_Cooment_Send:focus{
+  border: 2px solid white;
+}
+
+.AccordionComs{
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.AccordionComs:focus{
+  border: 2px solid white;
 }

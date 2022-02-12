@@ -85,9 +85,11 @@ const ModifyMessage = ({
   return (
     <div>
       {(myUserId === idUserMessage || admin === true) && (
-        <div className="modify-icon" onClick={handleModal}>
+        
+        <button  title="modif" onClick={handleModal}  className="buttonmodif">
           <FontAwesomeIcon color="#0E88FA" icon={["fas", "edit"]} /> modifier
-        </div>
+          </button> 
+        
       )}
       <ModifPopUp
         oldAttachement={oldAttachement}

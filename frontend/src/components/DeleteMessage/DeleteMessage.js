@@ -34,8 +34,10 @@ const DeleteMessage = ({ messageId, myUserId, idUserMessage, changeDeleteMessage
   return (
     <div>
       {(myUserId === idUserMessage || admin === true) && (
-        <div className="delete-icon" onClick={handleModal}>
+        <div className="delete-icon" >
+        <button onClick={handleModal} className="deletemessage">
           <FontAwesomeIcon color="red" icon={["far", "trash-alt"]} /> supprimer
+          </button>
         </div>
       )}
       <ConfirmPopUp

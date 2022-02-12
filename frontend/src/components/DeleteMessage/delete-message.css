@@ -2,3 +2,12 @@
   cursor: pointer;
   width: 100px;
 }
+.deletemessage{
+  background: transparent;
+  border: none;
+  color:white;
+}
+
+.deletemessage:focus{
+border: 2px solid white;  
+}

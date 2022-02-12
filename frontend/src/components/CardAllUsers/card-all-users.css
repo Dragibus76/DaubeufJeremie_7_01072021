@@ -17,15 +17,24 @@
  
 }
 
+.Chip_Users:focus{
+  border: 2px solid #0E88FA!important;
+  
+  
+}
 .Users_search{
   border: none;
   background: rgba(51, 51, 51, 0.8);
-  opacity: 50%;
+  opacity: 100%;
   border-radius: 30px;
   height: 30px;
   width: 250px;
   text-align: center;
   color: white;
+  
+}
+.Users_search:focus{
+  border: 3px solid white
   
 }
 .Users_search::placeholder{

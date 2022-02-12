@@ -1,0 +1,9 @@
+.modifCommentMessage{
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 12px;
+}
+.modifCommentMessage:focus{
+   border: 2px solid white;
+}

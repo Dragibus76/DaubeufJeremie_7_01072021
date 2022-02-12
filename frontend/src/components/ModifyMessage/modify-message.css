@@ -2,3 +2,11 @@
   cursor: pointer;
   width: 100px;
 }
+.buttonmodif{
+  background: transparent;
+  border: none;
+  color: white;
+}
+.buttonmodif:focus{
+  border: 2px solid white;
+}

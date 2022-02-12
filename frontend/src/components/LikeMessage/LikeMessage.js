@@ -83,10 +83,14 @@ const LikeDislikeMessage = ({ messageId, like, dislike, changeLike, messageLikeB
   return (
     <div className="like-dislike-container">
       <div className="like-blue">
-        <FontAwesomeIcon onClick={onLike} color="#0E88FA" icon={pushLike} /> {like}
+      <button className="buttonLike" onClick={onLike}>
+        <FontAwesomeIcon  color="#0E88FA" icon={pushLike} /> {like}
+        </button>
       </div>
       <div className="like-icon">
-        <FontAwesomeIcon onClick={onDislike} color="red" icon={pushDislike} /> {dislike}
+      <button className="buttonLike" onClick={onDislike} >
+        <FontAwesomeIcon  color="red" icon={pushDislike} /> {dislike}
+        </button>
       </div>
     </div>
   );

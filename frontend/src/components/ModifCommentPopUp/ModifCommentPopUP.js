@@ -25,7 +25,9 @@ const ModifCommentPopUp = ({
       <div className="modif-pop-up-container">
         <div className="modif-pop-up-inputs-container">
           <div className="modif-pop-up-title">
-          <FontAwesomeIcon icon="times" title={buttonTitle2} onClick={handleModal} className="button_modif_close_modale"/>
+          <button className="close" onClick={handleModal}>
+          <FontAwesomeIcon icon="times" title={buttonTitle2}  className="button_modif_close_modale"/>
+          </button>
             <DialogTitle>{modalTitle}</DialogTitle>
           </div>
           <label id="InputFN" htmlFor="FN">

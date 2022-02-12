@@ -72,6 +72,7 @@ export default function OutlinedChips({ myUserId }) {
               
               
               <Chip
+            
               className="Chip_Users"
                 style={{
                   width: "14em",

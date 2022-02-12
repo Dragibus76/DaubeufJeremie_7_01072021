@@ -23,7 +23,9 @@
   color: rgba(51, 51, 51, 0.8);
   transform: scale(1.1);
 }
-
+.button_modif_comment_yes:focus {
+  border: 2px solid white
+}
 .button_modif_close_modale{
     color: #0E88FA;
     font-size: 20px;
@@ -34,7 +36,14 @@
     font-size: 20px;
     transform: scale(1.2);
 }
-
+.close{
+  background:transparent;  
+  border: none; 
+ }
+ .close:focus{
+  background:transparent;  
+  border: 2px solid white ; 
+ }
 .input_modif_comment{
     width: 250px;
     height: 20px;
@@ -48,4 +57,5 @@
 }
 .input_modif_comment:focus{
  border-radius: 5px;
+ border: 2px solid white;
 }

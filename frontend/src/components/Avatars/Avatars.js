@@ -4,7 +4,8 @@ import "./avatars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as React from 'react';
 import Dialog from "@material-ui/core/Dialog";
-import { ImageListItem } from "@material-ui/core";
+import { ButtonBase, CardMedia, ImageListItem, Tab, useIsFocusVisible } from "@material-ui/core";
+
 
 function importAll(r) {
   let images = {};
@@ -15,20 +16,25 @@ function importAll(r) {
   return images;
 }
 
+
 const images = importAll(require.context("../../assets/avatars", false, /\.(png|jpeg|jpg|svg)$/));
 
 const Card = ({ number, selectCardIndex }) => {
   return (
-    <img
-      style={selectCardIndex === number ? { border: "1px solid black" } : null}
-      name={images[`${number}.jpg`]}
-      src={images[`${number}.jpg`]}
-      alt={number}
-      height={150}
-      width={150}
-    />
+    
+    
+    <CardMedia
+        component="img"
+        name={images[`${number}.jpg`]}
+        sx={{ width: 150 , height: 150}}
+        style={selectCardIndex === number ? { border: "1px solid black"  } : null}
+        image={images[`${number}.jpg`]}
+        alt={number}
+      />
+    
   );
 };
+
 
 const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
   const [avatar, setAvatar] = useState(null);
@@ -63,7 +69,6 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
   };
   
   
- 
 
   return (
     <Dialog open={open}
@@ -73,15 +78,22 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
       <div className="testavatar">
       
         <div className="avatar-choice-container">
-        <FontAwesomeIcon icon="times"  className="button_modif_close_modale"  onClick={close}/>
+        <button  title="modif" onClick={close}  className="closeAvatar">
+        <FontAwesomeIcon icon="times"  className="button_modif_close_modale"  />
+        </button>
           <div className="Avatar_Display">
        
             {tab &&
               tab.map((element, i) => {
                 return (
-                  <div  className="Avatar_Row" key={i} onClick={(e) => onSubmitAvatar(e, i)} >
-                    <Card selectCardIndex={selectCardIndex} number={element} />
-                  </div>
+                  <button key={i}  onClick={(e) => onSubmitAvatar(e, i)} className="AvatarChoise">
+                  
+                    
+                    
+                    <Card  onClick={selectCardIndex} number={element}  />
+                    
+                 
+                  </button>
                 );
               })}
           </div>
@@ -89,7 +101,7 @@ const Avatar = ({ onChangeAvatar, close, open, handleModal }) => {
         
       </div>
       <div className="avatar-button">
-          <button onClick={onSubmit} title="Valider l'avatar" className="Validate_Modif_Avatar">Valider</button>
+          <button  onKeyDown={onSubmit} onClick={onSubmit} title="Valider l'avatar" className="Validate_Modif_Avatar">Valider</button>
         </div>
     </Dialog >
   );

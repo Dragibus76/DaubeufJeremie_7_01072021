@@ -32,13 +32,22 @@ grid-row-gap: 10px;
   margin: 10px;
   width: 150px;
   height: 150px;
-
+  border: none;
   transition: 0.5s ease;
 }
 .Avatar_Row:hover {
   transform: scale(1.2);
 }
-
+.Avatar_Row:focus {
+  border: 2px solid white;
+}
+.AvatarChoise{
+  background: transparent;
+  border: none;
+}
+.AvatarChoise:focus{
+  border: 2px solid white;
+}
 .Validate_Modif_Avatar {
   width: 150px;
   height: 40px;
@@ -55,6 +64,18 @@ grid-row-gap: 10px;
   color: #0e88fa;
   transform: scale(1.1);
 }
+.Validate_Modif_Avatar:focus {
+  border: 2px solid white;
+}
+
+ .closeAvatar{
+   background: transparent;
+   border: none;
+   margin-bottom: 400px;
+ }
+ .closeAvatar:focus{
+  border: 2px solid white;
+}
 
 @media screen and (max-width: 1255px) {
   .Avatar_Display {
@@ -69,6 +90,11 @@ grid-row-gap: 10px;
   }
   .avatar-choice-container {
     overflow-x: none;
+  }
+  .closeAvatar{
+    background: transparent;
+    border: none;
+    margin-bottom: 700px;
   }
 }
 
@@ -86,6 +112,11 @@ grid-row-gap: 10px;
   .avatar-choice-container {
     overflow-x: none;
   }
+  .closeAvatar{
+    background: transparent;
+    border: none;
+    margin-bottom: 900px;
+  }
 }
 @media screen and (max-width: 640px) {
   .Avatar_Display {
@@ -100,6 +131,11 @@ grid-row-gap: 10px;
   }
   .avatar-choice-container {
     overflow-x: none;
+  }
+  .closeAvatar{
+    background: transparent;
+    border: none;
+    margin-bottom: 900px;
   }
 }
 

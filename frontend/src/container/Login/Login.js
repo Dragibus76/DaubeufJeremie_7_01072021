@@ -50,14 +50,14 @@ const Login = ({ setIsLoggedin, setMyUserId /*setAdmin*/ }) => {
       <p className="subtitle">Notre entreprise spécialisée dans la grande distribution.</p>
       <div className="login-title">Connexion</div>
       <div className="login-input-email">
-      <FontAwesomeIcon icon="envelope" className="Icons"/>
+      <FontAwesomeIcon icon="envelope" className="Icons" />
       <label id="InputEmailConnect" htmlFor="EmailConnect">
       <div className="LabelAria" >Email</div>
       </label>
        <input onChange={onChangeEmail} label="e-mail" type="email" autoComplete="on" placeholder="Email" aria-labelledby="InputEmailConnect" id="EmailConnect"/>
       </div>
       <div className="login-input-password">
-      <FontAwesomeIcon icon="lock" className="Icons"/> 
+      <FontAwesomeIcon icon="lock" className="Icons" /> 
       <label id="InputPasswordConnect" htmlFor="PasswordConnect">
       <div className="LabelAria" >Password</div>
       </label>

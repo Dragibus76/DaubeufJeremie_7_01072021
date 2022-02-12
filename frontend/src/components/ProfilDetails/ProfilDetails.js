@@ -377,11 +377,12 @@ const ProfilDetails = ({ myUserId, setIsLoggedin, setCheckLogin }) => {
         </div>
         
         <div className="img_upload_circle">
+          <button title="upload" className="buttonImgUpload" onClick={handleModal}>
           <FontAwesomeIcon
             icon="camera"
             className="img_upload_circle_plane"
-            onClick={handleModal}
           />
+          </button>
         </div>
         {firstname} {lastname}
         <Avatar

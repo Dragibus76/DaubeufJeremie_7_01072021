@@ -87,15 +87,17 @@ const CommentMessage = ({
       toastTrigger("error", "Une erreur est survenue ⛔️");
     }
   };
+  const test = <button className="AccordionComs">Voir les commentaires</button>
   return (
     <div>
-      <div className="reaction_container">
+    
+      <div  className="reaction_container">
       
       <div className="accordions">
         <Accordion
           admin={admin}
           setAllMessages={setAllMessages}
-          title="Voir les commentaires"
+          title={test}
           content={content}
           messageId={messageId}
           allComments={allComments}
@@ -110,14 +112,22 @@ const CommentMessage = ({
       </div>
       </div>
       <div className="comment-input-button">
-      <FontAwesomeIcon icon="paper-plane" className="Send_icon" onClick={onComment}/>
+      {/* <FontAwesomeIcon icon="paper-plane" className="Send_icon" onClick={onComment}/> */}
+      
         <div className="comment-input">
         <label id="Comments" htmlFor={messageId} >
         <div className="LabelAria" >Commentaires</div>
         </label>
         
         <input value={content} onChange={onChangeContent} label="votre commentaire" type="text"  className="label_com_input" placeholder="Je met un com!"  id={messageId}/>
-        
+         <button
+                onClick={onComment}
+                title="Publier"
+                className="Button_Cooment_Send"
+              >
+                Publier
+               
+            </button>
           
           
           {activeLimitContent && (

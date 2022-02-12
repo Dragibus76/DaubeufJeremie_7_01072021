@@ -45,7 +45,9 @@ const ModifPopUp = ({
   return (
     <Dialog open={open} onClose={handleModal} className="TransitionModale">
       <div className="modif-pop-up-container">
-      <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} onClick={handleModal}/>
+      <button className="close" onClick={handleModal}>
+      <FontAwesomeIcon icon="times"  className="button_modif_close_modale" title={buttonTitle2} />
+      </button>   
         <div className="modif-pop-up-inputs-container">
           <div className="modif-pop-up-title">
             <DialogTitle>   <FontAwesomeIcon icon="pen" color="#0E88FA" className="Icon_modif_photo"/> {modalTitle}</DialogTitle>
@@ -68,8 +70,8 @@ const ModifPopUp = ({
               <label id="InputImg" htmlFor="Img">
               <div className="LabelAria" >Choisir une image ou un gif</div>
               </label>
-            <input onChange={onUploadFile} type="file" aria-labelledby="InputImg" id="Img"/>
-            <FontAwesomeIcon icon="photo-video" color="#F0B418" className="Icon_modif_photo"/> 
+            <input onChange={onUploadFile} type="file" aria-labelledby="InputImg" id="Img" className="changeImage"/>
+
             </div>
             
           </div>

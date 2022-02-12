@@ -230,6 +230,8 @@ class PostMessage extends Component {
             <div className="input-file">
               <label id="InputImage" htmlFor="Photo">
               <div className="LabelAria" >Choisir une image ou un gif</div>
+              {/* <div><FontAwesomeIcon icon="photo-video"  className="test1"/>{" "}</div> */}
+              
               <input
                 onChange={this.onUploadFile}
                 type="file"
@@ -239,8 +241,8 @@ class PostMessage extends Component {
               />
               </label>
               
-              <FontAwesomeIcon icon="photo-video" />{" "}
-              <div className="title_input_file">photo/vidéo</div>
+              
+             
             </div>
             {this.state.activePicture &&
               this.state.file?.name !== undefined && (

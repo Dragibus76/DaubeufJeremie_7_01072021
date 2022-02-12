@@ -35,7 +35,11 @@
   
  
 }
-
+.but{
+  background: transparent;
+  border: none;
+  color: white;
+}
 @keyframes transitionAccordion {
   100%{
     transform: translate(0,0);

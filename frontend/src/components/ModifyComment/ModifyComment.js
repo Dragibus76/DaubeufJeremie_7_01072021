@@ -3,7 +3,7 @@ import api from "../../Config/Api";
 import { useState } from "react";
 import ModifCommentPopUp from "../ModifCommentPopUp/ModifCommentPopUP";
 import { toastTrigger } from "../../helper/toast";
-
+import "./modifCommentMessage.css"
 const ModifyComment = ({ myUserId, idUserComment, commentId, content, messageId, setAllComments }) => {
   const [open, setOpen] = useState(false);
   const [newContent, setNewContent] = useState(content);
@@ -48,11 +48,13 @@ const ModifyComment = ({ myUserId, idUserComment, commentId, content, messageId,
   };
 
   return (
-    <div>
+    <>
       {myUserId === idUserComment && (
-        <div className="modify-icon" onClick={handleModal}>
+        <div onClick={handleModal  }>
+        <button  className="modifCommentMessage">
           <FontAwesomeIcon color="#0E88FA" icon={["fas", "edit"]} /> modifier
-        </div>
+          </button>
+</div>
       )}
       <ModifCommentPopUp
         open={open}
@@ -66,7 +68,7 @@ const ModifyComment = ({ myUserId, idUserComment, commentId, content, messageId,
         setNewContent={setNewContent}
         label="Modifier commentaire"
       />
-    </div>
+    </>
   );
 };
 export default ModifyComment;

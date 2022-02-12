@@ -4,7 +4,7 @@ import { useState } from "react";
 import ConfirmPopUp from "../ConfirmPopUp/ConfirmPopUp";
 import { toastTrigger } from "../../helper/toast";
 import { useHistory } from "react-router";
-
+import "./deleteComment.css"
 const DeleteComment = ({
   messageId,
   admin,
@@ -78,7 +78,9 @@ const DeleteComment = ({
     <div>
       {(myUserId === idUserComment || admin === true) && (
         <div className="delete-icon" onClick={handleModal}>
+        <button onClick={open} className="deletecomment">
           <FontAwesomeIcon color="red" icon={["far", "trash-alt"]} /> supprimer
+          </button>
         </div>
       )}
       <ConfirmPopUp
